@@ -1,14 +1,18 @@
 import React from 'react'
 import "./App.css";
-import {Navbar} from './Component/component.js';
+// import Navbar from './component/Navbar';
+// import HeroComponent from './component/HeroComponent';
+import { Navbar, HeroComponent } from './component';
+
+import { search } from './assets/asset';
 
 const App = () => {
   return (
-    <div className=''>
+    <div className="">
       <Navbar />
-      hello world
+      <HeroComponent /> 
     </div>
-  )
+  );
 }
 
 export default App

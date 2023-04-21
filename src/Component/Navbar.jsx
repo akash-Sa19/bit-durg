@@ -1,12 +1,10 @@
 import React from 'react'
-// import { search, Grouplogo1 } from '../assets/asset.js'
-// import search from ''
-const svg_img = '../assets/search.svg'
+import { search } from "../assets/asset"
 const Navbar = () => {
   return (
 	<div className='font-roboto'>
 	  <div className='h-10 bg-bit-red '>
-		{/* <ul>
+		<ul>
 			<li>EVENT</li>
 			<li>NEWS</li>
 			<li>CAREERS</li>
@@ -15,12 +13,11 @@ const Navbar = () => {
 			<li>VISIT</li>
 			<li>CONTACT US</li>
 			<li>IIC</li>
-		</ul> */}
+		</ul>
 		<div>
 			Find Department....
 			<span>
-				{search}
-				<img src={svg_img} alt="svg"/>
+				<img src={search} alt="Search" />
 			</span>
 		</div>
 	  </div>
