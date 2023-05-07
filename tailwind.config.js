@@ -10,16 +10,21 @@ export default {
     },
     fontFamily : {
       'roboto': ['Roboto', 'sans-serif' ],
-      'serif-pro': ['Source Serif Pro', 'serif']
+      'serif-pro': ['Source Serif Pro', 'serif'],
+      'alegreya-sans': ['Alegreya Sans', 'sans-serif']
     },
-    extend: {colors : {
+    extend: 
+
+    {colors : {
       "bit-red": "#800000",
       "bit-yellow": "#E7D7C1",
       "bit-blue": "#062242",
       "bit-lightblue": "#7EB2DD",
       "white": "#FFFFFF",
-      "black": "#000000"
-    }},
+      "black": "#000000",
+      "grey": "#D9D9D9",
+    }
+  },
   },
   plugins: [],
 };

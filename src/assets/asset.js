@@ -7,11 +7,12 @@ import undergraduate from './undergraduate.svg'
 import scholarship from './scholarship.png'
 import campusLife from './campusLife.png'
 import whoWeAre from './whoWeAre.png'
+import calender from './icons_calender.svg'
 
 export {
 	search,
 	Grouplogo1,
 	downArrow,
 	hero,
-	graduate, undergraduate, scholarship, campusLife, whoWeAre
+	graduate, undergraduate, scholarship, campusLife, whoWeAre, calender
 };
