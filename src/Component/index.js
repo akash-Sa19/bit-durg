@@ -5,6 +5,9 @@ import WhoWeAre from './WhoWeAre';
 import NewsEvent from './NewsEvent';
 import Ribbon from './Ribbon';
 import Card from './Card'
+import Mission from './Mission'
+import Achievements from './Achievements';
+import StraightFromSource from './StraightFromSource';
 
 export {
 	Navbar,
@@ -14,4 +17,7 @@ export {
 	NewsEvent,
 	Card,
 	Ribbon,
+	Mission,
+	Achievements,
+	StraightFromSource
 };
