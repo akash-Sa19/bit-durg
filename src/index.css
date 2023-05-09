@@ -7,7 +7,7 @@
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   /* line-height: 1.5; */
-  /* font-weight: 400; */
+  font-weight: 400;
 
   color-scheme: light dark;
   color: rgb(0, 0, 0);
@@ -20,4 +20,50 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+
+/* .bitButton.MuiButton-contained {
+  color: #800000;
+  background-color: rgba(231, 215, 193, 0.25);
+  width: 200px;
+  height: 45px;
+  border-radius: 0;
+  border: 3px solid #E7D7C1;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: Alegreya Sans;
+  filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.25));
+} */
+
+.buttonDropShadow {
+  filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.25));
+}
+
+/* .ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.ripple:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.8s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+} */
 
