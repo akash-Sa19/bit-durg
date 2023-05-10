@@ -12,6 +12,7 @@ import event_icon from './event_icon.svg'
 import news_icon from './news_icon.svg'
 import filter from './filter.svg'
 import img1 from './img1.png'
+
 import startDoubleQuote from './startDoubleQuote.svg'
 import endDoubleQuote from './endDoubleQuote.svg'
 import deppHeard from './deppHeard.jpeg'
