@@ -11,6 +11,7 @@ import {
   Mission,
   Achievements,
   StraightFromSource,
+  Ribbon,
 } from "./Component";
 
 import { search } from "./assets/asset";

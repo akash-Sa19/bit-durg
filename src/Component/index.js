@@ -8,6 +8,7 @@ import Card from './Card'
 import Mission from './Mission'
 import Achievements from './Achievements';
 import StraightFromSource from './StraightFromSource';
+import BottomCircle from './BottomCircle';
 
 export {
 	Navbar,
@@ -19,5 +20,6 @@ export {
 	Ribbon,
 	Mission,
 	Achievements,
-	StraightFromSource
+	StraightFromSource,
+	BottomCircle
 };

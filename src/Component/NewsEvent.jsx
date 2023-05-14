@@ -1,35 +1,9 @@
 import React from 'react'
 import { calender, event_icon, news_icon, filter } from '../assets/asset'
-import {Ribbon, Card} from './index'
-import { Button, colors, } from '@mui/material'
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import { styled } from '@mui/material/styles'
-// import { BorderAllSharp } from '@mui/icons-material'
+import { Ribbon, Card, BottomCircle } from './index'
+import { Button } from '@mui/material'
+import { news, color } from '../Constants'
 import '../index.css'
-
-
-
-// const BitDurgButton = styled(Button)(({ theme }) => ({
-//   backgroundColor: 'rgba(231, 215, 193, 0.25)',
-//   color: "#800000",
-//   width: 200,
-//   height: 45,
-//   borderColor: '#E7D7C1',
-//   border: '3px solid',
-//   fontFamily: 'Alegreya Sans',
-//   fontWeight: 800,
-//   fontSize: 20,
-//   borderRadius: 0,
-
-// }));
-// s
-
-// fontFamily: "Alegreya Sans",
-
-// border: '3px solid #E7D7C1'
-// '& .MuiButton-root'
-// }));
-
 
 const buttonDesign = {
   backgroundColor: 'rgba(231, 215, 193, 0.25)',
@@ -73,41 +47,73 @@ const NewsIcon = () => {
 }
 const NewsEvent = () => {
   return (
-    <div className='mt-[150px] '>
-      {/* Ribbon for Event and News */}
-      <div className='lg:ml-[130px] md:ml-[90px] sm:ml-auto'>
-        <Ribbon heading="The Impact of Work" description="Deploying knowledge to address  critical and complex problem in the world" />
-      </div>
-      {/* News and Event */}
-      <div className='mt-[100px] flex'>
-        <div className='w-[202px] flex flex-col items-center ml-[60px]'>
-          {/* Calender Icon */}
-          <img src={calender} alt="Calender Icon" width='40px' height='40px' />
-          {/* Horizontal Bar */}
-          <span className='h-1 w-[200px] bg-grey block mt-5'></span>
-          <div className='mt-[60px] flex flex-col font-alegreya-sans'>
-            {/* <Button variant='contained' className='bitButton '>News</Button> */}
+    <div className='w-[100vw] border border-red-500'>
 
-            <Button variant='contained' sx={buttonDesign} startIcon={<img src={news_icon} width="20px" height="20px" style={{ marginRight: "8px" }}
-            />}>News</Button>
-
-            <Button variant='contained' sx={buttonDesign} startIcon={<img src={event_icon} width="20px" height="20px" style={{ marginRight: "8px" }} />}>Event</Button>
+      <div className='mt-[150px] border'>
+        {/* 1 */}
+        {/* Ribbon for Event and News */}
+          <div className=' sm:ml-auto border border-green-500 md:ml-[10%]'>
+            <Ribbon heading="The Impact of Work" description="Deploying knowledge to address  critical and complex problem in the world" />
 
           </div>
-          <div className='mt-[90px]'>
-            <Button varient='contained' sx={buttonDesign} startIcon={<img src={filter} width="20px" height="20px" style={{ marginRight: "8px" }} />}>Filter</Button>
-          </div>
-        </div>
-
-        {/* News and Event Card */}
-        <div className='border border-red-400'>
-          <Card heading="Solar Energy Workshop 2022" description="BIT is conducting Solar Energy workshop for three days." />
-        </div>
-
+        {/* 2 */}
+        {/* News and Event */}
         
+        <div className='mt-[100px] flex justify-center lg:gap-[100px] md:gap-[46px] '>
+          {/* 2.a */}
+          <div className='w-[202px] flex flex-col items-center'>
+            {/* Calender Icon */}
+            <img src={calender} alt="Calender Icon" width='40px' height='40px' />
+            {/* Horizontal Bar */}
+            <span className='h-1 w-[200px] bg-grey block mt-5'></span>
+            <div className='mt-[60px] flex flex-col font-alegreya-sans'>
+              {/* <Button variant='contained' className='bitButton '>News</Button> */}
 
+              <Button variant='contained' sx={buttonDesign} startIcon={<img src={news_icon} width="20px" height="20px" style={{ marginRight: "8px" }}
+              />}>News</Button>
+
+              <Button variant='contained' sx={buttonDesign} startIcon={<img src={event_icon} width="20px" height="20px" style={{ marginRight: "8px" }} />}>Event</Button>
+
+            </div>
+            <div className='mt-[90px]'>
+              <Button varient='contained' sx={buttonDesign} startIcon={<img src={filter} width="20px" height="20px" style={{ marginRight: "8px" }} />}>Filter</Button>
+            </div>
+          </div>
+
+          {/* 2.b */}
+          {/* News and Event Card */}
+          <div className='flex w-[1012px] flex-col items-center'>
+            {/* 2.b.a */}
+            <div className='flex flex-row flex-wrap gap-10 w-[1012px]  border border-red-600'>
+            {
+              news.map((newsItem, index) => (
+                <Card
+                  key={newsItem.id}
+                  heading={newsItem.heading}
+                  description={newsItem.description}
+                  date={newsItem.date}
+                  month={newsItem.month}
+                  img={newsItem.imgSrc}
+                />))
+
+            }
+            </div>
+
+            {/* 2.b.b */}
+            {/* Bottom Circle */}
+            <div className='flex gap-2 mt-[46px]'>
+              <BottomCircle circleColor={color.bitRed} />
+              <BottomCircle circleColor={color.bitRed} />
+              {/* <BottomCircle circleColor={color.bitRed} /> */}
+            </div>
+
+          
+          </div>
+        </div>
+        
       </div>
     </div>
+
   )
 }
 

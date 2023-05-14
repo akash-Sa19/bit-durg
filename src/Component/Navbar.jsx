@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../style";
+import styles from "../Constants";
 import { search, downArrow, Grouplogo1 } from "../assets/asset";
 import { useState } from "react";
 import Button from "@mui/material/Button";
@@ -28,8 +28,8 @@ const Navbar = () => {
   return (
     <div className="font-roboto relative">
       {/* Top Navbar */}
-      <div class="flex gap-4 bg-bit-red h-10 px-2">
-        <div class="item basis-0 grow">
+      <div className="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="item basis-0 grow">
           <div className="flex items-center h-full justify-end gap-6">
             <Button variant="text" sx={buttonStyle}>
               Event
@@ -47,11 +47,11 @@ const Navbar = () => {
         </div>
 
         {/* White Space for logo */}
-        <div class="item">
+        <div className="item">
           <div className={`w-[340px] h-full bg-white inline-block`}></div>
         </div>
 
-        <div class="item basis-0 grow">
+        <div className="item basis-0 grow">
           <div
             className={`flex items-center h-full w-full justify-start gap-6`}
           >
@@ -91,8 +91,8 @@ const Navbar = () => {
       </div>
 
       {/* Mid Navbar */}
-      <div class="flex gap-4 h-[60px] px-2">
-        <div class="item basis-0 grow">
+      <div className="flex gap-4 h-[60px] px-2">
+        <div className="item basis-0 grow">
           <div className="flex items-center h-full justify-end gap-6">
             <Button variant="text" sx={bottomNavLinkStyle}>
               Admission
@@ -108,10 +108,10 @@ const Navbar = () => {
             </Button>
           </div>
         </div>
-        <div class="item">
+        <div className="item">
           <div className={`w-[340px] h-full bg-white inline-block`}></div>
         </div>
-        <div class="item basis-0 grow">
+        <div className="item basis-0 grow">
           <div
             className={`flex items-center h-full w-full justify-start gap-6`}
           >
