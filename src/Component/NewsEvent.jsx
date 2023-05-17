@@ -47,21 +47,26 @@ const NewsIcon = () => {
 }
 const NewsEvent = () => {
   return (
-    <div className='w-[100vw] border border-red-500'>
+    <div className='w-[100vw] border border-blue-500'>
 
-      <div className='mt-[150px] border'>
+      <div className='mt-[150px]'>
         {/* 1 */}
         {/* Ribbon for Event and News */}
-          <div className=' sm:ml-auto border border-green-500 md:ml-[10%]'>
+          <div className=' sm:ml-auto md:ml-[10%]'>
             <Ribbon heading="The Impact of Work" description="Deploying knowledge to address  critical and complex problem in the world" />
 
           </div>
+
+
+
+
+          {/* this is not work when scaleing  */}
+          {/* try different approch or somthing */}
         {/* 2 */}
         {/* News and Event */}
-        
-        <div className='mt-[100px] flex justify-center lg:gap-[100px] md:gap-[46px] '>
+        <div className='mt-[100px] flex justify-center lg:gap-[100px] md:gap-[46px]  w-auto border border-yellow-700'>
           {/* 2.a */}
-          <div className='w-[202px] flex flex-col items-center'>
+          <div className='w-[202px] flex flex-col items-center lg:scale-[1] md:scale-75 '>
             {/* Calender Icon */}
             <img src={calender} alt="Calender Icon" width='40px' height='40px' />
             {/* Horizontal Bar */}
@@ -82,9 +87,11 @@ const NewsEvent = () => {
 
           {/* 2.b */}
           {/* News and Event Card */}
-          <div className='flex w-[1012px] flex-col items-center'>
+          {/* <div className='flex flex-col items-center lg:min-w-[1014px] lg:w-[70.27778vw] md:min-w-[554px] md:w-[66.4268vw] border border-yellow-600'> */}
+          
+          <div className='flex flex-col justify-center lg:min-w-[1014px] lg:w-[70.27778vw] md:w-[700px] border border-yellow-600 '>
             {/* 2.b.a */}
-            <div className='flex flex-row flex-wrap gap-10 w-[1012px]  border border-red-600'>
+            <div className='flex flex-row flex-wrap gap-10 border border-red-600 w-auto lg:scale-[1] md:scale-75'>
             {
               news.map((newsItem, index) => (
                 <Card
@@ -94,6 +101,7 @@ const NewsEvent = () => {
                   date={newsItem.date}
                   month={newsItem.month}
                   img={newsItem.imgSrc}
+                  className="lg:scale-[1] md:scale-[100%]"
                 />))
 
             }

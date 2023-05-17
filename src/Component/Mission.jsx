@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 const Mission = () => {
   return (
-    <div className="custom-cont">
+    <div className="new-container">
       <div
         className="bg-bit-red w-full rounded-lg relative 
         lg:h-[735px] 

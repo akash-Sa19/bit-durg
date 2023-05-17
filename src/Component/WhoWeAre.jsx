@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 const WhoWeAre = () => {
   return (
     <>
-      <div className="h-[605px] w-[1320px] mx-auto my-5 bg-bit-red grid grid-cols-2 rounded-lg shadow-2xl shadow-black">
+      <div className="new-container h-[605px] my-5 bg-bit-red grid grid-cols-2 rounded-lg shadow-2xl shadow-black">
         <div className="col-span-1 p-16 flex justify-center items-center">
           <img src={whoWeAre} alt="Who We Are Image" />
         </div>

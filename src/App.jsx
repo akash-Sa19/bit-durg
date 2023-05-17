@@ -11,7 +11,8 @@ import {
   Mission,
   Achievements,
   StraightFromSource,
-  Ribbon,
+  Footer,
+  
 } from "./Component";
 
 import { search } from "./assets/asset";
@@ -19,14 +20,15 @@ import { search } from "./assets/asset";
 const App = () => {
   return (
     <div className="">
-      <Navbar />
-      <Hero />
-      <CollegeWidget />
-      <WhoWeAre />
-      <NewsEvent />
-      <Mission />
-      <Achievements />
-      <StraightFromSource />
+      {/* <Navbar /> */}
+      {/* <Hero /> */}
+      {/* <CollegeWidget /> */}
+      {/* <WhoWeAre /> */}
+      {/* <NewsEvent /> */}
+      {/* <Mission /> */}
+      {/* <Achievements /> */}
+      {/* <StraightFromSource /> */}
+      <Footer />
     </div>
   );
 };

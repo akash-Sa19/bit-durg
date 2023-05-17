@@ -20,21 +20,26 @@ import Naac from './Naac.svg'
 import Nirf from './Nirf.svg'
 import Nba from './Nba.svg'
 import Margdarshan from './Margdarshan.svg'
+import bitLogo3 from './BitLogo3.svg'
+import bitBuildingIcon from './bit-building-icon.svg'
+import callIcon from './call-icon.svg'
+import locationIcon from './location-icon.svg'
+import mailIcon from './mail-icon.svg'
 
 export {
 	search,
 	Grouplogo1,
 	downArrow,
-	hero, 
-	event_icon, 
-	news_icon, 
-	filter, 
+	hero,
+	event_icon,
+	news_icon,
+	filter,
 	img1,
-	graduate, 
-	undergraduate, 
-	scholarship, 
-	campusLife, 
-	whoWeAre, 
+	graduate,
+	undergraduate,
+	scholarship,
+	campusLife,
+	whoWeAre,
 	calender,
 	startDoubleQuote,
 	endDoubleQuote,
@@ -43,5 +48,10 @@ export {
 	Naac,
 	Nirf,
 	Nba,
-	Margdarshan
+	Margdarshan,
+	bitLogo3,
+	bitBuildingIcon,
+	callIcon,
+	locationIcon,
+	mailIcon,
 };
