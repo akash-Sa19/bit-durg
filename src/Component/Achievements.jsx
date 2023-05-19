@@ -18,7 +18,12 @@ const Achievements = () => {
       >
         Achievements
       </Typography>
-      <div className="flex justify-between my-20 mx-16">
+      <div
+        className="
+        lg:my-20 lg:flex lg:justify-between lg:items-center
+        md:my-16 md:flex md:justify-between md:items-center
+        sm:my-12 sm:grid sm:grid-cols-2 sm:gap-5"
+      >
         <div>
           <img src={Ariia} alt="Ariia" />
           <p className={textStyle}>ariia</p>

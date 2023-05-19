@@ -5,38 +5,29 @@ import Typography from "@mui/material/Typography";
 const WhoWeAre = () => {
   return (
     <>
-      <div className="new-container h-[605px] my-5 bg-bit-red grid grid-cols-2 rounded-lg shadow-2xl shadow-black">
-        <div className="col-span-1 p-16 flex justify-center items-center">
+      <div className="new-container lg:h-[605px] md:h-[350px] my-5 bg-bit-red grid grid-cols-2 rounded-lg shadow-2xl shadow-black">
+        <div className="col-span-1 lg:p-16 md:p-8 flex justify-center items-center">
           <img src={whoWeAre} alt="Who We Are Image" />
         </div>
-        <div className="col-span-1 p-16 flex justify-center items-center">
+        <div className="col-span-1 lg:p-16 md:p-8 flex justify-center items-center">
           <div>
-            <Typography
-              variant="h3"
-              color="white"
-              sx={{ textAlign: "center", mb: 5 }}
-            >
+            <p className="text-white font-serif-pro text-center mb-5 lg:text-4xl md:text-2xl">
               Who We Are
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              color="white"
-              sx={{
-                textAlign: "justify",
-                fontSize: "20px",
-                lineHeight: "30px",
-              }}
+            </p>
+            <p
+              className="text-white text-justify
+             lg:leading-loose lg:text-xl
+             md:leading-normal md:text-sm
+             sm:leading-relaxed sm:text-base"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam fuga
-              amet quod magni ut repellendus, architecto consequuntur delectus
-              natus perspiciatis modi laboriosam dolor quos harum doloremque
-              optio cumque provident id aperiam fugit veniam asperiores. Eaque
-              nam odit quaerat eius. Odit optio cupiditate voluptas illo!
-              Deleniti repellat veniam facere sit debitis mollitia neque dicta
-              aliquid. Facere provident explicabo dolores et in tempora illum.
-              Animi accusantium provident voluptates, consequuntur doloremque
-              laborum ullam?
-            </Typography>
+              We are one of the Premier Technical and Management Educational
+              Institutions in the Country, delivering excellent professional
+              education, creating value based globally competitive professionals
+              and achieving excellence in all our endeavor. Putting in well
+              directed and honest efforts to create peace, prosperity and growth
+              for all stakeholders by exhibiting team work, commitment and zeal
+              to excel in all our endeavor and striving to be the best.
+            </p>
           </div>
         </div>
       </div>
