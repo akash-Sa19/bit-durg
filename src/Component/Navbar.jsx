@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "../Constants";
-import { search, downArrow, Grouplogo1 } from "../assets/asset";
+// If you need Down and up arrow import from material ui
+// import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+// import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import { search, Grouplogo1 } from "../assets/asset";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
