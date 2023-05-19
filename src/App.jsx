@@ -11,6 +11,7 @@ import {
   Mission,
   Achievements,
   StraightFromSource,
+  StudentSection,
   Footer,
 } from "./Component";
 
@@ -27,6 +28,7 @@ const App = () => {
       <Mission />
       <Achievements />
       <StraightFromSource />
+      <StudentSection />
       <Footer />
     </div>
   );
