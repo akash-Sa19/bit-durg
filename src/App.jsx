@@ -11,6 +11,7 @@ import {
   Mission,
   Achievements,
   StraightFromSource,
+  Footer,
 } from "./Component";
 
 import { search } from "./assets/asset";
@@ -26,6 +27,7 @@ const App = () => {
       <Mission />
       <Achievements />
       <StraightFromSource />
+      <Footer />
     </div>
   );
 };

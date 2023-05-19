@@ -23,6 +23,11 @@ import Margdarshan from "./Margdarshan.svg";
 import image01 from "./image01.jpeg";
 import image02 from "./image02.jpg";
 import image03 from "./image03.jpg";
+import bitLogo3 from "./BitLogo3.svg";
+import bitBuildingIcon from "./bit-building-icon.svg";
+import callIcon from "./call-icon.svg";
+import locationIcon from "./location-icon.svg";
+import mailIcon from "./mail-icon.svg";
 
 export {
   search,
@@ -50,4 +55,9 @@ export {
   image01,
   image02,
   image03,
+  bitLogo3,
+  bitBuildingIcon,
+  callIcon,
+  locationIcon,
+  mailIcon,
 };

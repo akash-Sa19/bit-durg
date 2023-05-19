@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../style";
+import styles from "../Constants";
 import { search, downArrow, Grouplogo1 } from "../assets/asset";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
@@ -56,9 +56,9 @@ const Navbar = () => {
     <div className="font-roboto relative">
       {/* Top Navbar */}
       {width >= 1440 ? (
-        <div class="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
-          <div class="item basis-0 grow">
+          <div className="item basis-0 grow">
             <div className="flex items-center h-full justify-end gap-4">
               <Button variant="text" sx={buttonStyle}>
                 Event
@@ -76,12 +76,12 @@ const Navbar = () => {
           </div>
 
           {/* White Space for logo */}
-          <div class="item">
+          <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
-          <div class="item basis-0 grow">
+          <div className="item basis-0 grow">
             <div
               className={`flex items-center h-full w-full justify-start gap-6`}
             >
@@ -122,25 +122,25 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        <div class="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
-          <div class="item basis-0 grow"></div>
+          <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div class="item">
+          <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
-          <div class="item basis-0 grow"></div>
+          <div className="item basis-0 grow"></div>
         </div>
       )}
 
       {/* Bottom Navbar */}
       {width >= 1440 ? (
-        <div class="flex gap-4 h-[60px] px-2">
+        <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
-          <div class="item basis-0 grow">
+          <div className="item basis-0 grow">
             <div className="flex items-center h-full w-full justify-end gap-6">
               <Button variant="text" sx={bottomNavLinkStyle}>
                 Admission
@@ -158,12 +158,12 @@ const Navbar = () => {
           </div>
 
           {/* White Space for logo */}
-          <div class="item">
+          <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
-          <div class="item basis-0 grow">
+          <div className="item basis-0 grow">
             <div
               className={`flex items-center h-full w-full justify-start gap-6`}
             >
@@ -183,17 +183,17 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        <div class="flex gap-4 h-[60px] px-2">
+        <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
-          <div class="item basis-0 grow"></div>
+          <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div class="item">
+          <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
-          <div class="item basis-0 grow">
+          <div className="item basis-0 grow">
             <div className="h-full flex items-center justify-end gap-2">
               <IconButton aria-label="delete">
                 <SearchIcon fontSize="large" />
