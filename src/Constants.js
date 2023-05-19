@@ -45,6 +45,50 @@ const news = [
   },
 ]
 
+const footerLinks = [
+  {
+    heading: 'ADDRESS',
+    links : [
+      'Institute Code: 01',
+      `Bhilai House, Durg, Chhattishgarh - 491001`,
+      '0788-2359297',
+      'bit@bitdurg.ac.in'
+    ]
+  },
+  {
+    heading: 'QUICK LINKS',
+    links: [
+      'Online Fee Payment',
+      'Sitemap',
+      'Uco Bank ',
+      'Gymnasium',
+      'E-Book',
+      'Facilities',
+    ]
+  },
+  {
+    heading: 'Downloads',
+    links: [
+      'Backlog Exam Form',
+      'Transfer & Provisional,<br/>Certificate Form',
+      'Revaluation Form',
+      'Calendar',
+      'Prospectus',
+      'Magazine',
+    ]
+  },
+  {
+    heading: 'IMPORTANT LINKS',
+    links: [
+      'CSVTU Calendar',
+      'BIT Alumni',
+      'AICTE',
+      'University Grants<br/>Commission',
+      'DTE Raipur',
+    ]
+  },
+]
+
 const color = {
   bitLightBlue : "#7EB2DD",
   bitBlue : "#062242",
@@ -74,5 +118,5 @@ const styles = {
 };
 
 export default styles;
-export {color, news};
+export {color, news, footerLinks};
 
