@@ -3,8 +3,6 @@ import { bitLogo3, bitBuildingIcon, callIcon, locationIcon, mailIcon, } from '..
 import { Stack, Link, IconButton, Collapse } from '@mui/material'
 import { color, } from '../Constants'
 import '../index.css'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
@@ -22,17 +20,7 @@ import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 //     <PlayCircleTwoToneIcon fontSize='inherit' />
 // </IconButton>
 
-const theme = createTheme({
-    breakpoints: {
-        values: {
-            xs: 0,
-            sm: 360,
-            md: 834,
-            lg: 1440,
-            xl: 1640,
-        },
-    },
-});
+
 
 
 const LinkDesign = {
@@ -72,16 +60,16 @@ const listItemTextStyle = {
         fontWeight: 500,
     }
 }
-const calculation = (width, viewport) => {
-    const viewportSize = {
-        'lg': 1440,
-        'md': 834,
-        'sm': 360
-    }
-    return (
-        width / ((viewportSize[viewport]) / 100)
-    )
-}
+// const calculation = (width, viewport) => {
+//     const viewportSize = {
+//         'lg': 1440,
+//         'md': 834,
+//         'sm': 360
+//     }
+//     return (
+//         width / ((viewportSize[viewport]) / 100)
+//     )
+// }
 // console.log(calculation(310, 'lg'))
 
 const BitBuildingIcon = () => (<img src={bitBuildingIcon} />)
@@ -111,7 +99,6 @@ const Footer = () => {
         setOpen4(!open4);
     }
     return (
-        <ThemeProvider theme={theme}>
             <div className='w-[100vw] relative'>
                 {/* Footer Heading */}
                 {/* 1 */}
@@ -406,7 +393,7 @@ const Footer = () => {
 
                 {/* Horizonatal Bar 3*/}
                 {/* 6 */}
-                <div className='absolute lg:top-[276px] md:top-[168px] w-full sm:hidden'>
+                <div className='absolute lg:top-[276px] md:top-[168px] w-full md:block sm:hidden'>
                     <div className='bg-bit-yellow h-[4px] w-full'></div>
                     <div className='bg-bit-red h-[4px] w-full'></div>
                 </div>
@@ -418,7 +405,6 @@ const Footer = () => {
                 </div>
 
             </div>
-        </ThemeProvider>
 
     )
 }
