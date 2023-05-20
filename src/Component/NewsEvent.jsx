@@ -8,7 +8,7 @@ import '../index.css'
 const buttonDesign = {
   backgroundColor: 'rgba(231, 215, 193, 0.25)',
   color: "#800000",
-  width: {md:'175px', lg:'200px'},
+  width: {sm: '200px',md:'175px', lg:'200px'},
   height: 45,
   // fontFamily: 'Alegreya Sans',
   fontWeight: 800,
@@ -56,7 +56,7 @@ const NewsEvent = () => {
         {/* The Approch -> is to maintain the conxtant size of the card and let the view port growth and when the viewport reaches to 1225px the 2col of NewsEvent becomes 3Col  */}
         {/* 2 */}
         {/* News and Event */}
-        <div className='mt-[100px] flex justify-center lg:gap-[100px] md:gap-[46px]  w-auto '>
+        <div className='mt-[100px] flex md:flex-row sm:flex-col md:items-start sm:items-center md:justify-center lg:gap-[100px] md:gap-[46px]  w-auto '>
           {/* 2.a */}
           <div className='w-[202px] flex flex-col items-center '>
             {/* Calender Icon */}
@@ -83,7 +83,7 @@ const NewsEvent = () => {
           <div className='flex flex-col justify-center'>
           {/* <div className='flex flex-col justify-center lg:min-w-[1024px] lg:w-[70.27778vw] md:min-w-[550px] md:w-[64.7482vw] border border-yellow-600 '> */}
             {/* 2.b.a */}
-            <div className='flex flex-row flex-wrap lg:gap-10 md:gap-8  w-auto lg:min-w-[1024px] lg:w-[70.27778vw] md:w-[540px] mdl:w-[840px]'>
+            <div className='flex md:flex-row sm:flex-col md:mt-[0] sm:mt-10 flex-wrap lg:gap-10 sm:gap-8 w-auto lg:min-w-[1024px] lg:w-[70.27778vw] md:w-[540px] mdl:w-[840px]'>
             {
               news.map((newsItem, index) => (
                 <Card

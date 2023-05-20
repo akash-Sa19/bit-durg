@@ -150,9 +150,10 @@ export default function MediaCard(props) {
       boxShadow: '8px 8px 10px rgba(0, 0, 0, 0.25)',
       
     }}
+    // Increasing the height of card by 10px
     className={` relative
     lg:w-[310px] lg:h-[420px]
-    md:w-[253.19px] md:h-[314.46px] `}
+    sm:w-[253.19px] sm:h-[324.46px] `}
     // className={` relative
     // lg:min-w-[310px] lg:min-h-[420px] lg:w-[21.52778vw] lg:h-[29.1667vw] 
     // md:min-w-[253.19px] md:min-h-[314.46px] md:w-[30.3585vw] md:h-[37.70vw]
@@ -162,7 +163,7 @@ export default function MediaCard(props) {
         // sx={{ height: 208 }}
         image={img1}
         title="Image 1"
-        className="lg:h-[208px] md:h-[168.79px]"
+        className="lg:h-[208px] sm:h-[168.79px]"
       />
       {/* Image Border */}
       <Box sx={{
@@ -171,11 +172,11 @@ export default function MediaCard(props) {
         border: '3px solid #ffffff',
         position: 'absolute',
         color: 'rgba(217, 217, 217, 0)',
-        top: {md: '8px', lg: '10px'},
-        left: {md: '8px', lg: '10px'},
+        top: {sm: '8px', lg: '10px'},
+        left: {sm: '8px', lg: '10px'},
       }}
       className="lg:w-[290px] lg:h-[190px] 
-      md:w-[237.19px] md:h-[152.79px]"
+      sm:w-[237.19px] sm:h-[152.79px]"
       >
       </Box>
 
@@ -195,30 +196,30 @@ export default function MediaCard(props) {
         // left: 36.25,
         filter: 'drop-shadow(3.6px 3.6px 3.6px rgba(0, 0, 0, 0.25))',
       }}
-      className={`lg:w-[72.5px] lg:h-[72.5px] lg:top-[170.89px] lg:left-[36.25px] md:w-[50px] md:h-[50px]
-      md:top-[138.41px] md:left-[29.87px] `}
+      className={`lg:w-[72.5px] lg:h-[72.5px] lg:top-[170.89px] lg:left-[36.25px] sm:w-[50px] sm:h-[50px]
+      sm:top-[138.41px] sm:left-[29.87px] `}
       >
         {/* Calender Month */}
         <p
-          className={`text-bit-blue lg:text-[14px] md:text-[10px] lg:top-[12px] md:top-[10px] relative font-extrabold`}>{props.month}</p>
+          className={`text-bit-blue lg:text-[14px] sm:text-[10px] lg:top-[12px] sm:top-[10px] relative font-extrabold`}>{props.month}</p>
 
         {/* Calender Date */}
         <p 
-          className="font-bold text-bit-lightblue lg:text-[36px] md:text-[26px] "
+          className="font-bold text-bit-lightblue lg:text-[36px] sm:text-[26px] "
           >{props.date}</p>
       </Box>
 
 
       {/* Card Content */}
-      <CardContent className='lg:mt-[34px] md:mt-[8px] xl:mt-[38px]'>
+      <CardContent className='lg:mt-[34px] sm:mt-[8px] xl:mt-[38px]'>
 
         {/* Content Heading */}
         <Typography 
           // variant="h6"
           sx={{ fontWeight: 700,
-          fontSize: {md: '16px', lg: '20px', xl: '24px'}, 
+          fontSize: {sm: '16px', lg: '20px', xl: '24px'}, 
         }}
-          className={`text-bit-red font-bold lg:h-[64px] md:h-[48px] 
+          className={`text-bit-red font-bold lg:h-[64px] sm:h-[48px] 
           xl:h-[72px]`}>
           {props.heading}
         </Typography>
@@ -228,8 +229,8 @@ export default function MediaCard(props) {
           // variant="body2"
           color="text.black"
           sx={{ fontWeight: 500,
-                fontSize: {md: '12px',lg: '14px', xl: '16px'},
-                marginTop: {md: '4px'}
+                fontSize: {sm: '12px',lg: '14px', xl: '16px'},
+                marginTop: {sm: '4px'}
           }} >
           {props.description}
         </Typography>
@@ -238,7 +239,7 @@ export default function MediaCard(props) {
 
       <CardActions sx={{
         position: 'absolute',
-        bottom: {md: '-4px', lg: '8px'},
+        bottom: {sm: '0px', lg: '4px'},
         left: 0,
       }}>
 
