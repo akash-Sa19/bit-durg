@@ -1,43 +1,43 @@
-import {img1} from './assets/asset'
+import { img1 } from './assets/asset'
 const news = [
   {
-    heading : "Solar Energy workshop 2022",
+    heading: "Solar Energy workshop 2022",
     description: "BIT is conducting Solar Energy workshop for three days.",
     date: "08",
     month: "APR",
     id: 1,
-    imgSrc: {img1},
+    imgSrc: { img1 },
   },
   {
-    heading : "Smart India Hackathon Project 2022",
+    heading: "Smart India Hackathon Project 2022",
     description: "Smart India Hackathon is here in our BIT Read About it.",
     date: "10",
     month: "MAR",
     id: 2,
   },
   {
-    heading : "BIT honors RDC Cadet",
+    heading: "BIT honors RDC Cadet",
     description: "BIT will honors our RDC Cadet in close auditorium.",
     date: "07",
     month: "APR",
     id: 3,
   },
   {
-    heading : "ATAL FDP @ Department of ETC",
+    heading: "ATAL FDP @ Department of ETC",
     description: "Department of ETC are having ATAL FDP  ",
     date: "06",
     month: "JUN",
     id: "4",
   },
   {
-    heading : "Speech Competition",
+    heading: "Speech Competition",
     description: "Poet's and Author's of BIT it's time to showcase your talent.",
     date: "05",
     month: "JAN",
     id: "5",
   },
   {
-    heading : "FDP on Green Technology",
+    heading: "FDP on Green Technology",
     description: "BIT is taking steps toward green Energy",
     date: "13",
     month: "DEC",
@@ -48,7 +48,7 @@ const news = [
 const footerLinks = [
   {
     heading: 'ADDRESS',
-    links : [
+    links: [
       'Institute Code: 01',
       `Bhilai House, Durg, Chhattishgarh - 491001`,
       '0788-2359297',
@@ -88,11 +88,53 @@ const footerLinks = [
     ]
   },
 ]
+const LearnAboutBit = [
+  {
+    id: 1,
+    link: '',
+    heading:  '1st Year Student Information',
+    img: '',
+  },
+  {
+    id: 2,
+    link: '',
+    heading:  'Anti Ragging Cell',
+    img: '',
+  },
+  {
+    id: 3,
+    link: '',
+    heading:  'Women Security Cell',
+    img: '',
+  },
+  {
+    id: 4,
+    link: '',
+    heading:  'Parent Zone',
+    img: '',
+  },
+  {
+    id: 5,
+    link: '',
+    heading:  'Grievance Redressal',
+    img: '',
+  },
+  {
+    id: 6,
+    link: '',
+    heading:  'Faculty Corner',
+    img: '',
+  },
+]
+
+
+
+
 
 const color = {
-  bitLightBlue : "#7EB2DD",
-  bitBlue : "#062242",
-  bitRed : "#800000"
+  bitLightBlue: "#7EB2DD",
+  bitBlue: "#062242",
+  bitRed: "#800000"
 }
 
 
@@ -114,9 +156,9 @@ const styles = {
 
   marginX: "sm:mx-16 mx-6",
   marginY: "sm:my-16 my-6",
-  
+
 };
 
 export default styles;
-export {color, news, footerLinks};
+export { color, news, footerLinks, LearnAboutBit };
 

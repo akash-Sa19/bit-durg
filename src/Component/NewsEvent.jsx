@@ -44,7 +44,7 @@ const NewsIcon = () => {
 }
 const NewsEvent = () => {
   return (
-    <div className='w-[100vw] border border-blue-500'>
+    <div className='w-[100vw]'>
 
       <div className='mt-[150px]'>
         {/* 1 */}

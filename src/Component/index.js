@@ -10,7 +10,8 @@ import Achievements from './Achievements';
 import StraightFromSource from './StraightFromSource';
 import BottomCircle from './BottomCircle';
 import Footer from './Footer';
-// import Card2 from './Card2';
+import NewToBit from './NewToBit';
+import Card2 from './Card2';
 export {
 	Navbar,
 	Hero,
@@ -24,5 +25,6 @@ export {
 	StraightFromSource,
 	BottomCircle,
 	Footer,
-	// Card2,
+	NewToBit,
+	Card2,
 };

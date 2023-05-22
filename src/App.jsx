@@ -13,6 +13,7 @@ import {
   Achievements,
   StraightFromSource,
   Footer,
+  NewToBit,
 } from "./Component";
 
 const theme = createTheme({
@@ -42,7 +43,8 @@ const App = () => {
         {/* <Mission /> */}
         {/* <Achievements /> */}
         {/* <StraightFromSource /> */}
-        {/* <Footer /> */}
+        <NewToBit />
+        <Footer />
       </div>
     </ThemeProvider>
 
