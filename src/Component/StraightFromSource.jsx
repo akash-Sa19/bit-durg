@@ -6,7 +6,7 @@ import { video01, video02, video03 } from "../assets/video/asset";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { image01, image02, image03 } from "../assets/asset";
 
-const StraightFromSource = () => {
+const StraightFromSource = ({ width, height }) => {
   const [play, setPlay] = useState({
     video01: false,
     video02: false,
@@ -23,23 +23,21 @@ const StraightFromSource = () => {
     } else {
       videoRef01.current.pause();
     }
-  }, [play.video01]);
-
-  useEffect(() => {
     if (play.video02) {
       videoRef02.current.play();
     } else {
       videoRef02.current.pause();
     }
-  }, [play.video02]);
-
-  useEffect(() => {
     if (play.video03) {
       videoRef03.current.play();
     } else {
       videoRef03.current.pause();
     }
-  }, [play.video03]);
+  }, [play]);
+
+  // useEffect(() => {}, [play.video02]);
+
+  // useEffect(() => {}, [play.video03]);
 
   const iconButtonStyle = {
     p: 0,
@@ -69,6 +67,38 @@ const StraightFromSource = () => {
   const videoText =
     "absolute bottom-6 w-full px-8 text-center text-2xl font-bold font-alegreya-sans text-white z-30";
 
+  const calculateResolution = () => {
+    //  aspect ratio = 16:9
+    //  no of video card = 3
+    //  max height = 90%
+    //  max width = 100%
+
+    let videoWidth = width * (1 / 3);
+    let videoHeight = videoWidth * (16 / 9);
+    if (videoHeight > height * (9 / 10)) {
+      console.log("Exceeding Height");
+      console.log("Original: ", [
+        videoHeight.toString(),
+        videoWidth.toString(),
+      ]);
+      videoHeight = height * (9 / 10);
+      videoWidth = videoHeight * (9 / 16);
+    }
+    return [videoHeight.toString(), videoWidth.toString()];
+  };
+
+  const videoSize = {
+    height: calculateResolution()[0] + "px",
+    width: calculateResolution()[1] + "px",
+  };
+
+  // const videoContainer = `relative col-span-1
+  // h-[${calculateResolution()[0]}px]
+  // w-[${calculateResolution()[1]}px]`;
+  const videoContainer = `relative col-span-1`;
+
+  console.log(videoSize);
+
   return (
     <div className="new-container">
       <div className="">
@@ -80,11 +110,17 @@ const StraightFromSource = () => {
 
       {/* Video Section */}
 
-      <div className="my-10 grid grid-cols-3">
+      <div className="my-10 flex justify-center">
         {/* Video Component */}
-        <div className="relative col-span-1 h-[700px] bg-slate-400">
-          <div className="relative h-full w-full opacity-80">
-            <video className="h-full w-full object-cover" ref={videoRef01}>
+        {/* {console.log(width * (3 / 10) * (16 / 9))} */}
+        <div className={videoContainer} style={videoSize}>
+          <div className="relative h-full w-full">
+            <video
+              className="h-full w-full object-cover"
+              ref={videoRef01}
+              controls
+              onPause={() => setPlay({ ...play, video01: false })}
+            >
               <source src={video01} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -96,7 +132,9 @@ const StraightFromSource = () => {
             />
           </div>
           <div
-            className={`absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
+            className={`${
+              play.video01 ? "hidden" : "unset"
+            } absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
               !play.video01 ? "outline-red-800" : "outline-white"
             } hover:outline-white z-20`}
           >
@@ -105,7 +143,7 @@ const StraightFromSource = () => {
               size="large"
               onClick={() =>
                 setPlay({
-                  video01: !play.video01,
+                  video01: true,
                   video02: false,
                   video03: false,
                 })
@@ -118,9 +156,14 @@ const StraightFromSource = () => {
         </div>
 
         {/* Video Component */}
-        <div className="relative col-span-1 h-[700px] bg-slate-400">
-          <div className="relative h-full w-full opacity-80">
-            <video className="h-full w-full object-cover" ref={videoRef02}>
+        <div className={videoContainer} style={videoSize}>
+          <div className="relative h-full w-full">
+            <video
+              className="h-full w-full object-cover"
+              ref={videoRef02}
+              controls
+              onPause={() => setPlay({ ...play, video02: false })}
+            >
               <source src={video02} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -132,7 +175,9 @@ const StraightFromSource = () => {
             />
           </div>
           <div
-            className={`absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
+            className={`${
+              play.video02 ? "hidden" : "unset"
+            } absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
               !play.video02 ? "outline-red-800" : "outline-white"
             } hover:outline-white z-20`}
           >
@@ -142,7 +187,7 @@ const StraightFromSource = () => {
               onClick={() =>
                 setPlay({
                   video01: false,
-                  video02: !play.video02,
+                  video02: true,
                   video03: false,
                 })
               }
@@ -156,9 +201,14 @@ const StraightFromSource = () => {
         </div>
 
         {/* Video Component */}
-        <div className="relative col-span-1 h-[700px] bg-slate-400">
-          <div className="relative h-full w-full opacity-80">
-            <video className="h-full w-full object-cover" ref={videoRef03}>
+        <div className={videoContainer} style={videoSize}>
+          <div className="relative h-full w-full">
+            <video
+              className="h-full w-full object-cover"
+              ref={videoRef03}
+              controls
+              onPause={() => setPlay({ ...play, video03: false })}
+            >
               <source src={video03} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -170,7 +220,9 @@ const StraightFromSource = () => {
             />
           </div>
           <div
-            className={`absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
+            className={`${
+              play.video03 ? "hidden" : "unset"
+            } absolute w-full h-full top-0 left-0 outline outline-4 -outline-offset-[12px] ${
               !play.video03 ? "outline-red-800" : "outline-white"
             } hover:outline-white z-20`}
           >
@@ -181,7 +233,7 @@ const StraightFromSource = () => {
                 setPlay({
                   video01: false,
                   video02: false,
-                  video03: !play.video03,
+                  video03: true,
                 })
               }
             >

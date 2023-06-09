@@ -11,18 +11,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
 
-const Navbar = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(134.2);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
-  }, []);
-  useEffect(() => {
-    console.log(width);
-  }, [width]);
-
+const Navbar = ({ width }) => {
   const buttonStyle = {
     color: "white",
     "&:hover": {
@@ -201,16 +192,17 @@ const Navbar = () => {
               <IconButton aria-label="delete">
                 <SearchIcon fontSize="large" />
               </IconButton>
-              <IconButton
-                aria-label="delete"
-                onClick={() => {
-                  setAnchorEl(true);
-                }}
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
               >
                 <MenuIcon fontSize="large" />
-              </IconButton>
+              </Button>
             </div>
-            <Menu
+            {/* <Menu
               id="basic-menu"
               anchorEl={anchorEl}
               open={open}
@@ -222,32 +214,38 @@ const Navbar = () => {
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
-            {/* <Menu
+            </Menu> */}
+            <Menu
+              id="basic-menu"
               anchorEl={anchorEl}
-              id="account-menu"
               open={open}
               onClose={handleClose}
-              // onClick={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
               PaperProps={{
                 elevation: 0,
                 sx: {
                   overflow: "visible",
                   filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  mt: 10.5,
-                  left: "unset",
-                  right: 0,
-                  borderRadius: 0,
+                  // mt: 1,
+                  px: 1,
+                  width: 300,
+                  borderRadius: 2,
                   "& .MuiAvatar-root": {
                     width: 32,
                     height: 32,
+                    ml: -0.5,
                     mr: 1,
                   },
                 },
               }}
-              transformOrigin={{ horizontal: "right", vertical: "top" }}
-              anchorOrigin={{ horizontal: "right", vertical: "top" }}
             >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
               <MenuItem
                 sx={menuItemCSS}
                 onClick={() =>
@@ -278,18 +276,14 @@ const Navbar = () => {
               <MenuItem sx={menuItemCSS}>Department</MenuItem>
               <MenuItem sx={menuItemCSS}>Placement</MenuItem>
               <MenuItem sx={menuItemCSS}>More</MenuItem>
-            </Menu> */}
+            </Menu>
           </div>
         </div>
       )}
 
       {/* BIT Logo */}
       <div className="block absolute top-0 left-1/2 -translate-x-1/2 z-20">
-        <img
-          src={Grouplogo1}
-          alt="BitLogo"
-          className={`w-[${width}px] h-[${height}px m-auto`}
-        />
+        <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>
   );

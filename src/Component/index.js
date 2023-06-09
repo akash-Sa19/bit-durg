@@ -10,6 +10,7 @@ import Achievements from "./Achievements";
 import StraightFromSource from "./StraightFromSource";
 import BottomCircle from "./BottomCircle";
 import StudentSection from "./StudentSection";
+import Gallery from "./Gallery";
 import Footer from "./Footer";
 // import Card2 from './Card2';
 export {
@@ -26,5 +27,6 @@ export {
   BottomCircle,
   Footer,
   StudentSection,
+  Gallery,
   // Card2,
 };
