@@ -35,14 +35,14 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="">
-        {/* <Navbar /> */}
-        {/* <Hero /> */}
-        {/* <CollegeWidget /> */}
-        {/* <WhoWeAre /> */}
+        <Navbar />
+        <Hero />
+        <CollegeWidget />
+        <WhoWeAre />
         <NewsEvent />
-        {/* <Mission /> */}
-        {/* <Achievements /> */}
-        {/* <StraightFromSource /> */}
+        <Mission />
+        <Achievements />
+        <StraightFromSource />
         <NewToBit />
         <Footer />
       </div>
