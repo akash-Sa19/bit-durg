@@ -27,6 +27,7 @@ import bitBuildingIcon from "./bit-building-icon.svg";
 import callIcon from "./call-icon.svg";
 import locationIcon from "./location-icon.svg";
 import mailIcon from "./mail-icon.svg";
+import college from "./college.png";
 
 export {
   search,
@@ -58,4 +59,5 @@ export {
   callIcon,
   locationIcon,
   mailIcon,
+  college,
 };
