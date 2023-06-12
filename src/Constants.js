@@ -1,4 +1,313 @@
 import { img1 } from './assets/asset'
+
+const About = [
+  {
+    heading: 'Glance At BIT-Durg',
+    links: [
+      'About',
+      'Mission',
+      'Quality Policy',
+      'Visionaries',
+      'Principal',
+      'Vice Principal',
+      'Mandatory Disclosures',
+      'NAAC-NBA Status',
+      'Committees (2022-2024)',
+    ]
+  },
+  {
+    heading: 'Administration',
+    links: [
+      'Audit Report',
+      'Governance',
+      'Governance Member'
+    ]
+  },
+  {
+    heading: 'Collaboration',
+    links: [
+      'MOU & Tie-Ups',
+      'Professional Membership',
+      'ERASMUS + Staff & Student Mobility'
+    ]
+  },
+  {
+    heading: 'Care @ BIT-Durg',
+    links: [
+      'Anti Ragging',
+      'Women Security Cell',
+      'Grievance Redressal'
+    ]
+  },
+  {
+    heading: 'Another Campus',
+    links: [
+      'BIT Raipur',
+    ]
+  },
+  {
+    heading: 'More...',
+    links: [
+      'Awards & Achievement',
+      'Panorama Magazine',
+      'Newspaper'
+    ]
+  },
+  
+]
+const Academics = [
+  {
+    heading: "Centres @ BIT-Durg",
+    links: [
+      'D Link',
+      'NMEICT',
+      'NPTEL',
+      'Spoken Tutorial',
+      'Texas Innovation'
+    ]
+  },
+  {
+    heading: 'UG Programme',
+    links : [
+      'Bachelor Of Technology (B.Tech)',
+      'Bachelor Of Vocational (B.Voc.)'
+    ]
+  },
+  {
+    heading: 'PG Programme',
+    links : [
+      'Master Of Technology (M.Tech)',
+      'Master Of Computer Applications (MCA)',
+      'Master Of Business Administration (MBA)'
+    ]
+  },
+  {
+    heading : 'Doctoral Programme',
+    links : [
+      'Doctor Of Philosophy (PhD)'
+    ]
+  },
+  {
+    heading : 'Research @ BIT-Durg',
+    links : [
+      'Research Overview',
+      'Patent & Copyright',
+      'Research Policies & Guidelines',
+      'Sponsored Research',
+      'Annual Conference (BITCON)',
+      'ISC-2019',
+      'AICTE ATAL EDP',
+      'International Conference'
+    ] 
+  },
+  {
+    heading : 'Achievements',
+    links : [
+      'Faculty Achievements',
+      'Student Achievements'
+    ]
+  },
+  {
+    heading : 'More..',
+    links : [
+      'Academic Calender',
+      'Academic Regulation',
+      'Exam Manual',
+      'Syllabus (CSVTU)',
+      'Syllabus (BIT)'
+    ]
+  }
+]
+const Admission = [
+  {
+    heading : 'Get Started',
+    links : [
+      'Admission Procedure',
+      'Reservation Policy',
+      'Tuition Fees Waiver Scheme',
+      'Scholarship',
+      'Fees Structure (2022-23)',
+      'Fees Structure (2021-22)'
+    ] 
+  },
+  {
+    heading : 'Regular Course',
+    links : [
+      'B.Tech',
+      'M.Tech',
+      'MCA',
+      'MBA',
+      'Ph.D',
+      'B.Voc'
+    ]
+  },
+  {
+    heading : 'Lateral Entry Courses',
+    links : [
+      'B.Tech Lateral Entry'
+    ]
+  }
+]
+const Department = [
+  {
+    heading : 'First Year',
+    links : 'B.Tech 1st Year'
+  },
+  {
+    heading : 'Engineering',
+    links : [
+      'Mechanical Engineering',
+      'Civil Engineering',
+      'Computer Science And Engineering',
+      'Information Technology',
+      'Electrical Engineering',
+      'Electrical & Electronics Engineering',
+      'Electronic & Telecommunication Engineering',
+    ]
+  },
+  {
+    heading : 'Sciences',
+    links : [
+      'Applied Chemistry',
+      'Applied Mathematics',
+      'Applied Physics',
+      'Humanities'
+    ]
+  },
+  {
+    heading : 'Management',
+    links : [
+      'Master Of Business Administration'
+    ]
+  },
+  {
+    heading : 'Computer Application',
+    links : [
+      'Master Of Computer Applications'
+    ]
+  }
+]
+const Placement = [
+  {
+    heading : 'Overview',
+    links : [
+      'About T&P',
+      'Placement Team',
+      'Placement Gallery',
+      'Contact T&P Cell',
+    ]
+  },
+  {
+    heading : 'Udaan Incubation Centre',
+    links : [
+      'About BrainTech'
+    ]
+  },
+  {
+    heading: 'For Companies',
+    links : [
+      'Why Recruit BITians',
+      'Placement Procedure',
+      'Placement Statistics',
+      'Infrastructure For T&P',
+    ]
+  },
+  {
+    heading : 'International Relations Office',
+    links : [
+      'About IR Office'
+    ] 
+  },
+  {
+    heading: 'Esteemed Recruiters',
+    links: [
+      'Recruiters',
+      'Recruiters Feedback',
+    ]
+  },
+  {
+    heading: 'Entrepreneurship Development Cell',
+    links: [
+      'About ED Cell',
+      'Programs Conducted'
+    ]
+  }
+]
+const CampusLife = [
+  {
+    heading : 'Clubs @ BIT-Durg',
+    links : [
+      'Astro Club',
+      'Clicks Club',
+      'Techno Hub',
+      'Developer Student Community',
+      'Professional Activity Club',
+      'Innovation Club',
+      'Vista Club',
+      'Quizbizz Club',
+      'Startup Club',
+      'Public Speaking Club',
+      'Literature Club'
+    ]
+  },
+  {
+    heading : 'Amenities',
+    links : [
+      'Library',
+      'Wifi Campus',
+      'Bank',
+      'Medical Facility',
+      'Shopping Complex',
+      'Gymnasium'
+    ]
+  },
+  {
+    heading : 'Highlights',
+    links : [
+      'Techfest (OJAS)',
+      'Spicmacy',
+      'Hostels',
+      'Sports',
+      'NCC',
+      'NSS',
+      'Auditorium'
+    ]
+  }
+]
+const Connect = [
+  {
+    heading: "Whats's Happening",
+    links: [
+      'OJAS',
+      'BITCON',
+      'Media Coverage'
+    ]
+  },
+  {
+    heading: 'Event Gallery',
+    links: [
+      'Image Gallery',
+      'Video Gallery'
+    ]
+  },
+  {
+    heading: 'Alumni',
+    links: [
+      'Alumni Connect',
+      'Success Stories',
+      'Testimonial'
+    ]
+  },
+  {
+    heading: 'Download',
+    links: [
+      'Brochure',
+      'Newsletter',
+      'Magazine'
+    ]
+  }
+]
+
 const news = [
   {
     heading: "Solar Energy workshop 2022",
@@ -88,6 +397,10 @@ const footerLinks = [
     ]
   },
 ]
+
+
+
+
 const LearnAboutBit = [
   {
     id: 1,
