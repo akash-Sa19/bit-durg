@@ -76,17 +76,17 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar width={width} />
-      <Hero />
-      <CollegeWidget />
-      <WhoWeAre />
-      <NewsEvent />
-      <Mission />
-      <Achievements />
-      <StraightFromSource width={width} height={height} />
-      <StudentSection />
-      <NewToBit />
-      <Gallery />
-      <Footer />
+      {/* <Hero /> */}
+      {/* <CollegeWidget /> */}
+      {/* <WhoWeAre /> */}
+      {/* <NewsEvent /> */}
+      {/* <Mission /> */}
+      {/* <Achievements /> */}
+      {/* <StraightFromSource width={width} height={height} /> */}
+      {/* <StudentSection /> */}
+      {/* <NewToBit /> */}
+      {/* <Gallery /> */}
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 };
