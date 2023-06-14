@@ -12,6 +12,7 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const Navbar = ({ width }) => {
   const buttonStyle = {
@@ -210,7 +211,7 @@ const Navbar = ({ width }) => {
               MenuListProps={{
                 "aria-labelledby": "basic-button",
               }}
-            >
+              >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem onClick={handleClose}>Logout</MenuItem>
@@ -241,11 +242,25 @@ const Navbar = ({ width }) => {
                 },
               }}
             >
-              <TextField
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-              />
+              <div className="flex justify-evenly items-center w-full mx-auto">
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                />
+                <IconButton
+                  aria-label="delete"
+                  size="small"
+                  sx={{
+                    bgcolor: "#800000",
+                    borderRadius: 1,
+                    width: "24px",
+                    height: "24px",
+                  }}
+                >
+                  <ClearIcon fontSize="small" color="white" />
+                </IconButton>
+              </div>
               <MenuItem
                 sx={menuItemCSS}
                 onClick={() =>

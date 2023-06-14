@@ -12,7 +12,7 @@ import BottomCircle from "./BottomCircle";
 import StudentSection from "./StudentSection";
 import Gallery from "./Gallery";
 import Footer from "./Footer";
-import NewToBit from "./NewToBit";
+// import NewToBit from "./NewToBit";
 import Card2 from "./Card2";
 export {
   Navbar,
@@ -29,6 +29,6 @@ export {
   Footer,
   StudentSection,
   Gallery,
-  NewToBit,
+  // NewToBit,
   Card2,
 };
