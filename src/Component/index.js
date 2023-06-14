@@ -14,6 +14,7 @@ import Gallery from "./Gallery";
 import Footer from "./Footer";
 import NewToBit from "./NewToBit";
 import Card2 from "./Card2";
+import NavbarMenuItem from "./NavbarMenuItem";
 export {
   Navbar,
   Hero,
@@ -31,4 +32,5 @@ export {
   Gallery,
   NewToBit,
   Card2,
+  NavbarMenuItem
 };

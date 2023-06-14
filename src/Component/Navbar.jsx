@@ -1,5 +1,6 @@
 import React from "react";
-import { color } from "../Constants";
+import { color, NavbarItems, About, VarNavbarItems } from "../Constants";
+import { NavbarMenuItem } from './index'
 import { search, Grouplogo1 } from "../assets/asset";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
@@ -7,22 +8,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 
-// Akash - Commented - Down
-// import Menu from "@mui/material/Menu";
-// import MenuItem from "@mui/material/MenuItem";
-// import TextField from "@mui/material/TextField";
-// Akash - Commented - Up
-
-// Akash - Edited - Down
-import { Stack, Link, Collapse } from '@mui/material'
 import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+
 // Akash - Edited - Up
 
 
@@ -90,48 +77,59 @@ const Navbar = ({ width }) => {
 
 
   // Akash - Edit - Down
-  const [open1, setOpen1] = useState(false);
-  const [open1a, setOpen1a] = useState(false);
-  const [open1b, setOpen1b] = useState(false);
-  const [open1c, setOpen1c] = useState(false);
-  const [open1d, setOpen1d] = useState(false);
-  const [open1e, setOpen1e] = useState(false);
-  const [open1f, setOpen1f] = useState(false);
-  const [open2, setOpen2] = useState(false);
-  const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
+  // const [open1, setOpen1] = useState(false);
+  // const [open1a, setOpen1a] = useState(false);
+  // const [open1b, setOpen1b] = useState(false);
+  // const [open1c, setOpen1c] = useState(false);
+  // const [open1d, setOpen1d] = useState(false);
+  // const [open1e, setOpen1e] = useState(false);
+  // const [open1f, setOpen1f] = useState(false);
+  // const [open2, setOpen2] = useState(false);
+  // const [open2a, setOpen2a] = useState(false);
+  // const [open2b, setOpen2b] = useState(false);
+  // const [open2c, setOpen2c] = useState(false);
+  // const [open2d, setOpen3d] = useState(false);
+  // const [open2e, setOpen4e] = useState(false);
+  // const [open3, setOpen3] = useState(false);
+  // const [open4, setOpen4] = useState(false);
+
   const [navbarDisplay, setNavbarDisplay] = useState(true);
 
-  const handleClick1 = () => {
-    setOpen1(!open1);
+  const [show, setShow] = useState(false);
+  const handleShow = (show) => {
+    setShow(!show)
   }
-  const handleClick1a = () => {
-    setOpen1a(!open1a);
-  }
-  const handleClick1b = () => {
-    setOpen1b(!open1b);
-  }
-  const handleClick1c = () => {
-    setOpen1c(!open1c);
-  }
-  const handleClick1d = () => {
-    setOpen1d(!open1d);
-  }
-  const handleClick1e = () => {
-    setOpen1e(!open1e);
-  }
-  const handleClick1f = () => {
-    setOpen1f(!open1f);
-  }
-  const handleClick2 = () => {
-    setOpen2(!open2);
-  }
-  const handleClick3 = () => {
-    setOpen3(!open3);
-  }
-  const handleClick4 = () => {
-    setOpen4(!open4);
-  }
+
+  // const handleClick1 = () => {
+  //   setOpen1(!open1);
+  // }
+  // const handleClick1a = () => {
+  //   setOpen1a(!open1a);
+  // }
+  // const handleClick1b = () => {
+  //   setOpen1b(!open1b);
+  // }
+  // const handleClick1c = () => {
+  //   setOpen1c(!open1c);
+  // }
+  // const handleClick1d = () => {
+  //   setOpen1d(!open1d);
+  // }
+  // const handleClick1e = () => {
+  //   setOpen1e(!open1e);
+  // }
+  // const handleClick1f = () => {
+  //   setOpen1f(!open1f);
+  // }
+  // const handleClick2 = () => {
+  //   setOpen2(!open2);
+  // }
+  // const handleClick3 = () => {
+  //   setOpen3(!open3);
+  // }
+  // const handleClick4 = () => {
+  //   setOpen4(!open4);
+  // }
   const handleNavbarDisplay = () => {
     setNavbarDisplay(!navbarDisplay);
   }
@@ -377,377 +375,426 @@ const Navbar = ({ width }) => {
             {/* Akash - Edited - down */}
             {navbarDisplay ?
               (
-              <List
-                // set position and desifn it for responsive 
-                // the on and off of tablet nav bar is done 
-                // then we just have to make it responsive 
-                // start work from ther ->
-                component={`nav`}
-                className=' absolute '
-              >
-                {/* About  1 */}
-                <Divider component="li" />
-                <ListItemButton onClick={handleClick1}>
-                  <ListItemText primary="ABOUT" sx={headListStyleText}/>
-                  {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                </ListItemButton>
-                <Collapse in={open1} timeout={`auto`} unmountOnExit >
+                // <List
+                //   // set position and desifn it for responsive 
+                //   // the on and off of tablet nav bar is done 
+                //   // then we just have to make it responsive 
+                //   // start work from there ->
+                //   component={`nav`}
+                //   className=' absolute '
+                // >
+                //   {/* About  1 */}
+                //   <Divider component="li" />
+                //   <ListItemButton onClick={handleClick1}>
+                //     <ListItemText primary="ABOUT" sx={headListStyleText} />
+                //     {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={open1} timeout={`auto`} unmountOnExit >
 
-                  <List component={`div`} disablePadding>
-                    {/* Glance At BIT-Durg 1.a */}
-                    <ListItemButton  onClick= {handleClick1a}>
-                      <ListItemText sx={listItemTextStyle}>Glance At BIT-Durg</ListItemText >
-                      {open1a ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside Glance At BIT-Durg  1.a.a */}
-                    <Collapse in={open1a} timeout={`auto`} unmountOnExit >
+                //     <List component={`div`} disablePadding>
+                //       {/* Glance At BIT-Durg 1.a */}
+                //       <ListItemButton onClick={handleClick1a}>
+                //         <ListItemText sx={listItemTextStyle}>Glance At BIT-Durg</ListItemText >
+                //         {open1a ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside Glance At BIT-Durg  1.a.a */}
+                //       <Collapse in={open1a} timeout={`auto`} unmountOnExit >
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>About</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>About</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Mission & Vision</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Mission & Vision</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Quality Policy</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Quality Policy</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Visionaries</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Visionaries</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Principal</ListItemText >
-                      </ListItemButton>
-                      
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Vice Principal</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Principal</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Mandatory Disclosures</ListItemText >
-                      </ListItemButton>
-                      
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>NAAC-NBA Status</ListItemText >
-                      </ListItemButton>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Vice Principal</ListItemText >
+                //         </ListItemButton>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Committees (2022-24)</ListItemText >
-                      </ListItemButton>
-                    </Collapse>
-                      
-                      {/* Administration  1.b */}
-                    <ListItemButton  onClick={handleClick1b}>
-                      <ListItemText sx={listItemTextStyle}>Administration</ListItemText>
-                      {open1b ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside Administration  1.b.a */}
-                    <Collapse in={open1b} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Audit Report</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Governance</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Governance Member</ListItemText >
-                    </ListItemButton>
-                    
-                    </Collapse>
-                    {/* Collaboration  1.c */}
-                    <ListItemButton onClick={handleClick1c}>
-                      <ListItemText sx={listItemTextStyle}>Collaboration</ListItemText >
-                      {open1c ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside Collaboration 1.c.a  */}
-                    <Collapse in={open1c} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>MOU & Tie-Ups</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Professional Membership</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>ERASMUS + Staff & Student Mobility</ListItemText >
-                    </ListItemButton> 
-                    </Collapse>
-                    {/* Care @ BIT-Durg 1.d */}
-                    <ListItemButton onClick={handleClick1d}>
-                      <ListItemText sx={listItemTextStyle}>Care @ BIT-Durg</ListItemText >
-                      {open1d ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside Care @ BIT-Durg 1.d.a  */}
-                    <Collapse in={open1d} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Anti Ragging</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Women Security Cell</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Grievance Redressal</ListItemText >
-                    </ListItemButton> 
-                    </Collapse>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Mandatory Disclosures</ListItemText >
+                //         </ListItemButton>
 
-                    {/* More... 1.e */}
-                    <ListItemButton onClick={handleClick1e}>
-                      <ListItemText sx={listItemTextStyle}>More...</ListItemText >
-                      {open1e ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside More... 1.e.a  */}
-                    <Collapse in={open1e} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Awards & Achievements</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Panaroma Magazine</ListItemText >
-                    </ListItemButton> 
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Newspaper</ListItemText >
-                    </ListItemButton> 
-                    </Collapse>
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>NAAC-NBA Status</ListItemText >
+                //         </ListItemButton>
 
-                    {/* Another Campus 1.f */}
-                    <ListItemButton onClick={handleClick1f}>
-                      <ListItemText sx={listItemTextStyle}>Another Campus</ListItemText >
-                      {open1f ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside Another Campus 1.f.a  */}
-                    <Collapse in={open1f} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>BIT Raipur</ListItemText >
-                    </ListItemButton>
-                    </Collapse>
-                  </List>
-                </Collapse>
-                
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Committees (2022-24)</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
 
+                //       {/* Administration  1.b */}
+                //       <ListItemButton onClick={handleClick1b}>
+                //         <ListItemText sx={listItemTextStyle}>Administration</ListItemText>
+                //         {open1b ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside Administration  1.b.a */}
+                //       <Collapse in={open1b} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Audit Report</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Governance</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Governance Member</ListItemText >
+                //         </ListItemButton>
 
-                {/* Admission 3 */}
-                <Divider component="li" />
-                {/* Admission Button  */}
-                <ListItemButton onClick={handleClick1}>
-                  <ListItemText primary="ADMISSION" sx={headListStyleText}/>
-                  {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                </ListItemButton>
-                <Collapse in={open1} timeout={`auto`} unmountOnExit >
+                //       </Collapse>
+                //       {/* Collaboration  1.c */}
+                //       <ListItemButton onClick={handleClick1c}>
+                //         <ListItemText sx={listItemTextStyle}>Collaboration</ListItemText >
+                //         {open1c ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside Collaboration 1.c.a  */}
+                //       <Collapse in={open1c} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>MOU & Tie-Ups</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Professional Membership</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>ERASMUS + Staff & Student Mobility</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
+                //       {/* Care @ BIT-Durg 1.d */}
+                //       <ListItemButton onClick={handleClick1d}>
+                //         <ListItemText sx={listItemTextStyle}>Care @ BIT-Durg</ListItemText >
+                //         {open1d ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside Care @ BIT-Durg 1.d.a  */}
+                //       <Collapse in={open1d} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Anti Ragging</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Women Security Cell</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Grievance Redressal</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
 
-                  {/* Middle List */}
-                  <List component={`div`} disablePadding>
-                    {/* Get Started 3.a */}
-                    <ListItemButton  onClick= {handleClick1a}>
-                      <ListItemText sx={listItemTextStyle}>Get Started</ListItemText >
-                      {open1a ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside GetStarted 3.a.a */}
-                    <Collapse in={open1a} timeout={`auto`} unmountOnExit >
+                //       {/* More... 1.e */}
+                //       <ListItemButton onClick={handleClick1e}>
+                //         <ListItemText sx={listItemTextStyle}>More...</ListItemText >
+                //         {open1e ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside More... 1.e.a  */}
+                //       <Collapse in={open1e} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Awards & Achievements</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Panaroma Magazine</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Newspaper</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Admission Procedure</ListItemText >
-                      </ListItemButton>
+                //       {/* Another Campus 1.f */}
+                //       <ListItemButton onClick={handleClick1f}>
+                //         <ListItemText sx={listItemTextStyle}>Another Campus</ListItemText >
+                //         {open1f ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside Another Campus 1.f.a  */}
+                //       <Collapse in={open1f} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>BIT Raipur</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
+                //     </List>
+                //   </Collapse>
 
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
-                      </ListItemButton>
-
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Tution Fees Waiver Scheme</ListItemText >
-                      </ListItemButton>
-
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Scholorships</ListItemText >
-                      </ListItemButton>
-
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Fees Structure (2022-23)</ListItemText >
-                      </ListItemButton>
-
-                      <ListItemButton >
-                        <ListItemText sx={listItemTextStyle}>Fees Structure (2021-22)</ListItemText >
-                      </ListItemButton>
-                      
-                    </Collapse>
-                      
-                      {/* Regular Course  3.b */}
-                    <ListItemButton  onClick={handleClick1b}>
-                      <ListItemText sx={listItemTextStyle}>Regular Course</ListItemText>
-                      {open1b ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside RegularCourse  3.b.a*/}
-                    <Collapse in={open1b} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>B.Tech</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>M.Tech</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>MCA</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>MBA</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>Ph.D</ListItemText >
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>B.Voc</ListItemText >
-                    </ListItemButton>
-
-                    </Collapse>
-                    {/* Lateral Entry Courses 3.c */}
-                    <ListItemButton onClick={handleClick1c}>
-                      <ListItemText sx={listItemTextStyle}>Lateral Entry Courses</ListItemText >
-                      {open1c ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                    </ListItemButton>
-                    {/* Inside LateralEntryCourse  */}
-                    <Collapse in={open1c} timeout={`auto`} unmountOnExit>
-                    <ListItemButton>
-                      <ListItemText sx={listItemTextStyle}>B.Tech Lateral Entry</ListItemText >
-                    </ListItemButton> 
-                    </Collapse>
-                  </List>
-                </Collapse>
-                <Divider component="li" />
-
-                {/* Quick Links */}
-                {/* 5.a.b */}
-                <ListItemButton
-                  onClick={handleClick2}
-                >
-                  <ListItemText primary="QUICK LINKS"
-                    sx={headListStyleText}
-                  />
-                  {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                </ListItemButton>
-                <Collapse in={open2} timeout={`auto`} unmountOnExit>
-                  <List>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Online Fee Payment
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Sitemap
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        UCO Bank
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Gymnasium
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        E-Book
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Facilities
-                      </ListItemText>
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-                <Divider component="li" />
+                //   {/* Academic 2 */}
+                //   <Divider component='li' />
+                //   <ListItemButton onClick={() => handleShow(show)}>
+                //     <ListItemText primary="ACADEMICS" sx={headListStyleText} />
+                //     {show ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={show} timeout={`auto`} unmountOnExit >
+                //     <ListItemButton onClick={() => handleShow(show)}>
+                //       <ListItemText primary={Academics[0].heading} sx={headListStyleText} />
+                //       {show ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //     </ListItemButton>
+                //     <Collapse in={show} timeout={`auto`} unmountOnExit >
+                //       <ListItemButton >
+                //         <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //       </ListItemButton>
+                //       <ListItemButton >
+                //         <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //       </ListItemButton>
+                //       <ListItemButton >
+                //         <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //       </ListItemButton>
+                //       <ListItemButton >
+                //         <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //       </ListItemButton>
+                //       <ListItemButton >
+                //         <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //       </ListItemButton>
+                //     </Collapse>
+                //   </Collapse>
 
 
-                {/* Download */}
-                {/* 5.a.c */}
-                <ListItemButton
-                //  onClick={handleClick3}
-                >
-                  <ListItemText primary="DOWNLOAD"
-                    sx={headListStyleText}
-                  />
-                  {open3 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                </ListItemButton>
-                <Collapse in={open3} timeout={`auto`} unmountOnExit>
-                  <List>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Backlog Exam Form
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Transfer & Provisional<br />Certificate Form
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Revaluation Form
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Calender
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Prospectus
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        Magazine
-                      </ListItemText>
-                    </ListItemButton>
 
-                  </List>
-                </Collapse>
-                <Divider component="li" />
+                //   {/* Admission 3 */}
+                //   <Divider component="li" />
+                //   {/* Admission Button  */}
+                //   <ListItemButton onClick={handleClick1}>
+                //     <ListItemText primary="ADMISSION" sx={headListStyleText} />
+                //     {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={open1} timeout={`auto`} unmountOnExit >
 
-                {/* Important */}
-                {/* 5.a.d */}
-                <ListItemButton
-                  onClick={handleClick4}
-                >
-                  <ListItemText primary="IMPORTANT"
-                    sx={headListStyleText}
-                  />
-                  {open4 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
-                </ListItemButton>
-                <Collapse in={open4} timeout={`auto`} unmountOnExit>
-                  <List>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        CSVTU Calender
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        BIT Alumni
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        AICTE
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} sx={listItemTextStyle}>
-                        University Grants<br />Commission
-                      </ListItemText>
-                    </ListItemButton>
-                    <ListItemButton>
-                      <ListItemText inset={true} primary="DTE Raipur" sx={listItemTextStyle} />
-                    </ListItemButton>
-                  </List>
-                </Collapse>
-                <Divider component="li" />
+                //     {/* Middle List */}
+                //     <List component={`div`} disablePadding>
+                //       {/* Get Started 3.a */}
+                //       <ListItemButton onClick={handleClick1a}>
+                //         <ListItemText sx={listItemTextStyle}>Get Started</ListItemText >
+                //         {open1a ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside GetStarted 3.a.a */}
+                //       <Collapse in={open1a} timeout={`auto`} unmountOnExit >
 
-              </List>
-              ) 
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Admission Procedure</ListItemText >
+                //         </ListItemButton>
+
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Reservation Policy</ListItemText >
+                //         </ListItemButton>
+
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Tution Fees Waiver Scheme</ListItemText >
+                //         </ListItemButton>
+
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Scholorships</ListItemText >
+                //         </ListItemButton>
+
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Fees Structure (2022-23)</ListItemText >
+                //         </ListItemButton>
+
+                //         <ListItemButton >
+                //           <ListItemText sx={listItemTextStyle}>Fees Structure (2021-22)</ListItemText >
+                //         </ListItemButton>
+
+                //       </Collapse>
+
+                //       {/* Regular Course  3.b */}
+                //       <ListItemButton onClick={handleClick1b}>
+                //         <ListItemText sx={listItemTextStyle}>Regular Course</ListItemText>
+                //         {open1b ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside RegularCourse  3.b.a*/}
+                //       <Collapse in={open1b} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>B.Tech</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>M.Tech</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>MCA</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>MBA</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>Ph.D</ListItemText >
+                //         </ListItemButton>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>B.Voc</ListItemText >
+                //         </ListItemButton>
+
+                //       </Collapse>
+                //       {/* Lateral Entry Courses 3.c */}
+                //       <ListItemButton onClick={handleClick1c}>
+                //         <ListItemText sx={listItemTextStyle}>Lateral Entry Courses</ListItemText >
+                //         {open1c ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //       </ListItemButton>
+                //       {/* Inside LateralEntryCourse  */}
+                //       <Collapse in={open1c} timeout={`auto`} unmountOnExit>
+                //         <ListItemButton>
+                //           <ListItemText sx={listItemTextStyle}>B.Tech Lateral Entry</ListItemText >
+                //         </ListItemButton>
+                //       </Collapse>
+                //     </List>
+                //   </Collapse>
+                //   <Divider component="li" />
+
+                //   {/* Quick Links */}
+                //   {/* 5.a.b */}
+                //   <ListItemButton
+                //     onClick={handleClick2}
+                //   >
+                //     <ListItemText primary="QUICK LINKS"
+                //       sx={headListStyleText}
+                //     />
+                //     {open1 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={open2} timeout={`auto`} unmountOnExit>
+                //     <List>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Online Fee Payment
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Sitemap
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           UCO Bank
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Gymnasium
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           E-Book
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Facilities
+                //         </ListItemText>
+                //       </ListItemButton>
+                //     </List>
+                //   </Collapse>
+                //   <Divider component="li" />
+
+
+                //   {/* Download */}
+                //   {/* 5.a.c */}
+                //   <ListItemButton
+                //   //  onClick={handleClick3}
+                //   >
+                //     <ListItemText primary="DOWNLOAD"
+                //       sx={headListStyleText}
+                //     />
+                //     {open3 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={open3} timeout={`auto`} unmountOnExit>
+                //     <List>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Backlog Exam Form
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Transfer & Provisional<br />Certificate Form
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Revaluation Form
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Calender
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Prospectus
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           Magazine
+                //         </ListItemText>
+                //       </ListItemButton>
+
+                //     </List>
+                //   </Collapse>
+                //   <Divider component="li" />
+
+                //   {/* Important */}
+                //   {/* 5.a.d */}
+                //   <ListItemButton
+                //     onClick={handleClick4}
+                //   >
+                //     <ListItemText primary="IMPORTANT"
+                //       sx={headListStyleText}
+                //     />
+                //     {open4 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
+                //   </ListItemButton>
+                //   <Collapse in={open4} timeout={`auto`} unmountOnExit>
+                //     <List>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           CSVTU Calender
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           BIT Alumni
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           AICTE
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} sx={listItemTextStyle}>
+                //           University Grants<br />Commission
+                //         </ListItemText>
+                //       </ListItemButton>
+                //       <ListItemButton>
+                //         <ListItemText inset={true} primary="DTE Raipur" sx={listItemTextStyle} />
+                //       </ListItemButton>
+                //     </List>
+                //   </Collapse>
+                //   <Divider component="li" />
+
+                // </List>
+
+                <List component={`nav`}>
+                  {NavbarItems.map((currentValue, index1) => (
+                    <div key={currentValue.key}>
+                    {currentValue.content.map((current, index2) => (
+                      <>
+                        <NavbarMenuItem heading={currentValue.title}
+                          itemArray={current.heading}
+                          subItemArray={current.links[index2]}
+                          key={current.key} />
+                        {/* {console.log(currentValue.content[index].heading)} */}
+                      </>
+                      ))}
+                     </div>
+                  ))}
+                  {console.log(NavbarItems[0].title)}
+                  {console.log(NavbarItems[0].content[0].heading)}
+                  {console.log(NavbarItems[0].content[0].links[2])}
+                </List>
+              )
               : (<></>)}
 
             {/* Akash - Edited - up */}
