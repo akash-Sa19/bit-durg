@@ -342,7 +342,6 @@ const Connect = [
   }
 ]
 const VarNavbarItems = [About, Academics, Admission, Department, Placement, CampusLife, Connect]
-// const NavbarItems = ['About', 'Academics', 'Admission', 'Department', 'Placement', 'CampusLife', 'Connect']
 const NavbarItems = [ 
   {
     title : 'About',

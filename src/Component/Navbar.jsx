@@ -1,5 +1,5 @@
 import React from "react";
-import { color, NavbarItems, About, VarNavbarItems } from "../Constants";
+import { color, NavbarItems, About } from "../Constants";
 import { NavbarMenuItem } from './index'
 import { search, Grouplogo1 } from "../assets/asset";
 import { useState, useEffect } from "react";
@@ -777,22 +777,11 @@ const Navbar = ({ width }) => {
                 // </List>
 
                 <List component={`nav`}>
-                  {NavbarItems.map((currentValue, index1) => (
-                    <div key={currentValue.key}>
-                    {currentValue.content.map((current, index2) => (
-                      <>
-                        <NavbarMenuItem heading={currentValue.title}
-                          itemArray={current.heading}
-                          subItemArray={current.links[index2]}
-                          key={current.key} />
-                        {/* {console.log(currentValue.content[index].heading)} */}
-                      </>
-                      ))}
-                     </div>
-                  ))}
-                  {console.log(NavbarItems[0].title)}
-                  {console.log(NavbarItems[0].content[0].heading)}
-                  {console.log(NavbarItems[0].content[0].links[2])}
+                  {/* {NavbarItems.map((currentValue, index) => (
+                    <> */}
+                      <NavbarMenuItem heading={NavbarItems[0]} itemArray={About} subItemArray={About[0].links} />
+                    {/* </> */}
+                  {/* ))} */}
                 </List>
               )
               : (<></>)}
