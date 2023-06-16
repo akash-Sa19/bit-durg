@@ -16,7 +16,7 @@ import {
   StudentSection,
   Gallery,
   Footer,
-  // NewToBit,
+  NewToBit,
 } from "./Component";
 
 import Button from "@mui/material/Button";
@@ -74,9 +74,9 @@ const App = () => {
   }, [width, height]);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Navbar width={width} />
-      <Hero />
+      {/* <Hero />
       <CollegeWidget />
       <WhoWeAre />
       <NewsEvent />
@@ -84,10 +84,10 @@ const App = () => {
       <Achievements />
       <StraightFromSource width={width} height={height} />
       <StudentSection />
-      {/* <NewToBit /> */}
+      <NewToBit />
       <Gallery />
-      <Footer />
-    </>
+      <Footer /> */}
+    </ThemeProvider>
   );
 };
 

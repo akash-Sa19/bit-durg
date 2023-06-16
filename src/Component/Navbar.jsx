@@ -1,18 +1,43 @@
 import React from "react";
-import styles from "../Constants";
-// If you need Down and up arrow import from material ui
-// import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-// import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import { color, NavbarItems, About, VarNavbarItems } from "../Constants";
 import { search, Grouplogo1 } from "../assets/asset";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
-import ClearIcon from "@mui/icons-material/Clear";
+
+import List from "@mui/material/List";
+import GrandParent from "./subComponent/GrandParent";
+
+const stackDesign = {
+  marginTop: { md: "40px", lg: "48px" },
+  display: "flex",
+  justifyContent: "space-between",
+  height: { md: "160px", lg: "226px" },
+};
+const innerStackDesign = {
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  gap: "8px",
+};
+const headListStyleText = {
+  "& .MuiTypography-root": {
+    fontWeight: 800,
+    fontFamily: "Alegreya Sans",
+    color: color.bitRed,
+    letterSpacing: "1px",
+  },
+};
+const listItemTextStyle = {
+  "& .MuiTypography-body1 ": {
+    fontSize: "12px",
+    color: color.bitRed,
+    fontWeight: 500,
+  },
+};
+// Akash - Edited - Up
 
 const Navbar = ({ width }) => {
   const buttonStyle = {
@@ -45,11 +70,24 @@ const Navbar = ({ width }) => {
     color: "red",
   };
 
+  const [navbarDisplay, setNavbarDisplay] = useState(true);
+
+  const [show, setShow] = useState(false);
+  const handleShow = (show) => {
+    setShow(!show);
+  };
+
+  const handleNavbarDisplay = () => {
+    setNavbarDisplay(!navbarDisplay);
+  };
+
+  // Akash - edit - Up
+
   const [miniMenu, setMiniMenu] = useState("none");
 
   return (
     <div className="font-roboto relative">
-      {/* Top Navbar */}
+      {/* TopBar of Top Navbar */}
       {width >= 1440 ? (
         <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
@@ -131,7 +169,7 @@ const Navbar = ({ width }) => {
         </div>
       )}
 
-      {/* Bottom Navbar */}
+      {/* BottomBar of Top Navbar */}
       {width >= 1440 ? (
         <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
@@ -198,100 +236,57 @@ const Navbar = ({ width }) => {
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
-                onClick={handleClick}
+                onClick={handleNavbarDisplay}
               >
                 <MenuIcon fontSize="large" />
               </Button>
             </div>
-            {/* <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-              >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu> */}
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-              PaperProps={{
-                elevation: 0,
-                sx: {
-                  overflow: "visible",
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  // mt: 1,
-                  px: 1,
-                  width: 300,
-                  borderRadius: 2,
-                  "& .MuiAvatar-root": {
-                    width: 32,
-                    height: 32,
-                    ml: -0.5,
-                    mr: 1,
-                  },
-                },
-              }}
-            >
-              <div className="flex justify-evenly items-center w-full mx-auto">
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  size="small"
-                />
-                <IconButton
-                  aria-label="delete"
-                  size="small"
-                  sx={{
-                    bgcolor: "#800000",
-                    borderRadius: 1,
-                    width: "24px",
-                    height: "24px",
-                  }}
-                >
-                  <ClearIcon fontSize="small" color="white" />
-                </IconButton>
-              </div>
-              <MenuItem
-                sx={menuItemCSS}
-                onClick={() =>
-                  miniMenu === "admission"
-                    ? setMiniMenu("none")
-                    : setMiniMenu("admission")
-                }
-              >
-                Admission
-              </MenuItem>
-              <ul className="list-none">
-                <li>Mini Menu</li>
-                <li>Mini Menu</li>
-                <li>Mini Menu</li>
-                <li>Mini Menu</li>
-              </ul>
-              {miniMenu === "admission" ? (
-                <>
-                  <MenuItem sx={menuItemCSS}>Admission</MenuItem>
-                  <MenuItem sx={menuItemCSS}>Admission</MenuItem>
-                  <MenuItem sx={menuItemCSS}>Admission</MenuItem>
-                </>
-              ) : (
-                <></>
-              )}
 
-              <MenuItem sx={menuItemCSS}>Academics</MenuItem>
-              <MenuItem sx={menuItemCSS}>Department</MenuItem>
-              <MenuItem sx={menuItemCSS}>Placement</MenuItem>
-              <MenuItem sx={menuItemCSS}>More</MenuItem>
-            </Menu>
+            {navbarDisplay ? (
+              <List component={`nav`} sx={{ zIndex: "50", bgcolor: "white" }}>
+                {/* {console.log(NavbarItems)} */}
+                {NavbarItems.map((currentValue, index1) => (
+                  <div key={currentValue.key}>
+                    {/* {console.log(currentValue)} */}
+                    {/* <p className="text-2xl text-green-600">
+                      {currentValue.title}
+                      {console.log(currentValue)}
+                    </p> */}
+                    <GrandParent item={currentValue} />
+                    {/* {console.log(currentValue)} */}
+                    {currentValue.content.map((current, index2) => (
+                      <>
+                        {/* <p className="text-xl text-red-600">
+                          {current.heading}
+                        </p>
+                        {current.links.map((item) => (
+                          <>
+                            <a className="text-blue-600 block" href={item[1]}>
+                              {item[0]}
+                            </a>
+                          </>
+                        ))} */}
+
+                        {/* <NavbarMenuItem
+                          heading={currentValue.title}
+                          itemArray={current.heading}
+                          subItemArray={current.links[index2]}
+                          key={current.key}
+                        /> */}
+                        {/* {console.log(currentValue.content[index].heading)} */}
+                      </>
+                    ))}
+                  </div>
+                ))}
+                {/* {console.log(NavbarItems[0].title)}
+                {console.log(NavbarItems[0].content[0].heading)}
+                {console.log(NavbarItems[0].content[0].links[2])} */}
+              </List>
+            ) : (
+              <></>
+            )}
+
+            {/* Akash - Edited - up */}
           </div>
         </div>
       )}
