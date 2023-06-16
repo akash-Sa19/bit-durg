@@ -76,7 +76,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar width={width} />
-      {/* <Hero />
+      <Hero />
       <CollegeWidget />
       <WhoWeAre />
       <NewsEvent />
@@ -86,7 +86,7 @@ const App = () => {
       <StudentSection />
       <NewToBit />
       <Gallery />
-      <Footer /> */}
+      <Footer />
     </ThemeProvider>
   );
 };

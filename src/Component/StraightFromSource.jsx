@@ -4,7 +4,7 @@ import Ribbon from "./Ribbon";
 import IconButton from "@mui/material/IconButton";
 import { video01, video02, video03 } from "../assets/video/asset";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { image01, image02, image03 } from "../assets/asset";
+import { Rectangle1, Rectangle2, Rectangle3 } from "../assets/asset";
 
 const StraightFromSource = ({ width, height }) => {
   const [play, setPlay] = useState({
@@ -126,7 +126,7 @@ const StraightFromSource = ({ width, height }) => {
             </video>
             <img
               className="absolute top-0 left-0 h-full w-full object-cover"
-              src={image01}
+              src={Rectangle1}
               style={{ display: !play.video01 ? "block" : "none" }}
               alt="Poster Image"
             />
@@ -169,7 +169,7 @@ const StraightFromSource = ({ width, height }) => {
             </video>
             <img
               className="absolute top-0 left-0 h-full w-full object-cover"
-              src={image02}
+              src={Rectangle2}
               style={{ display: !play.video02 ? "block" : "none" }}
               alt="Poster Image"
             />
@@ -214,7 +214,7 @@ const StraightFromSource = ({ width, height }) => {
             </video>
             <img
               className="absolute top-0 left-0 h-full w-full object-cover"
-              src={image03}
+              src={Rectangle3}
               style={{ display: !play.video03 ? "block" : "none" }}
               alt="Poster Image"
             />

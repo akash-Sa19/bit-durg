@@ -28,6 +28,9 @@ import callIcon from "./call-icon.svg";
 import locationIcon from "./location-icon.svg";
 import mailIcon from "./mail-icon.svg";
 import college from "./college.png";
+import Rectangle1 from "./Rectangle1.jpg";
+import Rectangle2 from "./Rectangle2.jpg";
+import Rectangle3 from "./Rectangle3.jpg";
 
 export {
   search,
@@ -60,4 +63,7 @@ export {
   locationIcon,
   mailIcon,
   college,
+  Rectangle1,
+  Rectangle2,
+  Rectangle3,
 };
