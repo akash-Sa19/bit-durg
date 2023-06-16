@@ -244,43 +244,11 @@ const Navbar = ({ width }) => {
 
             {navbarDisplay ? (
               <List component={`nav`} sx={{ zIndex: "50", bgcolor: "white" }}>
-                {/* {console.log(NavbarItems)} */}
                 {NavbarItems.map((currentValue, index1) => (
                   <div key={currentValue.key}>
-                    {/* {console.log(currentValue)} */}
-                    {/* <p className="text-2xl text-green-600">
-                      {currentValue.title}
-                      {console.log(currentValue)}
-                    </p> */}
                     <GrandParent item={currentValue} />
-                    {/* {console.log(currentValue)} */}
-                    {currentValue.content.map((current, index2) => (
-                      <>
-                        {/* <p className="text-xl text-red-600">
-                          {current.heading}
-                        </p>
-                        {current.links.map((item) => (
-                          <>
-                            <a className="text-blue-600 block" href={item[1]}>
-                              {item[0]}
-                            </a>
-                          </>
-                        ))} */}
-
-                        {/* <NavbarMenuItem
-                          heading={currentValue.title}
-                          itemArray={current.heading}
-                          subItemArray={current.links[index2]}
-                          key={current.key}
-                        /> */}
-                        {/* {console.log(currentValue.content[index].heading)} */}
-                      </>
-                    ))}
                   </div>
                 ))}
-                {/* {console.log(NavbarItems[0].title)}
-                {console.log(NavbarItems[0].content[0].heading)}
-                {console.log(NavbarItems[0].content[0].links[2])} */}
               </List>
             ) : (
               <></>
