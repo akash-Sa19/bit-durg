@@ -100,7 +100,7 @@ const StraightFromSource = ({ width, height }) => {
   console.log(videoSize);
 
   return (
-    <div className="new-container">
+    <div className="new-container mt-[150px]">
       <div className="">
         <Ribbon
           heading="Straight From The Source"
@@ -110,7 +110,7 @@ const StraightFromSource = ({ width, height }) => {
 
       {/* Video Section */}
 
-      <div className="my-10 flex justify-center">
+      <div className="my-10 flex justify-center mt-[100px]">
         {/* Video Component */}
         {/* {console.log(width * (3 / 10) * (16 / 9))} */}
         <div className={videoContainer} style={videoSize}>

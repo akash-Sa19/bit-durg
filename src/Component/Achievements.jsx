@@ -1,19 +1,22 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { Ariia, Naac, Nirf, Nba, Margdarshan } from "../assets/asset";
+import { color } from "../Constants";
 
 const Achievements = () => {
   const textStyle =
     "text-xl font-extrabold tracking-[0.15rem] text-center mt-2 uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#F26921] to-[#ED1065]";
 
   return (
-    <div className="new-container">
+    <div className="new-container mt-[150px]">
       <Typography
         variant="h3"
         color="black"
         sx={{
           textAlign: "Center",
           textTransform: "uppercase",
+          color: color.bitRed,
+          fontFamily: "Source Serif Pro",
         }}
       >
         Achievements

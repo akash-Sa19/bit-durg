@@ -31,6 +31,7 @@ import college from "./college.png";
 import Rectangle1 from "./Rectangle1.jpg";
 import Rectangle2 from "./Rectangle2.jpg";
 import Rectangle3 from "./Rectangle3.jpg";
+import Principal from "./Principal.png";
 
 export {
   search,
@@ -66,4 +67,5 @@ export {
   Rectangle1,
   Rectangle2,
   Rectangle3,
+  Principal,
 };
