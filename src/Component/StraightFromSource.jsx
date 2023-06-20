@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState, useRef } from "react";
-import Ribbon from "./Ribbon";
+import Ribbon from "./subComponent/Ribbon";
 import IconButton from "@mui/material/IconButton";
 import { video01, video02, video03 } from "../assets/video/asset";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";

@@ -1,14 +1,14 @@
 import React from "react";
-import { color, NavbarItems, About, VarNavbarItems } from "../Constants";
-import { search, Grouplogo1 } from "../assets/asset";
-import { useState, useEffect } from "react";
+import { color, NavbarItems } from "../Constants";
+import { Grouplogo1, bitLogo3, bitLogo2, closeIcon, search, hamburgerMenu } from "../assets/asset";
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 
 import List from "@mui/material/List";
-import GrandParent from "./subComponent/GrandParent";
+import GrandParent from "./subComponent/MenuItemList";
 
 const stackDesign = {
   marginTop: { md: "40px", lg: "48px" },
@@ -86,7 +86,7 @@ const Navbar = ({ width }) => {
   const [miniMenu, setMiniMenu] = useState("none");
 
   return (
-    <div className="font-roboto relative">
+    <div className="font-roboto relative bg-scroll">
       {/* TopBar of Top Navbar */}
       {width >= 1440 ? (
         <div className="flex gap-4 bg-bit-red h-10 px-2">
@@ -204,7 +204,7 @@ const Navbar = ({ width }) => {
                 Central Library
               </Button>
               <Button variant="text" sx={bottomNavLinkStyle}>
-                Moodle(lms)
+                Moodle (lsm)
               </Button>
               <Button variant="text" sx={bottomNavLinkStyle}>
                 Connect
@@ -229,7 +229,8 @@ const Navbar = ({ width }) => {
           <div className="item basis-0 grow">
             <div className="h-full flex items-center justify-end gap-2">
               <IconButton aria-label="delete">
-                <SearchIcon fontSize="large" />
+                {/* <SearchIcon fontSize="large" /> */}
+                <img src={search} alt="Search Icon" />
               </IconButton>
               <Button
                 id="basic-button"
@@ -238,18 +239,37 @@ const Navbar = ({ width }) => {
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleNavbarDisplay}
               >
-                <MenuIcon fontSize="large" />
+                {/* <MenuIcon fontSize="large" /> */}
+                <img src={hamburgerMenu} alt="Hamburger Menu" className="w-[22px] h-[22px]" />
               </Button>
             </div>
 
             {navbarDisplay ? (
-              <List component={`nav`} sx={{ zIndex: "50", bgcolor: "white" }}>
-                {NavbarItems.map((currentValue, index1) => (
-                  <div key={currentValue.key}>
-                    <GrandParent item={currentValue} />
+              <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed">
+                <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
+                  <div className="w-[210px] flex justify-around items-center">
+                    <img
+                      src={bitLogo2}
+                      alt="BIT Logo"
+                      className="w-[60px] h-[61.68px] "
+                    />
+                    <p className="text-[24px] font-semibold text-[#800000]">
+                      BIT-DURG
+                    </p>
                   </div>
-                ))}
-              </List>
+                  <div className="flex justify-between items-center w-[92px]">
+                    <img src={search} alt="Search Icon" className="w-[30px] h-[30px]"/>
+                    <img src={closeIcon} alt="Close Icon" className="w-[22px] h-[22px]" onClick={() => (setNavbarDisplay(!navbarDisplay))} />
+                  </div>
+                </div>
+                <List component={`nav`} sx={{ zIndex: "50", bgcolor: "white", position:'relative', bottom: '15px' }}>
+                  {NavbarItems.map((currentValue, index1) => (
+                    <div key={currentValue.key}>
+                      <GrandParent item={currentValue} />
+                    </div>
+                  ))}
+                </List>
+              </div>
             ) : (
               <></>
             )}

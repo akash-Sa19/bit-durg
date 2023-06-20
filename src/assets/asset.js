@@ -23,11 +23,15 @@ import image01 from "./image01.jpeg";
 import image02 from "./image02.jpg";
 import image03 from "./image03.jpg";
 import bitLogo3 from "./BitLogo3.svg";
+import bitLogo2 from "./BitLogo2.svg";
 import bitBuildingIcon from "./bit-building-icon.svg";
 import callIcon from "./call-icon.svg";
 import locationIcon from "./location-icon.svg";
 import mailIcon from "./mail-icon.svg";
 import college from "./college.png";
+import closeIcon from "./closeIcon.svg"
+import roundedDownArrow from "./roundedDownArrow.svg"
+import hamburgerMenu from './hamburgerMenu.svg'
 
 export {
   search,
@@ -55,9 +59,13 @@ export {
   image02,
   image03,
   bitLogo3,
+  bitLogo2,
   bitBuildingIcon,
   callIcon,
   locationIcon,
   mailIcon,
   college,
+  closeIcon,
+  roundedDownArrow,
+  hamburgerMenu,
 };
