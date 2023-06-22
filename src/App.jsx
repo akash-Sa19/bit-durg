@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import Navbar from './component/Navbar';
 // import HeroComponent from './component/HeroComponent';
 import {
+  Search,
   Navbar,
   Hero,
   CollegeWidget,
@@ -17,7 +18,7 @@ import {
   Gallery,
   Footer,
   NewToBit,
-} from "./Component";
+} from "./Component/index";
 
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
@@ -85,8 +86,8 @@ const App = () => {
       <Mission />
       <Achievements />
       <StraightFromSource width={width} height={height} />
-      <StudentSection />
       <NewToBit />
+      <StudentSection />
       <Gallery />
       <Footer />
     </ThemeProvider>

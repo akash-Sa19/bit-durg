@@ -6,7 +6,7 @@ const Mission = () => {
   const textStyle =
     "font-medium text-justify lg:leading-loose lg:text-lg md:leading-normal md:text-base sm:leading-tight sm:text-xs";
   return (
-    <div className="new-container my-8">
+    <div className="new-container mt-[150px]">
       <div
         className="bg-bit-red w-full rounded-lg relative 
         lg:h-[735px] 

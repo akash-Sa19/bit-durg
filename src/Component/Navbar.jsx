@@ -1,6 +1,14 @@
 import React from "react";
 import { color, NavbarItems } from "../Constants";
-import { Grouplogo1, bitLogo3, bitLogo2, closeIcon, search, hamburgerMenu } from "../assets/asset";
+import {
+  Grouplogo1,
+  bitLogo3,
+  bitLogo2,
+  closeIcon,
+  search,
+  hamburgerMenu,
+} from "../assets/asset";
+import { Search } from "./index";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
@@ -70,24 +78,27 @@ const Navbar = ({ width }) => {
     color: "red",
   };
 
-  const [navbarDisplay, setNavbarDisplay] = useState(true);
+  const [navbarDisplay, setNavbarDisplay] = useState(false);
 
-  const [show, setShow] = useState(false);
-  const handleShow = (show) => {
-    setShow(!show);
+  const [showSearchBar, setSearchBar] = useState(false);
+  // This Function is used to transfer the state if the "showNavBar" to the child component Search so that i can manipulate the state of the function
+  const handleSearchBar = (showSearchBar) => {
+    setSearchBar(!showSearchBar);
   };
 
   const handleNavbarDisplay = () => {
     setNavbarDisplay(!navbarDisplay);
   };
 
-  // Akash - edit - Up
 
   const [miniMenu, setMiniMenu] = useState("none");
 
   return (
     <div className="font-roboto relative bg-scroll">
+      {/* Search Bar */}
+      {showSearchBar ? <Search handleSearchBarState= {handleSearchBar} /> : <></>}
       {/* TopBar of Top Navbar */}
+
       {width >= 1440 ? (
         <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
@@ -227,9 +238,9 @@ const Navbar = ({ width }) => {
 
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow">
-            <div className="h-full flex items-center justify-end gap-2">
-              <IconButton aria-label="delete">
-                {/* <SearchIcon fontSize="large" /> */}
+            {/* change here */}
+            <div className="h-full flex items-center justify-end gap-2 mr-[5px]">
+              <IconButton aria-label="Search" onClick={() => (handleSearchBar())}>
                 <img src={search} alt="Search Icon" />
               </IconButton>
               <Button
@@ -240,12 +251,18 @@ const Navbar = ({ width }) => {
                 onClick={handleNavbarDisplay}
               >
                 {/* <MenuIcon fontSize="large" /> */}
-                <img src={hamburgerMenu} alt="Hamburger Menu" className="w-[22px] h-[22px]" />
+                <img
+                  src={hamburgerMenu}
+                  alt="Hamburger Menu"
+                  className="w-[22px] h-[22px]"
+                />
               </Button>
             </div>
 
+            {/* Side Navbar */}
+            {/* for Tablet */}
             {navbarDisplay ? (
-              <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed">
+              <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed ">
                 <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
                   <div className="w-[210px] flex justify-around items-center">
                     <img
@@ -257,12 +274,39 @@ const Navbar = ({ width }) => {
                       BIT-DURG
                     </p>
                   </div>
-                  <div className="flex justify-between items-center w-[92px]">
-                    <img src={search} alt="Search Icon" className="w-[30px] h-[30px]"/>
-                    <img src={closeIcon} alt="Close Icon" className="w-[22px] h-[22px]" onClick={() => (setNavbarDisplay(!navbarDisplay))} />
+                  {/* change here */}
+                  <div className="flex justify-end items-center w-[92px] gap-[21px] ">
+                    <IconButton aria-label="Search" onClick={() => {
+                      handleSearchBar();
+                      handleNavbarDisplay();
+                    }}>
+                      <img
+                        src={search}
+                        alt="Search Icon"
+                        className="w-[30px] h-[30px]"
+                      />
+                    </IconButton>
+                    <IconButton
+                      aria-label="Close"
+                      onClick={() => setNavbarDisplay(!navbarDisplay)}
+                    >
+                      <img
+                        src={closeIcon}
+                        alt="Close Icon"
+                        className="w-[22px] h-[22px]"
+                      />
+                    </IconButton>
                   </div>
                 </div>
-                <List component={`nav`} sx={{ zIndex: "50", bgcolor: "white", position:'relative', bottom: '15px' }}>
+                <List
+                  component={`nav`}
+                  sx={{
+                    zIndex: "50",
+                    bgcolor: "white",
+                    position: "relative",
+                    bottom: "15px",
+                  }}
+                >
                   {NavbarItems.map((currentValue, index1) => (
                     <div key={currentValue.key}>
                       <GrandParent item={currentValue} />
@@ -280,6 +324,7 @@ const Navbar = ({ width }) => {
       )}
 
       {/* BIT Logo */}
+      {/* The main Middle Logo */}
       <div className="block absolute top-0 left-1/2 -translate-x-1/2 z-20">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>

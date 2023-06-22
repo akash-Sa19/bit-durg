@@ -6,7 +6,7 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 
 const Gallery = () => {
   return (
-    <div className="new-container my-10 h-[1000px] grid grid-cols-6 grid-rows-5 gap-8">
+    <div className="new-container my-10 h-[1000px] grid grid-cols-6 grid-rows-5 gap-8 mt-[200px]">
       <div className="h-full w-full p-2 text-center font-bold border-2 border-green-600 rounded-lg col-span-2 row-span-3 bg-[#E7D7C1]">
         <p className="text-xl">Academic Calender</p>
         <LocalizationProvider dateAdapter={AdapterDayjs}>

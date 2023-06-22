@@ -1,4 +1,5 @@
-import { img1 } from "./assets/asset";
+import { global_icon, news_icon, } from "./assets/asset";
+
 
 // const NavbarItems = ['About', 'Academics', 'Admission', 'Department', 'Placement', 'CampusLife', 'Connect']
 const NavbarItems = [
@@ -610,6 +611,30 @@ const NavbarItems = [
   }
 ];
 
+const SearchItems = [
+  {
+    heading: "All of BIT.in",
+    img: global_icon,
+    alt: 'Global Icon',
+    selected: true,
+    key: 1,
+  },
+  {
+    heading: "People",
+    img: global_icon,
+    alt : 'People Icon',
+    selected: false,
+    key: 2,
+  },
+  {
+    heading: "News",
+    img: news_icon,
+    alt: 'News Icon',
+    selected: false,
+    key: 3,
+  },
+];
+
 const news = [
   {
     heading: "Solar Energy workshop 2022",
@@ -617,7 +642,7 @@ const news = [
     date: "08",
     month: "APR",
     id: 1,
-    imgSrc: { img1 },
+    // imgSrc: { img1 },
   },
   {
     heading: "Smart India Hackathon Project 2022",
@@ -740,6 +765,7 @@ const LearnAboutBit = [
   },
 ];
 
+
 const color = {
   bitLightBlue: "#7EB2DD",
   bitBlue: "#062242",
@@ -771,4 +797,5 @@ export {
   footerLinks,
   LearnAboutBit,
   NavbarItems,
+  SearchItems,
 };
