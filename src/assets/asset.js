@@ -39,6 +39,10 @@ import triangle from "./triangle.svg";
 import peopleCircleRed from "./people-circle-red.svg";
 import peopleCircleWhite from "./people-circle-icon.svg";
 import arrowRight from "./arrow-right.svg";
+import Rectangle1 from "./Rectangle1.jpg";
+import Rectangle2 from "./Rectangle2.jpg";
+import Rectangle3 from "./Rectangle3.jpg";
+import Principal from "./Principal.png";
 
 export {
   search,
@@ -81,4 +85,8 @@ export {
   peopleCircleRed,
   peopleCircleWhite,
   arrowRight,
+  Rectangle1,
+  Rectangle2,
+  Rectangle3,
+  Principal,
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { startDoubleQuote, endDoubleQuote, deppHeard } from "../assets/asset";
+import { startDoubleQuote, endDoubleQuote, Principal } from "../assets/asset";
 import Typography from "@mui/material/Typography";
 
 const Mission = () => {
@@ -30,7 +30,7 @@ const Mission = () => {
               className="absolute top-[-40px] left-[-5px]"
             />
             <img
-              src={deppHeard}
+              src={Principal}
               alt="Depp Heard Lawsuit"
               className="object-cover h-full w-full p-1 rounded-xl"
             />

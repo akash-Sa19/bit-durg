@@ -20,9 +20,9 @@ const Gallery = () => {
         </LocalizationProvider>
 
         <div className="my-2 bg-white p-2 w-[320px] mx-auto rounded-lg text-left">
-          <p>21-May | Sunday | No Masturbation</p>
-          <p>22-May | Monday | One Masturbation</p>
-          <p>22-May | Tuesday | Infinite Masturbation</p>
+          <p>21-May | Sunday | Holiday</p>
+          <p>22-May | Monday | Somthing</p>
+          <p>22-May | Tuesday | Nothing</p>
         </div>
       </div>
       <div className="h-full w-full p-2 text-center font-bold border-2 border-green-600 rounded-lg col-span-3 row-span-2">

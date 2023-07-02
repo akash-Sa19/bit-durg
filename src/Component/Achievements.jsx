@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { Ariia, Naac, Nirf, Nba, Margdarshan } from "../assets/asset";
+import { color } from "../Constants";
 
 const Achievements = () => {
   const textStyle =
@@ -14,6 +15,8 @@ const Achievements = () => {
         sx={{
           textAlign: "Center",
           textTransform: "uppercase",
+          color: color.bitRed,
+          fontFamily: "Source Serif Pro",
         }}
       >
         Achievements

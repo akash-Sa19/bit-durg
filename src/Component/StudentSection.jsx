@@ -4,7 +4,11 @@ import { college } from "../assets/asset";
 const StudentSection = () => {
   return (
     <div
+<<<<<<< HEAD
       className={`new-container h-[550px] my-10 py-6 bg-[url('/src/assets/college.png')] bg-black bg-opacity-20 mt-[150px]`}
+=======
+      className={`new-container h-[550px] mt-[150px] py-6 bg-[url('/src/assets/college.png')] bg-black bg-opacity-20`}
+>>>>>>> a58a2670bc6b1bf4a41b7d0a139b7e67c44fc79f
     >
       <p className="text-4xl w-full text-white font-alegreya-sans font-bold uppercase text-center ">
         Student Section
@@ -28,7 +32,7 @@ const StudentSection = () => {
             100-100 both for Boys (co) and Girls.
           </p>
         </div>
-        <div className="col-span-1 px-10 py-2 grid grid-cols-2 gap-2 bg-black bg-opacity-50 p-2">
+        {/* <div className="col-span-1 px-10 py-2 grid grid-cols-2 gap-2 bg-black bg-opacity-50 p-2">
           <div className="col-span-1">
             <p className="text-white text-lg font-bold text-center border-4 border-transparent blur-sm">
               NSS
@@ -49,7 +53,7 @@ const StudentSection = () => {
               Hult Prize
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
