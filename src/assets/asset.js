@@ -29,25 +29,56 @@ import callIcon from "./call-icon.svg";
 import locationIcon from "./location-icon.svg";
 import mailIcon from "./mail-icon.svg";
 import college from "./college.png";
-import closeIcon from "./closeIcon.svg"
+import closeIcon from "./closeIcon.svg";
 import roundedDownArrow from "./roundedDownArrow.svg";
-import hamburgerMenu from './hamburgerMenu.svg';
+import hamburgerMenu from "./hamburgerMenu.svg";
 // used in search - down
-import people from './people-circle-icon.svg'
-import global_icon from './global_icon.svg'
-import triangle from './triangle.svg'           
-import peopleCircleRed from './people-circle-red.svg'
-import peopleCircleWhite from './people-circle-icon.svg'
-import arrowRight from './arrow-right.svg' 
+import people from "./people-circle-icon.svg";
+import global_icon from "./global_icon.svg";
+import triangle from "./triangle.svg";
+import peopleCircleRed from "./people-circle-red.svg";
+import peopleCircleWhite from "./people-circle-icon.svg";
+import arrowRight from "./arrow-right.svg";
 
 export {
   search,
-  Grouplogo1, hero, event_icon, news_icon, filter, img1, graduate, undergraduate, scholarship, campusLife, whoWeAre, calender, startDoubleQuote, endDoubleQuote, deppHeard, Ariia, Naac, Nirf, Nba, Margdarshan, image01, image02, image03, bitLogo3, bitLogo2, bitBuildingIcon, callIcon, locationIcon, mailIcon, college, closeIcon, roundedDownArrow, hamburgerMenu,
+  Grouplogo1,
+  hero,
+  event_icon,
+  news_icon,
+  filter,
+  img1,
+  graduate,
+  undergraduate,
+  scholarship,
+  campusLife,
+  whoWeAre,
+  calender,
+  startDoubleQuote,
+  endDoubleQuote,
+  deppHeard,
+  Ariia,
+  Naac,
+  Nirf,
+  Nba,
+  Margdarshan,
+  image01,
+  image02,
+  image03,
+  bitLogo3,
+  bitLogo2,
+  bitBuildingIcon,
+  callIcon,
+  locationIcon,
+  mailIcon,
+  college,
+  closeIcon,
+  roundedDownArrow,
+  hamburgerMenu,
   people,
   global_icon,
   triangle,
   peopleCircleRed,
   peopleCircleWhite,
-  arrowRight
-
+  arrowRight,
 };
