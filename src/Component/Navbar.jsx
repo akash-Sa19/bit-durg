@@ -273,14 +273,18 @@ const Navbar = ({ width }) => {
                     ? {
                         style: {
                           width: 418, // Set the desired width for the Menu
+                          height: "100vh",
                           right: 0,
+                          top: 16,
                           borderRadius: 0,
                         },
                       }
                     : {
                         style: {
                           width: width, // Set the desired width for the Menu
+                          height: "100vh",
                           right: 0,
+                          top: 16,
                           borderRadius: 0,
                         },
                       }
@@ -292,8 +296,20 @@ const Navbar = ({ width }) => {
                 }}
                 sx={
                   width > 576
-                    ? { left: 15, right: 0, top: -67, width: 418 }
-                    : { left: 16, right: 0, top: -67, width: width + 32 }
+                    ? {
+                        left: 15,
+                        right: 0,
+                        top: 16,
+                        width: 418,
+                        height: "115vh",
+                      }
+                    : {
+                        left: 16,
+                        right: 0,
+                        top: 16,
+                        width: width + 32,
+                        height: "115vh",
+                      }
                 }
                 TransitionComponent={Slide}
                 TransitionProps={{ direction: "left" }} // Change to 'right' for leave animation
