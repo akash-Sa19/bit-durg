@@ -45,22 +45,6 @@ import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
 import { Phone } from "@mui/icons-material";
 
-const buttonStyle = {
-  color: "white",
-  "&:hover": {
-    color: "#ddd",
-    backgroundColor: "rgba(245, 245, 245, 0.1)",
-  },
-};
-const bottomNavLinkStyle = {
-  color: "black",
-  "&:hover": {
-    color: "rgb(0, 0, 255)",
-    textDecoration: "underline",
-    backgroundColor: "white",
-  },
-};
-
 // const menuItemCSS = {
 //   // textTransform: "capitalize",
 //   color: "red",
@@ -81,7 +65,30 @@ const Navbar = ({ width }) => {
     setNavbarDisplay(!navbarDisplay);
   };
 
-  const [miniMenu, setMiniMenu] = useState("none");
+  const buttonStyle = {
+    color: "white",
+    "&:hover": {
+      color: "#ddd",
+      backgroundColor: "rgba(245, 245, 245, 0.1)",
+    },
+  };
+  const bottomNavLinkStyle = {
+    color: "black",
+    "&:hover": {
+      color: "rgb(0, 0, 255)",
+      textDecoration: "underline",
+      backgroundColor: "white",
+    },
+  };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="font-roboto relative bg-scroll">
@@ -411,7 +418,7 @@ const Navbar = ({ width }) => {
 
       {/* BIT Logo */}
       {/* The main middle logo */}
-      <div className="absolute sm:hidden md:block top-0 left-1/2 -translate-x-1/2 z-20 ">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 ">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>
