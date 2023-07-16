@@ -17,10 +17,10 @@
 import React from "react";
 import { useState } from "react";
 
-// importing consant
+// consant
 import { color, NavbarItems } from "../Constants";
 
-// importing asset
+// asset
 import {
   Grouplogo1,
   bitLogo3,
@@ -30,18 +30,16 @@ import {
   hamburgerMenu,
 } from "../assets/asset";
 
-// importing component
+// imported components
 import { Search } from "./index";
 
 
-// Material Ui Import 
+// Material Ui
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
-import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
-import { Phone } from "@mui/icons-material";
 
 
 

@@ -85,7 +85,7 @@ const App = () => {
       <NewsEvent />
       <Mission />
       {/* this component is creating prb causing tilting of the component */}
-      {/* <Achievements /> */}
+      <Achievements />
       <StraightFromSource width={width} height={height} />
       <NewToBit />
       <StudentSection />

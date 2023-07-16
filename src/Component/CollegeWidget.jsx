@@ -6,7 +6,7 @@
 
 import React from "react";
 
-// importing assets
+// assets
 import {
   graduate,
   undergraduate,

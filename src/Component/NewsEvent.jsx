@@ -1,9 +1,24 @@
+// screen breakpoints
+// sm: '360px'
+// md: '834px'
+// mdl: '1275px'
+// lg: '1440px'
+// xl: '1640px
+
 import React from "react";
+// assets
 import { calender, event_icon, news_icon, filter } from "../assets/asset";
+
+// component import 
 import { Ribbon, Card, BottomCircle } from "./index";
+
+// material Ui
 import { Button } from "@mui/material";
+
+// constant
 import { news, color } from "../Constants";
-import "../index.css";
+
+// import "../index.css";
 
 const buttonDesign = {
   backgroundColor: "rgba(231, 215, 193, 0.25)",

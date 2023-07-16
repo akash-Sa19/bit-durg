@@ -4,10 +4,10 @@
 
 import React from "react";
 
-// importing asset
+// asset
 import { hero } from "../assets/asset";
 
-// importing Material Ui asset 
+// Material Ui  
 import Typography from "@mui/material/Typography";
 
 const Hero = () => {

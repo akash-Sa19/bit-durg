@@ -10,6 +10,8 @@
 // 2 - Description 
 
 import React from "react";
+
+// assets
 import { whoWeAre } from "../assets/asset";
 
 const WhoWeAre = () => {

@@ -5,46 +5,46 @@
 // lg: '1440px'
 // xl: '1640px
 
-// parentDiv > childDiv > grandChildDiv 
+// parentDiv > childDiv > grandChildDiv
 // grand child have 2 component
 // 1 - super grand child 1
 // 2 - super grand child 2
 
-
-
 import React from "react";
+
+// assets
 import { startDoubleQuote, endDoubleQuote, Principal } from "../assets/asset";
-import Typography from "@mui/material/Typography";
 
 const Mission = () => {
   const textStyle =
     "font-medium text-justify lg:leading-loose lg:text-lg md:leading-normal md:text-base sm:leading-tight sm:text-xs";
   return (
-    // parent div
     <div className="new-container mt-[150px]">
       {/* child div */}
       <div
-        className="bg-bit-red w-full rounded-lg relative 
+        className="bg-bit-red w-full rounded-lg relative border border-white
         lg:h-[735px] 
         md:h-[600px] 
-        sm:h-[550px]">
-          {/* grand child */}
+        sm:h-[550px]"
+      >
+        {/* grand child */}
         <div
-          className="h-4 w-4 bg-green-800 z-40 
+          className="md:h-4 md:w-4 z-40  border border-blue-500 
           lg:absolute lg:top-[40%] lg:left-[45%] lg:-translate-x-[40%] lg:-translate-y-[45%]
-          md:absolute md:top-[40%] md:left-[45%] md:-translate-x-[40%] md:-translate-y-[45%]
-          "
+          md:absolute md:top-[40%] md:left-[45%] md:-translate-x-[40%] md:-translate-y-[45%] md:block
+          sm:w-full sm:h-full sm:flex sm:justify-center sm:items-center sm:flex-col "
         >
           {/* super grand child 1 */}
           <div
-            className="bg-white shadow-[4px_4px_15px_0px_rgba(0,0,0,0.25)] rounded-xl z-10 
+            className="bg-white md:shadow-[8px_8px_10px_0px_rgba(0,0,0,0.25)] md:rounded-xl z-10 
             lg:absolute lg:-bottom-[80px] lg:-right-[20px] lg:h-[270px] lg:w-[440px]
-            md:absolute md:-bottom-[10px] md:-right-[30px] md:h-[215px] md:w-[350px] "
+            md:absolute md:-bottom-[20px] md:-right-[30px] md:h-[215px] md:w-[350px] 
+            sm:block sm:relative sm:rounded-tl-xl sm:rounded-tr-xl sm:w-[310px] sm:h-[200px]"
           >
             <img
               src={startDoubleQuote}
               alt="startDoubleQuote"
-              className="absolute top-[-40px] left-[-5px]"
+              className="absolute md:top-[-40px] md:left-[-5px] sm:-left-[30px] sm:-top-[40px]"
             />
             <img
               src={Principal}
@@ -55,27 +55,30 @@ const Mission = () => {
 
           {/* super grand child 2 */}
           <div
-            className="bg-white rounded-xl 
+            className="bg-white md:rounded-xl md:shadow-[8px_8px_10px_0px_rgba(0,0,0,0.25)]
             lg:absolute lg:-top-[80px] lg:-left-[20px] lg:h-[385px] lg:w-[605px]
-            md:absolute md:-top-[10px] md:-left-[30px] md:h-[286px] md:w-[450px]
-            "
+            md:absolute md:top-[0px] md:-left-[55px] md:h-[286px] md:w-[450px]
+            sm:block sm:relative sm:rounded-bl-xl sm:rounded-br-xl sm:w-[310px] sm:h-[200px]"
           >
             <img
               src={endDoubleQuote}
               alt="endDoubleQuote"
-              className="absolute bottom-[-40px] right-[-5px]"
+              className="absolute md:bottom-[-40px] md:right-[-5px]
+               sm:-bottom-[40px] sm:-right-[30px]"
             />
-            <div className="lg:px-20 md:px-10 flex items-center justify-center h-full">
+            <div className="lg:px-20 md:px-10 flex items-center justify-center h-full mx-5">
               <div>
                 <p className={textStyle}>
                   Bhilai Institute Of Technology, Durg, with a mission to
                   provide world class technical manpower to serve the industry,
                   profession and society and to contribute effectively to the
                   national economic development, has acquired the status of one
-                  of the premier technological institutions of India. Read
-                  more...
+                  of the premier technological institutions of India.
+                  <span className="md:block sm:inline"> Read more...</span>
                 </p>
-                <p className={textStyle}>- Dr. Arun Arora, Director</p>
+                <p className={`${textStyle} sm:mt-[8px] `}>
+                  - Dr. Arun Arora, Director
+                </p>
               </div>
             </div>
           </div>
@@ -86,3 +89,5 @@ const Mission = () => {
 };
 
 export default Mission;
+
+7314823444;
