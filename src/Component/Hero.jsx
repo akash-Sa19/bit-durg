@@ -1,6 +1,13 @@
+// compoent is divided into 2 parts 
+// 1 - hero img 
+// 2 - hero text 
+
 import React from "react";
-import { Navbar } from "./index";
+
+// importing asset
 import { hero } from "../assets/asset";
+
+// importing Material Ui asset 
 import Typography from "@mui/material/Typography";
 
 const Hero = () => {

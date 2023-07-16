@@ -10,7 +10,6 @@ const buttonDesign = {
   color: "#800000",
   width: { sm: "200px", md: "175px", lg: "200px" },
   height: 45,
-  // fontFamily: 'Alegreya Sans',
   fontWeight: 800,
   fontSize: 20,
   borderRadius: 0,
@@ -21,10 +20,7 @@ const buttonDesign = {
   textTransform: "none",
   borderBottom: "3px solid #E7D7C1",
 
-  // '&:active': {
-  //   border: '3px solid #E7D7C1',
-
-  // },
+ 
   "&:hover": {
     border: "3px solid #E7D7C1",
     boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
