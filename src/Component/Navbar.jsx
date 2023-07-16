@@ -14,7 +14,9 @@ import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
 
@@ -90,13 +92,16 @@ const Navbar = ({ width }) => {
     setNavbarDisplay(!navbarDisplay);
   };
 
-
   const [miniMenu, setMiniMenu] = useState("none");
 
   return (
     <div className="font-roboto relative bg-scroll">
       {/* Search Bar */}
-      {showSearchBar ? <Search handleSearchBarState= {handleSearchBar} /> : <></>}
+      {showSearchBar ? (
+        <Search handleSearchBarState={handleSearchBar} />
+      ) : (
+        <></>
+      )}
       {/* TopBar of Top Navbar */}
 
       {width >= 1440 ? (
@@ -121,7 +126,7 @@ const Navbar = ({ width }) => {
 
           {/* White Space for logo */}
           <div className="item">
-            <div className={`w-[340px] h-full bg-white inline-block`}></div>
+            <div className={`w-[340px] h-full bg-bit-red inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
@@ -166,14 +171,14 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="flex gap-4 bg-bit-red h-[30px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div className="item">
+          {/* <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
-          </div>
+          </div> */}
 
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow"></div>
@@ -227,20 +232,20 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-4 h-[60px] px-2">
+        <div className="flex flex-row-reverse h-[40px]">
           {/* Left Side Nav-Links */}
-          <div className="item basis-0 grow"></div>
+          {/* <div className="item basis-0 grow"></div> */}
 
           {/* White Space for logo */}
-          <div className="item">
+          {/* <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
-          </div>
+          </div> */}
 
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow">
             {/* change here */}
-            <div className="h-full flex items-center justify-end gap-2 mr-[5px]">
-              <IconButton aria-label="Search" onClick={() => (handleSearchBar())}>
+            <div className="h-full flex items-center justify-end gap-1">
+              <IconButton aria-label="Search" onClick={() => handleSearchBar()}>
                 <img src={search} alt="Search Icon" />
               </IconButton>
               <Button
@@ -248,23 +253,52 @@ const Navbar = ({ width }) => {
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
-                onClick={handleNavbarDisplay}
+                sx={{ minWidth: 0 }}
+                onClick={handleClick}
               >
                 {/* <MenuIcon fontSize="large" /> */}
                 <img
                   src={hamburgerMenu}
                   alt="Hamburger Menu"
-                  className="w-[22px] h-[22px]"
+                  className="w-[22px] h-[22px] min-w-0"
                 />
               </Button>
-            </div>
-
-            {/* Side Navbar */}
-            {/* for Tablet */}
-            {navbarDisplay ? (
-              <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed ">
-                <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
-                  <div className="w-[210px] flex justify-around items-center">
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+                PaperProps={
+                  width > 576
+                    ? {
+                        style: {
+                          width: 418, // Set the desired width for the Menu
+                          right: 0,
+                          borderRadius: 0,
+                        },
+                      }
+                    : {
+                        style: {
+                          width: width, // Set the desired width for the Menu
+                          right: 0,
+                          borderRadius: 0,
+                        },
+                      }
+                }
+                MenuListProps={{
+                  style: {
+                    padding: 0, // Remove padding from the MenuList
+                  },
+                }}
+                sx={
+                  width > 576
+                    ? { left: 15, right: 0, top: -67, width: 418 }
+                    : { left: 16, right: 0, top: -67, width: width + 32 }
+                }
+                TransitionComponent={Slide}
+                TransitionProps={{ direction: "left" }} // Change to 'right' for leave animation
+              >
+                <div className="flex justify-between items-center h-[94px] pl-4 pr-3">
+                  <div className="w-[210px] flex gap-2 items-center">
                     <img
                       src={bitLogo2}
                       alt="BIT Logo"
@@ -276,20 +310,20 @@ const Navbar = ({ width }) => {
                   </div>
                   {/* change here */}
                   <div className="flex justify-end items-center w-[92px] gap-[21px] ">
-                    <IconButton aria-label="Search" onClick={() => {
-                      handleSearchBar();
-                      handleNavbarDisplay();
-                    }}>
+                    <IconButton
+                      aria-label="Search"
+                      onClick={() => {
+                        // handleSearchBar();
+                        // handleNavbarDisplay();
+                      }}
+                    >
                       <img
                         src={search}
                         alt="Search Icon"
                         className="w-[30px] h-[30px]"
                       />
                     </IconButton>
-                    <IconButton
-                      aria-label="Close"
-                      onClick={() => setNavbarDisplay(!navbarDisplay)}
-                    >
+                    <IconButton aria-label="Close" onClick={handleClose}>
                       <img
                         src={closeIcon}
                         alt="Close Icon"
@@ -308,7 +342,68 @@ const Navbar = ({ width }) => {
                   }}
                 >
                   {NavbarItems.map((currentValue, index1) => (
-                    <div key={currentValue.key}>
+                    <div key={currentValue.key} className="bg-[#f9f5ef]">
+                      <GrandParent item={currentValue} />
+                    </div>
+                  ))}
+                </List>
+              </Menu>
+            </div>
+
+            {/* Side Navbar */}
+            {/* for Tablet */}
+            {navbarDisplay ? (
+              <div className="bg-white z-50 fixed w-[418px] sml:w-[418px] sm:w-[100vw] top-0 right-0 h-[100vh] bg-fixed ">
+                <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
+                  <div className="w-[210px] flex justify-around items-center">
+                    <img
+                      src={bitLogo2}
+                      alt="BIT Logo"
+                      className="w-[60px] h-[61.68px] "
+                    />
+                    <p className="text-[24px] font-semibold text-[#800000]">
+                      BIT-DURG
+                    </p>
+                  </div>
+                  {/* change here */}
+                  <div className="flex justify-end items-center w-[92px] gap-[21px] ">
+                    <IconButton
+                      aria-label="Search"
+                      onClick={() => {
+                        handleSearchBar();
+                        handleNavbarDisplay();
+                      }}
+                    >
+                      <img
+                        src={search}
+                        alt="Search Icon"
+                        className="w-[30px] h-[30px]"
+                      />
+                    </IconButton>
+                    <IconButton
+                      aria-label="Close"
+                      onClick={() => setNavbarDisplay(!navbarDisplay)}
+                    >
+                      <img
+                        src={closeIcon}
+                        alt="Close Icon"
+                        className="w-[22px] h-[22px]"
+                      />
+                    </IconButton>
+                  </div>
+                </div>
+
+                <List
+                  component={`nav`}
+                  sx={{
+                    zIndex: "50",
+                    bgcolor: "white",
+                    position: "relative",
+                    bottom: "15px",
+                  }}
+                >
+                  {NavbarItems.map((currentValue, index1) => (
+                    <div key={currentValue.key} className="bg-[#f9f5ef]">
                       <GrandParent item={currentValue} />
                     </div>
                   ))}

@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import ArrowDropUpRoundedIcon from "@mui/icons-material/ArrowDropUpRounded";
-import {roundedDownArrow} from "../../assets/asset"
+import { roundedDownArrow } from "../../assets/asset";
 
 const listItemTextStyle = {
   "& .MuiTypography-body1 ": {
@@ -21,20 +21,21 @@ const headListStyleText = {
     fontFamily: "Alegreya Sans",
     color: color.bitRed,
     letterSpacing: "1px",
-    marginLeft: '10px',
+    // marginLeft: "10px",
   },
 };
 const RoundedDownArrow = () => {
-  return (
-    <img src={roundedDownArrow} alt="Rounded Down Arrow" />
-  )
-}
+  return <img src={roundedDownArrow} alt="Rounded Down Arrow" />;
+};
 const RoundedUpArrow = () => {
   return (
-    <img src={roundedDownArrow} alt="Rounded Down Arrow" className="rotate-180" />
-  )
-}
-
+    <img
+      src={roundedDownArrow}
+      alt="Rounded Down Arrow"
+      className="rotate-180"
+    />
+  );
+};
 
 /* 
   Child List
@@ -44,8 +45,11 @@ const RoundedUpArrow = () => {
 const ChildList = ({ name, link }) => {
   return (
     <>
-      <Divider component="li" />
-      <ListItemButton sx={{pl: "60px"}} href={link} target="_blank">
+      <Divider
+        component="li"
+        style={{ backgroundColor: "#E7D7C1", width: "5px" }}
+      />
+      <ListItemButton sx={{ pl: "40px" }} href={link} target="_blank">
         <ListItemText sx={listItemTextStyle}>{name}</ListItemText>
       </ListItemButton>
     </>
@@ -79,7 +83,7 @@ const ParentList = (props) => {
   return (
     <>
       <Divider component="li" />
-      <ListItemButton sx={{pl: '40px'}} onClick={() => setOpen2(!open2)}>
+      <ListItemButton sx={{ pl: "30px" }} onClick={() => setOpen2(!open2)}>
         <ListItemText sx={listItemTextStyle}>{props.subHeading}</ListItemText>
         {open2 ? <ArrowDropUpRoundedIcon /> : <ArrowDropDownRoundedIcon />}
       </ListItemButton>
@@ -164,7 +168,7 @@ const GrandParent = ({ item }) => {
   return (
     <>
       <Divider component="li" />
-      <ListItemButton  onClick={() => setOpen(!open)}>
+      <ListItemButton onClick={() => setOpen(!open)}>
         <ListItemText primary={item.title} sx={headListStyleText} />
         {open ? <RoundedUpArrow /> : <RoundedDownArrow />}
       </ListItemButton>

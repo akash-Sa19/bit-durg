@@ -76,11 +76,10 @@ const App = () => {
 
   return (
     <div className="bg-scroll">
-
-    <ThemeProvider theme={theme} >
-      <Navbar width={width} />
-      <Hero />
-      <CollegeWidget />
+      <ThemeProvider theme={theme}>
+        <Navbar width={width} />
+        <Hero />
+        {/* <CollegeWidget />
       <WhoWeAre />
       <NewsEvent />
       <Mission />
@@ -89,10 +88,9 @@ const App = () => {
       <NewToBit />
       <StudentSection />
       <Gallery />
-      <Footer />
-    </ThemeProvider>
+      <Footer /> */}
+      </ThemeProvider>
     </div>
-
   );
 };
 
