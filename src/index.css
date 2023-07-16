@@ -4,23 +4,24 @@
 
 
 
-:root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  /* line-height: 1.5; */
+#root {
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgb(0, 0, 0);
   background-color: #ffffff;
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
-  font-weight: 400q;
+  font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  overflow: scroll;
 }
+#root::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+  }
 
 .custom-cont{
   padding-left: 5%;

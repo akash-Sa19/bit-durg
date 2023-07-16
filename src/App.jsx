@@ -75,7 +75,7 @@ const App = () => {
   }, [width, height]);
 
   return (
-    <div className="bg-scroll">
+    <div className="bg-scroll ">
 
     <ThemeProvider theme={theme} >
       <Navbar width={width} />
@@ -84,7 +84,8 @@ const App = () => {
       <WhoWeAre />
       <NewsEvent />
       <Mission />
-      <Achievements />
+      {/* this component is creating prb causing tilting of the component */}
+      {/* <Achievements /> */}
       <StraightFromSource width={width} height={height} />
       <NewToBit />
       <StudentSection />

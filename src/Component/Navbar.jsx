@@ -1,5 +1,26 @@
+// screen breakpoints
+// sm: '360px'
+// md: '834px'
+// mdl: '1275px'
+// lg: '1440px'
+// xl: '1640px
+
+// compoent is divided into 4 parts 
+// 1 - Search Bar
+// 2 - TopBar of navbar 
+// 3 - BottomBar of navbar
+// 4 - Main website log (BIT logo)
+
+// structure
+// bottomBar (of navBar) > sideNavbar (for Tablet and Phone)
+
 import React from "react";
+import { useState } from "react";
+
+// importing consant
 import { color, NavbarItems } from "../Constants";
+
+// importing asset
 import {
   Grouplogo1,
   bitLogo3,
@@ -8,97 +29,69 @@ import {
   search,
   hamburgerMenu,
 } from "../assets/asset";
+
+// importing component
 import { Search } from "./index";
-import { useState } from "react";
+
+
+// Material Ui Import 
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
+import { Phone } from "@mui/icons-material";
 
-const stackDesign = {
-  marginTop: { md: "40px", lg: "48px" },
-  display: "flex",
-  justifyContent: "space-between",
-  height: { md: "160px", lg: "226px" },
-};
-const innerStackDesign = {
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "8px",
-};
-const headListStyleText = {
-  "& .MuiTypography-root": {
-    fontWeight: 800,
-    fontFamily: "Alegreya Sans",
-    color: color.bitRed,
-    letterSpacing: "1px",
+
+
+const buttonStyle = {
+  color: "white",
+  "&:hover": {
+    color: "#ddd",
+    backgroundColor: "rgba(245, 245, 245, 0.1)",
   },
 };
-const listItemTextStyle = {
-  "& .MuiTypography-body1 ": {
-    fontSize: "12px",
-    color: color.bitRed,
-    fontWeight: 500,
+const bottomNavLinkStyle = {
+  color: "black",
+  "&:hover": {
+    color: "rgb(0, 0, 255)",
+    textDecoration: "underline",
+    backgroundColor: "white",
   },
 };
-// Akash - Edited - Up
 
+// const menuItemCSS = {
+//   // textTransform: "capitalize",
+//   color: "red",
+// };
+
+// The component
 const Navbar = ({ width }) => {
-  const buttonStyle = {
-    color: "white",
-    "&:hover": {
-      color: "#ddd",
-      backgroundColor: "rgba(245, 245, 245, 0.1)",
-    },
-  };
-  const bottomNavLinkStyle = {
-    color: "black",
-    "&:hover": {
-      color: "rgb(0, 0, 255)",
-      textDecoration: "underline",
-      backgroundColor: "white",
-    },
-  };
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const menuItemCSS = {
-    // textTransform: "capitalize",
-    color: "red",
-  };
-
-  const [navbarDisplay, setNavbarDisplay] = useState(false);
 
   const [showSearchBar, setSearchBar] = useState(false);
-  // This Function is used to transfer the state if the "showNavBar" to the child component Search so that i can manipulate the state of the function
+  // This Function is used to transfer the state to the "showNavBar" to the child component Search 
+  // so that i can manipulate the state of the function
   const handleSearchBar = (showSearchBar) => {
     setSearchBar(!showSearchBar);
   };
-
+  
+  const [navbarDisplay, setNavbarDisplay] = useState(false);
+  // This function on/off navbar for tables and mobile 
   const handleNavbarDisplay = () => {
     setNavbarDisplay(!navbarDisplay);
   };
 
 
-  const [miniMenu, setMiniMenu] = useState("none");
-
   return (
     <div className="font-roboto relative bg-scroll">
       {/* Search Bar */}
+      {/* This component overlay above the all content of the website, (High z-index)  */}
       {showSearchBar ? <Search handleSearchBarState= {handleSearchBar} /> : <></>}
-      {/* TopBar of Top Navbar */}
 
+
+      {/* TopBar of Navbar - Down */}
+      {/* Responsive for all three breakpoints */}
       {width >= 1440 ? (
         <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
@@ -166,12 +159,13 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
+        // For Tablet and Mobile Devices
         <div className="flex gap-4 bg-bit-red h-10 px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div className="item">
+          <div className="item md:block sm:hidden">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
           </div>
 
@@ -179,9 +173,12 @@ const Navbar = ({ width }) => {
           <div className="item basis-0 grow"></div>
         </div>
       )}
+      {/* TopBar of Navbar - up */}
 
-      {/* BottomBar of Top Navbar */}
+      {/*  BottomBar of Navbar - down  */}
+      {/* Conditional statement for navbar display acc. to screen size */}
       {width >= 1440 ? (
+        // navbar > bottomBar for Desktop 
         <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow">
@@ -227,13 +224,14 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
+        // navbar > bottomBar Tablet and Mobile Devices, (contains HamburgerMenu and SearchBar) 
         <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div className="item">
-            <div className={`w-[340px] h-full bg-white inline-block`}></div>
+          <div className="item md:block sm:hidden">
+            <div className={`w-[340px] h-full bg-white inline-block `}></div>
           </div>
 
           {/* Right Side Nav-Links */}
@@ -259,8 +257,7 @@ const Navbar = ({ width }) => {
               </Button>
             </div>
 
-            {/* Side Navbar */}
-            {/* for Tablet */}
+            {/* BottomBar > sideNavBar for tablet and phone */}
             {navbarDisplay ? (
               <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed ">
                 <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
@@ -274,7 +271,6 @@ const Navbar = ({ width }) => {
                       BIT-DURG
                     </p>
                   </div>
-                  {/* change here */}
                   <div className="flex justify-end items-center w-[92px] gap-[21px] ">
                     <IconButton aria-label="Search" onClick={() => {
                       handleSearchBar();
@@ -318,14 +314,15 @@ const Navbar = ({ width }) => {
               <></>
             )}
 
-            {/* Akash - Edited - up */}
           </div>
         </div>
       )}
+      {/* BottomBar of Navbar - up */}
+
 
       {/* BIT Logo */}
-      {/* The main Middle Logo */}
-      <div className="block absolute top-0 left-1/2 -translate-x-1/2 z-20">
+      {/* The main middle logo */}
+      <div className="absolute sm:hidden md:block top-0 left-1/2 -translate-x-1/2 z-20 ">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>
