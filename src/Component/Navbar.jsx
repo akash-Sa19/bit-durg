@@ -5,9 +5,9 @@
 // lg: '1440px'
 // xl: '1640px
 
-// compoent is divided into 4 parts 
+// compoent is divided into 4 parts
 // 1 - Search Bar
-// 2 - TopBar of navbar 
+// 2 - TopBar of navbar
 // 3 - BottomBar of navbar
 // 4 - Main website log (BIT logo)
 
@@ -33,11 +33,13 @@ import {
 // imported components
 import { Search } from "./index";
 
-
-// Material Ui
+// Material Ui Import
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
 
@@ -66,27 +68,53 @@ const bottomNavLinkStyle = {
 
 // The component
 const Navbar = ({ width }) => {
-
   const [showSearchBar, setSearchBar] = useState(false);
-  // This Function is used to transfer the state to the "showNavBar" to the child component Search 
+  // This Function is used to transfer the state to the "showNavBar" to the child component Search
   // so that i can manipulate the state of the function
   const handleSearchBar = (showSearchBar) => {
     setSearchBar(!showSearchBar);
   };
-  
+
   const [navbarDisplay, setNavbarDisplay] = useState(false);
-  // This function on/off navbar for tables and mobile 
+  // This function on/off navbar for tables and mobile
   const handleNavbarDisplay = () => {
     setNavbarDisplay(!navbarDisplay);
   };
 
+  const buttonStyle = {
+    color: "white",
+    "&:hover": {
+      color: "#ddd",
+      backgroundColor: "rgba(245, 245, 245, 0.1)",
+    },
+  };
+  const bottomNavLinkStyle = {
+    color: "black",
+    "&:hover": {
+      color: "rgb(0, 0, 255)",
+      textDecoration: "underline",
+      backgroundColor: "white",
+    },
+  };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="font-roboto relative bg-scroll">
       {/* Search Bar */}
       {/* This component overlay above the all content of the website, (High z-index)  */}
-      {showSearchBar ? <Search handleSearchBarState= {handleSearchBar} /> : <></>}
-
+      {showSearchBar ? (
+        <Search handleSearchBarState={handleSearchBar} />
+      ) : (
+        <></>
+      )}
 
       {/* TopBar of Navbar - Down */}
       {/* Responsive for all three breakpoints */}
@@ -112,7 +140,7 @@ const Navbar = ({ width }) => {
 
           {/* White Space for logo */}
           <div className="item">
-            <div className={`w-[340px] h-full bg-white inline-block`}></div>
+            <div className={`w-[340px] h-full bg-bit-red inline-block`}></div>
           </div>
 
           {/* Right Side Nav-Links */}
@@ -157,15 +185,14 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
-        // For Tablet and Mobile Devices
-        <div className="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="flex gap-4 bg-bit-red h-[30px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow"></div>
 
           {/* White Space for logo */}
-          <div className="item md:block sm:hidden">
+          {/* <div className="item">
             <div className={`w-[340px] h-full bg-white inline-block`}></div>
-          </div>
+          </div> */}
 
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow"></div>
@@ -176,7 +203,7 @@ const Navbar = ({ width }) => {
       {/*  BottomBar of Navbar - down  */}
       {/* Conditional statement for navbar display acc. to screen size */}
       {width >= 1440 ? (
-        // navbar > bottomBar for Desktop 
+        // navbar > bottomBar for Desktop
         <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow">
@@ -222,21 +249,20 @@ const Navbar = ({ width }) => {
           </div>
         </div>
       ) : (
-        // navbar > bottomBar Tablet and Mobile Devices, (contains HamburgerMenu and SearchBar) 
-        <div className="flex gap-4 h-[60px] px-2">
+        <div className="flex flex-row-reverse h-[40px]">
           {/* Left Side Nav-Links */}
-          <div className="item basis-0 grow"></div>
+          {/* <div className="item basis-0 grow"></div> */}
 
           {/* White Space for logo */}
-          <div className="item md:block sm:hidden">
-            <div className={`w-[340px] h-full bg-white inline-block `}></div>
-          </div>
+          {/* <div className="item">
+            <div className={`w-[340px] h-full bg-white inline-block`}></div>
+          </div> */}
 
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow">
             {/* change here */}
-            <div className="h-full flex items-center justify-end gap-2 mr-[5px]">
-              <IconButton aria-label="Search" onClick={() => (handleSearchBar())}>
+            <div className="h-full flex items-center justify-end gap-1">
+              <IconButton aria-label="Search" onClick={() => handleSearchBar()}>
                 <img src={search} alt="Search Icon" />
               </IconButton>
               <Button
@@ -244,22 +270,68 @@ const Navbar = ({ width }) => {
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
-                onClick={handleNavbarDisplay}
+                sx={{ minWidth: 0 }}
+                onClick={handleClick}
               >
                 {/* <MenuIcon fontSize="large" /> */}
                 <img
                   src={hamburgerMenu}
                   alt="Hamburger Menu"
-                  className="w-[22px] h-[22px]"
+                  className="w-[22px] h-[22px] min-w-0"
                 />
               </Button>
-            </div>
-
-            {/* BottomBar > sideNavBar for tablet and phone */}
-            {navbarDisplay ? (
-              <div className="bg-white z-50 fixed w-[418px] top-0 right-0 h-[100vh] bg-fixed ">
-                <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
-                  <div className="w-[210px] flex justify-around items-center">
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+                PaperProps={
+                  width > 576
+                    ? {
+                        style: {
+                          width: 418, // Set the desired width for the Menu
+                          height: "100vh",
+                          right: 0,
+                          top: 16,
+                          borderRadius: 0,
+                        },
+                      }
+                    : {
+                        style: {
+                          width: width, // Set the desired width for the Menu
+                          height: "100vh",
+                          right: 0,
+                          top: 16,
+                          borderRadius: 0,
+                        },
+                      }
+                }
+                MenuListProps={{
+                  style: {
+                    padding: 0, // Remove padding from the MenuList
+                  },
+                }}
+                sx={
+                  width > 576
+                    ? {
+                        left: 15,
+                        right: 0,
+                        top: 16,
+                        width: 418,
+                        height: "115vh",
+                      }
+                    : {
+                        left: 16,
+                        right: 0,
+                        top: 16,
+                        width: width + 32,
+                        height: "115vh",
+                      }
+                }
+                TransitionComponent={Slide}
+                TransitionProps={{ direction: "left" }} // Change to 'right' for leave animation
+              >
+                <div className="flex justify-between items-center h-[94px] pl-4 pr-3">
+                  <div className="w-[210px] flex gap-2 items-center">
                     <img
                       src={bitLogo2}
                       alt="BIT Logo"
@@ -269,21 +341,21 @@ const Navbar = ({ width }) => {
                       BIT-DURG
                     </p>
                   </div>
+                  {/* change here */}
                   <div className="flex justify-end items-center w-[92px] gap-[21px] ">
-                    <IconButton aria-label="Search" onClick={() => {
-                      handleSearchBar();
-                      handleNavbarDisplay();
-                    }}>
+                    <IconButton
+                      aria-label="Search"
+                      onClick={() => {
+                        handleSearchBar();
+                      }}
+                    >
                       <img
                         src={search}
                         alt="Search Icon"
                         className="w-[30px] h-[30px]"
                       />
                     </IconButton>
-                    <IconButton
-                      aria-label="Close"
-                      onClick={() => setNavbarDisplay(!navbarDisplay)}
-                    >
+                    <IconButton aria-label="Close" onClick={handleClose}>
                       <img
                         src={closeIcon}
                         alt="Close Icon"
@@ -302,7 +374,67 @@ const Navbar = ({ width }) => {
                   }}
                 >
                   {NavbarItems.map((currentValue, index1) => (
-                    <div key={currentValue.key}>
+                    <div key={currentValue.key} className="bg-[#f9f5ef]">
+                      <GrandParent item={currentValue} />
+                    </div>
+                  ))}
+                </List>
+              </Menu>
+            </div>
+
+            {/* BottomBar > sideNavBar for tablet and phone */}
+            {/* Not is use anymore, it has been replaced with Menu Component */}
+            {navbarDisplay ? (
+              <div className="bg-white z-50 fixed w-[418px] sml:w-[418px] sm:w-[100vw] top-0 right-0 h-[100vh] bg-fixed ">
+                <div className="flex flex-start items-center h-[138px] justify-between ml-[16px] mr-[26px]">
+                  <div className="w-[210px] flex justify-around items-center">
+                    <img
+                      src={bitLogo2}
+                      alt="BIT Logo"
+                      className="w-[60px] h-[61.68px] "
+                    />
+                    <p className="text-[24px] font-semibold text-[#800000]">
+                      BIT-DURG
+                    </p>
+                  </div>
+                  <div className="flex justify-end items-center w-[92px] gap-[21px] ">
+                    <IconButton
+                      aria-label="Search"
+                      onClick={() => {
+                        handleSearchBar();
+                        handleNavbarDisplay();
+                      }}
+                    >
+                      <img
+                        src={search}
+                        alt="Search Icon"
+                        className="w-[30px] h-[30px]"
+                      />
+                    </IconButton>
+                    <IconButton
+                      aria-label="Close"
+                      onClick={() => setNavbarDisplay(!navbarDisplay)}
+                    >
+                      <img
+                        src={closeIcon}
+                        alt="Close Icon"
+                        className="w-[22px] h-[22px]"
+                      />
+                    </IconButton>
+                  </div>
+                </div>
+
+                <List
+                  component={`nav`}
+                  sx={{
+                    zIndex: "50",
+                    bgcolor: "white",
+                    position: "relative",
+                    bottom: "15px",
+                  }}
+                >
+                  {NavbarItems.map((currentValue, index1) => (
+                    <div key={currentValue.key} className="bg-[#f9f5ef]">
                       <GrandParent item={currentValue} />
                     </div>
                   ))}
@@ -311,16 +443,14 @@ const Navbar = ({ width }) => {
             ) : (
               <></>
             )}
-
           </div>
         </div>
       )}
       {/* BottomBar of Navbar - up */}
 
-
       {/* BIT Logo */}
       {/* The main middle logo */}
-      <div className="absolute sm:hidden md:block top-0 left-1/2 -translate-x-1/2 z-20 ">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 ">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>

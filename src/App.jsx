@@ -76,24 +76,22 @@ const App = () => {
 
   return (
     <div className="bg-scroll ">
-
-    <ThemeProvider theme={theme} >
-      <Navbar width={width} />
-      <Hero />
-      <CollegeWidget />
-      <WhoWeAre />
-      <NewsEvent />
-      <Mission />
-      {/* this component is creating prb causing tilting of the component */}
-      <Achievements />
-      <StraightFromSource width={width} height={height} />
-      <NewToBit />
-      <StudentSection />
-      <Gallery />
-      <Footer />
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Navbar width={width} />
+        <Hero />
+        <CollegeWidget />
+        <WhoWeAre />
+        <NewsEvent />
+        <Mission />
+        {/* this component is creating prb causing tilting of the component */}
+        {/* <Achievements /> */}
+        <StraightFromSource width={width} height={height} />
+        <NewToBit />
+        <StudentSection />
+        <Gallery />
+        <Footer />
+      </ThemeProvider>
     </div>
-
   );
 };
 
