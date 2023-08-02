@@ -770,6 +770,7 @@ const color = {
   bitLightBlue: "#7EB2DD",
   bitBlue: "#062242",
   bitRed: "#800000",
+  bitWhite: "#ffffff"
 };
 
 const styles = {

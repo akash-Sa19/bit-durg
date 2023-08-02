@@ -19,26 +19,26 @@ const WhoWeAre = () => {
     <div
       className="new-container flex md:justify-evenly sm:items-center bg-bit-red shadow-2xl shadow-black 
     lg:h-[605px] lg:min-w-[1320px] lg:w-[90vw] lg:max-w-[1520px]
-     md:min-w-[765px] md:w-[90vw] md:max-w-[950px] md:h-[350px] md:flex-row md:rounded-lg
+     md:min-w-[765px] md:w-[90vw] md:max-w-[900px] md:h-[350px] md:flex-row md:rounded-lg
       sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[680px] sm:flex-col sm:justify-start sm:rounded-none"
     >
       {/* image div */}
       {/* <div className="flex justify-center items-center w-auto "> */}
-        <img
-          src={whoWeAre}
-          alt="Who We Are Image"
-          className="lg:w-[493px] lg:max-w-[493px] lg:h-[496px] 
-          md:min-w-[274px] md:w-[30vw] md:max-w-[350px] md:h-[288px] 
+      <img
+        src={whoWeAre}
+        alt="Who We Are Image"
+        className="lg:w-[493px] lg:max-w-[493px] lg:h-[496px] 
+          md:min-w-[274px] md:w-[30vw] md:max-w-[320px] md:h-[288px] 
            sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[260px]  "
-        />
+      />
       {/* </div> */}
 
       {/* description div */}
       <div
-        className=" flex flex-col justify-start items-center sm:mt-[40px]
-        lg:w-[493px] lg:h-[496px] lg:max-w-[496px]
-         md:min-w-[274px] md:w-[30vw] md:max-w-[350px] md:h-[288px]
-          sm:min-w-[300px] sm:w-[80%] sm:h-auto "
+        className=" flex flex-col justify-start items-center 
+        lg:w-[493px] lg:h-[496px] lg:max-w-[496px] lg:mt-[40px]
+         md:min-w-[274px] md:w-[30vw] md:max-w-[320px] md:h-[288px] md:mt-[20px]
+          sm:min-w-[300px] sm:w-[80%] sm:h-auto sm:mt-[40px]"
       >
         <div className=" flex flex-col justify-start items-center">
           {/* description title */}
@@ -48,9 +48,9 @@ const WhoWeAre = () => {
           {/* desription  */}
           <p
             className="text-white text-justify
-             lg:leading-loose lg:text-xl
-             md:leading-normal md:text-sm
-             sm:leading-[28px] sm:text-[16px] font-alegreya-sans"
+             lg:leading-[40px] lg:text-2xl
+             md:leading-[20px] 
+             sm:leading-[28px] md:text-base font-alegreya-sans"
           >
             We are one of the Premier Technical and Management Educational
             Institutions in the Country, delivering excellent professional

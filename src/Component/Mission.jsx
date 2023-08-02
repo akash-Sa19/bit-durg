@@ -17,9 +17,11 @@ import { startDoubleQuote, endDoubleQuote, Principal } from "../assets/asset";
 
 const Mission = () => {
   const textStyle =
-    "font-medium text-justify lg:leading-loose lg:text-lg md:leading-normal md:text-base sm:leading-tight sm:text-xs";
+    "lg:font-medium text-justify lg:leading-[32px] lg:text-lg md:leading-normal md:font-normal md:text-base sm:font-light sm:leading-tight sm:text-xs";
   return (
-    <div className="new-container mt-[150px]">
+    <div className="new-container mt-[150px]
+    md:w-[90vw] md:max-w-[90vw]  
+    sm:min-w-[360px]  sm:w-[90vw] ">
       {/* child div */}
       <div
         className="bg-bit-red w-full rounded-lg relative border border-white
@@ -29,7 +31,7 @@ const Mission = () => {
       >
         {/* grand child */}
         <div
-          className="md:h-4 md:w-4 z-40  border border-blue-500 
+          className="md:h-4 md:w-4 z-40 
           lg:absolute lg:top-[40%] lg:left-[45%] lg:-translate-x-[40%] lg:-translate-y-[45%]
           md:absolute md:top-[40%] md:left-[45%] md:-translate-x-[40%] md:-translate-y-[45%] md:block
           sm:w-full sm:h-full sm:flex sm:justify-center sm:items-center sm:flex-col "
@@ -74,7 +76,7 @@ const Mission = () => {
                   profession and society and to contribute effectively to the
                   national economic development, has acquired the status of one
                   of the premier technological institutions of India.
-                  <span className="md:block sm:inline"> Read more...</span>
+                  <span className="sm:inline"> Read more...</span>
                 </p>
                 <p className={`${textStyle} sm:mt-[8px] `}>
                   - Dr. Arun Arora, Director

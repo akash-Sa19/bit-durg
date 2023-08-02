@@ -149,10 +149,10 @@ const NewsEvent = () => {
 
             {/* 2.b.b */}
             {/* Bottom Circle */}
-            <div className="flex gap-2 mt-[46px]">
-              <BottomCircle circleColor={color.bitRed} />
-              <BottomCircle circleColor={color.bitRed} />
-              {/* <BottomCircle circleColor={color.bitRed} /> */}
+            <div className="flex justify-center gap-4 mt-[46px] ">
+              <BottomCircle circleColor={color.bitRed} borderColor= {color.bitRed} />
+              <BottomCircle circleColor={color.bitWhite} borderColor= {color.bitRed} />
+              <BottomCircle circleColor={color.bitWhite} borderColor= {color.bitRed} />
             </div>
           </div>
         </div>
