@@ -6,20 +6,12 @@ export default {
       sm: "360px",
       sml: "576px",
       md: "834px",
+      m: '1000px',
       mdl: "1275px",
       lg: "1440px",
       xl: "1640px",
     },
-    // screens : {
-    //   'sm': '576px',
-    //   // => @media (min-width: 576px) { ... }
-
-    //   'md': '960px',
-    //   // => @media (min-width: 960px) { ... }
-
-    //   'lg': '1440px',
-    //   // => @media (min-width: 1440px) { ... }
-    // },
+    
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
       "serif-pro": ["Source Serif Pro", "serif"],
