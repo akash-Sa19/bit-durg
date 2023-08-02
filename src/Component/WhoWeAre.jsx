@@ -17,40 +17,40 @@ import { whoWeAre } from "../assets/asset";
 const WhoWeAre = () => {
   return (
     <div
-      className="new-container flex justify-evenly items-center bg-bit-red md:rounded-lg sm:rounded-none shadow-2xl shadow-black 
-    lg:h-[605px] lg:w-[1350px]
-     md:min-w-[765px] md:min-h-[350px] md:w-[90vw] md:h-[40vw] mdl:h-[460px] md:flex-row
-      sm:min-w-[360px] sm:h-[500px] sm:w-[360px] sm:flex-col sm:justify-evenly"
+      className="new-container flex md:justify-evenly sm:items-center bg-bit-red shadow-2xl shadow-black 
+    lg:h-[605px] lg:min-w-[1320px] lg:w-[90vw] lg:max-w-[1520px]
+     md:min-w-[765px] md:w-[90vw] md:max-w-[950px] md:h-[350px] md:flex-row md:rounded-lg
+      sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[680px] sm:flex-col sm:justify-start sm:rounded-none"
     >
       {/* image div */}
       {/* <div className="flex justify-center items-center w-auto "> */}
         <img
           src={whoWeAre}
           alt="Who We Are Image"
-          className="lg:w-[493px] lg:h-[496px] 
-           md:w-[30vw] md:h-[34vw] md:min-w-[274px] md:min-h-[288px] m:h-[250px] mdl:h-[300px]
-           sm:min-w-[300px] sm:h-[180px] sm:w-[82%] "
+          className="lg:w-[493px] lg:max-w-[493px] lg:h-[496px] 
+          md:min-w-[274px] md:w-[30vw] md:max-w-[350px] md:h-[288px] 
+           sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[260px]  "
         />
       {/* </div> */}
 
       {/* description div */}
       <div
-        className=" flex justify-center items-center 
-        lg:w-[493px] lg:h-[496px] 
-          md:h-[34vw] md:min-w-[274px] md:w-[30vw] md:min-h-[288px] m:h-[250px] mdl:h-[300px]
-          sm:min-w-[300px] sm:w-[90%] sm:h-[228px] "
+        className=" flex flex-col justify-start items-center sm:mt-[40px]
+        lg:w-[493px] lg:h-[496px] lg:max-w-[496px]
+         md:min-w-[274px] md:w-[30vw] md:max-w-[350px] md:h-[288px]
+          sm:min-w-[300px] sm:w-[80%] sm:h-auto "
       >
         <div className=" flex flex-col justify-start items-center">
           {/* description title */}
-          <p className="text-white font-serif-pro text-center mb-3 lg:text-4xl mdl:text-3xl md:text-2xl sm:text-2xl ">
+          <p className="text-white font-serif-pro text-center mb-3 lg:text-4xl md:text-2xl sm:text-2xl ">
             Who We Are
           </p>
           {/* desription  */}
           <p
             className="text-white text-justify
              lg:leading-loose lg:text-xl
-             md:leading-normal md:text-sm mdl:text-lg
-             sm:leading-[20px] sm:text-[14px] font-alegreya-sans"
+             md:leading-normal md:text-sm
+             sm:leading-[28px] sm:text-[16px] font-alegreya-sans"
           >
             We are one of the Premier Technical and Management Educational
             Institutions in the Country, delivering excellent professional
