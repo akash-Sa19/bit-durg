@@ -26,7 +26,7 @@ import ArrowDropUpRoundedIcon from "@mui/icons-material/ArrowDropUpRounded";
 const LinkDesign = {
   fontWeight: 500,
   color: color.bitRed,
-  fontSize: { md: "12px", lg: "16px" },
+  fontSize: { md: "12px", lg: "18px" },
   textDecoration: "none",
 };
 // console.log(12 / 8.34);
@@ -181,7 +181,7 @@ const Footer = () => {
                 <MailIcon />
               </IconButton>
               <Link sx={LinkDesign}>
-                <span className="underlineAnimation">bit@bitdurg.ac.in</span>
+                <a href="mailto:bit@bitdurg.ac.in" target="_blank" className="underlineAnimation">bit@bitdurg.ac.in</a>
               </Link>
             </Stack>
           </Stack>
@@ -197,22 +197,58 @@ const Footer = () => {
           </h3>
           <Stack sx={stackDesign}>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Online Fee Payment</span>
+              <a
+                href="https://www.bitdurg.ac.in/online-payment"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Online Fee Payment
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Sitemap</span>
+              <a
+                href="https://bitdurg.ac.in/sitemap"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Sitemap
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">UCO Bank</span>
+              <a
+                href="https://bitdurg.ac.in/bank"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                UCO Bank
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Gymnasium</span>
+              <a
+                href="https://bitdurg.ac.in/gym"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Gymnasium
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">E-Book</span>
+              <a
+                href="http://172.16.0.8/bitdurg_offline/elib.php"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                E-Book
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Facilities</span>
+              <a
+                href="https://bitdurg.ac.in/amenities"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Facilities
+              </a>
             </Link>
           </Stack>
         </div>
@@ -227,26 +263,60 @@ const Footer = () => {
           </h3>
           <Stack sx={stackDesign}>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Backlog Exam Form</span>
+              <a
+                href="http://bitdurg.ac.in/downloads/Forms/Backlog_Exam_Form_2021-22.pdf"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Backlog Exam Form
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">
+              <a
+                href="http://bitdurg.ac.in/downloads/Forms/Transfer_Provisional_Certificate_Form.pdf"
+                target="_blank"
+                className="underlineAnimation"
+              >
                 Transfer & Provisional
                 <br />
                 Certificate Form
-              </span>
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Revaluation Form</span>
+              <a
+                href="https://bitdurg.ac.in/pdf/REVALUATION%20FORM%20FOR%20AUTONOMOUS%20BATCH.pdf"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Revaluation Form
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Calender</span>
+              <a
+                href="https://www.bitdurg.ac.in/downloads/BIT_Durg_Calendar_2023.pdf"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Calender
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Prospectus</span>
+              <a
+                href="https://drive.google.com/file/d/1JOqPbhfwY0tDfDHLDpP4xrsXcXw8j7j2/view"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Prospectus
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">Magazine</span>
+              <a
+                href="http://www.bitdurg.ac.in/downloads/annual-magazine.pdf"
+                target="_blank"
+                className="underlineAnimation"
+              >
+                Magazine
+              </a>
             </Link>
           </Stack>
         </div>
@@ -260,23 +330,29 @@ const Footer = () => {
           </h3>
           <Stack sx={stackDesign}>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">CSVTU Calender</span>
+              <a href="http://csvtu.ac.in/" target="_blank" className="underlineAnimation">
+                CSVTU Calender
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">BIT Alumni</span>
+              <a href="https://alumni.bitdurg.ac.in/" target="_blank" className="underlineAnimation">
+                BIT Alumni
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">AICTE</span>
+              <a href="https://www.aicte-india.org/" target="_blank" className="underlineAnimation">
+                AICTE
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">
+              <a href="https://www.ugc.ac.in/" target="_blank" className="underlineAnimation">
                 University Grants
                 <br />
                 Commission
-              </span>
+              </a>
             </Link>
             <Link sx={LinkDesign}>
-              <span className="underlineAnimation">DTE Raipur</span>
+              <a href="https://www.cgdte.in/" target="_blank" className="underlineAnimation">DTE Raipur</a>
             </Link>
           </Stack>
         </div>
@@ -333,7 +409,7 @@ const Footer = () => {
                   </ListItemText>
                 </ListItemButton>
 
-                <ListItemButton>
+                <ListItemButton href="mailto:bit@bitdurg.ac.in" target="_blank">
                   <ListItemIcon>
                     <MailIcon />
                   </ListItemIcon>
@@ -357,36 +433,43 @@ const Footer = () => {
             </ListItemButton>
             <Collapse in={open2} timeout={`auto`} unmountOnExit>
               <List>
-                <ListItemButton>
-                  <ListItemText inset={true} sx={listItemTextStyle}>
+
+                <ListItemButton href="https://bitdurg.ac.in/online-payment" target="_blank">
+                  <ListItemText inset={true} sx={listItemTextStyle} >
                     Online Fee Payment
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://bitdurg.ac.in/sitemap" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Sitemap
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://bitdurg.ac.in/bank" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     UCO Bank
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://bitdurg.ac.in/gym" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Gymnasium
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="http://172.16.0.8/bitdurg_offline/elib.php" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     E-Book
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://bitdurg.ac.in/amenities" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Facilities
                   </ListItemText>
                 </ListItemButton>
+                 
               </List>
             </Collapse>
             <Divider component="li" />
@@ -403,38 +486,45 @@ const Footer = () => {
             </ListItemButton>
             <Collapse in={open3} timeout={`auto`} unmountOnExit>
               <List>
-                <ListItemButton>
+
+                <ListItemButton href="http://bitdurg.ac.in/downloads/Forms/Backlog_Exam_Form_2021-22.pdf" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Backlog Exam Form
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="http://bitdurg.ac.in/downloads/Forms/Transfer_Provisional_Certificate_Form.pdf" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Transfer & Provisional
                     <br />
                     Certificate Form
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://bitdurg.ac.in/pdf/REVALUATION%20FORM%20FOR%20AUTONOMOUS%20BATCH.pdf" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Revaluation Form
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://www.bitdurg.ac.in/downloads/BIT_Durg_Calendar_2023.pdf" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Calender
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://drive.google.com/file/d/1JOqPbhfwY0tDfDHLDpP4xrsXcXw8j7j2/view" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Prospectus
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="http://www.bitdurg.ac.in/downloads/annual-magazine.pdf" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     Magazine
                   </ListItemText>
                 </ListItemButton>
+
               </List>
             </Collapse>
             <Divider component="li" />
@@ -451,35 +541,41 @@ const Footer = () => {
             </ListItemButton>
             <Collapse in={open4} timeout={`auto`} unmountOnExit>
               <List>
-                <ListItemButton>
+
+                <ListItemButton href="http://csvtu.ac.in/" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     CSVTU Calender
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://alumni.bitdurg.ac.in/" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     BIT Alumni
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://www.aicte-india.org/" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     AICTE
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://www.ugc.ac.in/" target="_blank">
                   <ListItemText inset={true} sx={listItemTextStyle}>
                     University Grants
                     <br />
                     Commission
                   </ListItemText>
                 </ListItemButton>
-                <ListItemButton>
+
+                <ListItemButton href="https://www.cgdte.in/" target="_blank">
                   <ListItemText
                     inset={true}
                     primary="DTE Raipur"
                     sx={listItemTextStyle}
                   />
                 </ListItemButton>
+
               </List>
             </Collapse>
             <Divider component="li" />
