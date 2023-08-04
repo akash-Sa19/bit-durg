@@ -24,7 +24,7 @@ const Mission = () => {
     sm:min-w-[360px]  sm:w-[90vw] ">
       {/* child div */}
       <div
-        className="bg-bit-red w-full rounded-lg relative border border-white
+        className="bg-bit-red w-full sm:rounded-lg relative border border-white
         lg:h-[735px] 
         md:h-[600px] 
         sm:h-[550px]"
