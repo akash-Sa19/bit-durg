@@ -12,7 +12,7 @@ import { img1 } from '../../assets/asset'
 
 
 
-export default function MediaCard(props) {
+function MediaCard(props) {
   return (
     <Card sx={{
       // width: 310,
@@ -32,7 +32,7 @@ export default function MediaCard(props) {
     >
       <CardMedia
         // sx={{ height: 208 }}
-        image={props.img}
+        image={img1}
         title="Image 1"
         className="lg:h-[208px] sm:h-[168.79px]"
       />
@@ -72,7 +72,7 @@ export default function MediaCard(props) {
       >
         {/* Calender Month */}
         <p
-          className={`text-bit-blue lg:text-[14px] sm:text-[10px] lg:top-[12px] sm:top-[10px] relative font-extrabold`}>{props.month}</p>
+          className={`text-bit-blue lg:text-[14px] sm:text-[10px] lg:top-[12px] sm:top-[10px] relative font-extrabold uppercase`}>{props.month}</p>
 
         {/* Calender Date */}
         <p 
@@ -81,7 +81,7 @@ export default function MediaCard(props) {
       </Box>
 
 
-      {/* Card Content */} 
+      {/* Card Content */}
       <CardContent className='lg:mt-[34px] sm:mt-[8px] xl:mt-[38px]'>
 
         {/* Content Heading */}
@@ -110,7 +110,7 @@ export default function MediaCard(props) {
 
       <CardActions sx={{
         position: 'absolute',
-        bottom: {sm: '0px', lg: '4px', xl: '-4px'},
+        bottom: {sm: '0px', lg: '4px', xl: '-2px'},
         left: 0,
       }}>
 
@@ -122,3 +122,5 @@ export default function MediaCard(props) {
     </Card>
   );
 }
+
+export default MediaCard;

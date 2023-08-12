@@ -5,52 +5,74 @@
 // lg: '1440px'
 // xl: '1640px
 
-import React from "react";
+import React, { useState } from "react";
 // assets
 import { calender, event_icon, news_icon, filter } from "../assets/asset";
 
-// component import 
-import { Ribbon, Card, BottomCircle } from "./index";
+// component import
+import { Ribbon, Card, BottomCircle, Buttons } from "./index";
 
 // material Ui
 import { Button } from "@mui/material";
 
 // constant
-import { news, color } from "../Constants";
+import { news, events, color } from "../Constants";
 
 // import "../index.css";
 
-const buttonDesign = {
-  backgroundColor: "rgba(231, 215, 193, 0.25)",
-  color: "#800000",
-  width: { sm: "200px", md: "175px", lg: "200px" },
-  height: 45,
-  fontWeight: 800,
-  fontSize: 20,
-  borderRadius: 0,
-  display: "flex",
-  alignItem: "center",
-  justifyContent: "flex-start",
-  padding: "6px 16px",
-  textTransform: "none",
-  borderBottom: "3px solid #E7D7C1",
+// const buttonDesignStyle = {
+//   backgroundColor: "rgba(231, 215, 193, 0.25)",
+//   color: "#800000",
+//   width: { sm: "200px", md: "175px", lg: "200px" },
+//   height: 45,
+//   fontWeight: 800,
+//   fontSize: 20,
+//   borderRadius: 0,
+//   display: "flex",
+//   alignItem: "center",
+//   justifyContent: "flex-start",
+//   padding: "6px 16px",
+//   textTransform: "none",
+//   borderBottom: "3px solid #E7D7C1",
 
- 
-  "&:hover": {
-    border: "3px solid #E7D7C1",
-    boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
-    backgroundColor: "rgba(231, 215, 193, 0.25)",
-  },
-  "&:onClick": {
-    border: "3px solid #E7D7C1",
-    boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
-    backgroundColor: "rgba(231, 215, 193, 0.25)",
-  },
-};
+//   // "&:hover": {
+//   //   border: "3px solid #E7D7C1",
+//   //   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+//   //   backgroundColor: "rgba(231, 215, 193, 0.25)",
+//   // },
+//   "&:active": {
+//     border: "3px solid #E7D7C1",
+//     boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+//     // backgroundColor: "rgba(231, 215, 193, 0.25)",
+//     backgroundColor: "rgba(0, 0, 193, 0.25)",
+//   },
+// };
 const NewsIcon = () => {
   return <img src={news_icon} width="20px" height="20px" />;
 };
 const NewsEvent = () => {
+  // declaring variable
+  const [clickNews, setClickNews] = useState(true);
+  const [clickEvent, setClickEvent] = useState(false);
+  const [clickFilter, setClickFilter] =useState(false);
+  const [topic, setTopic] = useState(news);
+
+  // functions
+  const chngTopicToNews = () => {
+    setTopic(news);
+    if (clickEvent == false) {
+      setClickNews(true);
+    }
+  };
+  const chngTopicToEvents = () => {
+    setTopic(events);
+    if (clickNews == false) {
+      setClickEvent(true);
+    }
+  };
+  const chngFilter = () => {
+    setClickFilter(!clickFilter);
+  }
   return (
     <div className="w-full">
       <div className="mt-[150px]">
@@ -77,54 +99,62 @@ const NewsEvent = () => {
             />
             {/* Horizontal Bar */}
             <span className="h-1 w-[200px] bg-grey block mt-5"></span>
+            {/* Buttons */}
             <div className="mt-[60px] flex flex-col font-alegreya-sans">
-              {/* <Button variant='contained' className='bitButton '>News</Button> */}
-
-              <Button
-                variant="contained"
-                sx={buttonDesign}
-                startIcon={
-                  <img
-                    src={news_icon}
-                    width="20px"
-                    height="20px"
-                    style={{ marginRight: "8px" }}
-                  />
-                }
+              {/* News Icon */}
+              <div
+                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] border-[3px] ${clickNews ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } border-bit-Cream hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10 `}
+                onClick={(props) => {
+                  setTopic(news)
+                  if (clickEvent == true) {
+                    setClickEvent(false);
+                    setClickNews(true);
+                  }
+                }}
               >
-                News
-              </Button>
+                <img
+                  src={news_icon}
+                  alt="news icon"
+                  className="px-[6px] mr-[8px]"
+                />
+                <p className="font-[800] text-[20px] font-roboto text-bit-red">
+                  News
+                </p>
+              </div>
 
-              <Button
-                variant="contained"
-                sx={buttonDesign}
-                startIcon={
-                  <img
-                    src={event_icon}
-                    width="20px"
-                    height="20px"
-                    style={{ marginRight: "8px" }}
-                  />
-                }
+              {/* Event Icon */}
+              <div
+                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] mt-[8px]
+               border-[3px] ${clickEvent ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } border-bit-Cream hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10 `}
+                onClick={(props) => {
+                  setTopic(events)
+                  if(clickNews == true) {
+                    setClickNews(false)
+                    setClickEvent(true)
+                  }
+                }}
               >
-                Event
-              </Button>
+                <img
+                  src={event_icon}
+                  alt="Event icon"
+                  className="px-[6px] mr-[8px]"
+                />
+                <p className="font-[800] text-[20px] font-roboto text-bit-red">
+                  Events
+                </p>
+              </div>
+
+
             </div>
             <div className="mt-[90px]">
-              <Button
-                varient="contained"
-                sx={buttonDesign}
-                startIcon={
-                  <img
-                    src={filter}
-                    width="20px"
-                    height="20px"
-                    style={{ marginRight: "8px" }}
-                  />
-                }
-              >
-                Filter
-              </Button>
+              
+              <Buttons
+                img={filter}
+                iconName="filter icon"
+                buttonContent="Filter"
+                click = {clickFilter}
+                buttonFunc ={chngFilter}
+              />
             </div>
           </div>
 
@@ -132,28 +162,34 @@ const NewsEvent = () => {
           {/* News and Event Card */}
 
           <div className="flex flex-col justify-center">
-            {/* <div className='flex flex-col justify-center lg:min-w-[1024px] lg:w-[70.27778vw] md:min-w-[550px] md:w-[64.7482vw] border border-yellow-600 '> */}
             {/* 2.b.a */}
-            <div className="flex md:flex-row sm:flex-col md:mt-[0] sm:mt-10 flex-wrap lg:gap-10 sm:gap-8 w-auto lg:min-w-[1024px] lg:w-[70.27778vw] md:w-[540px] mdl:w-[840px]">
-              {news.map((newsItem, index) => (
-                <Card
-                  key={newsItem.id}
-                  heading={newsItem.heading}
-                  description={newsItem.description}
-                  date={newsItem.date}
-                  month={newsItem.month}
-                  img={newsItem.imgSrc}
-                />
-              ))}
+            <div
+              className="scrollNone flex flex-wrap w-auto overflow-x-scroll
+            lg:gap-10 lg:min-w-[1024px] lg:w-[70.27778vw] lg:h-[890px]
+            md:mt-[0] md:w-[540px] mdl:w-[840px] md:flex-col md:h-[690px]
+            sm:flex-col sm:mt-10 sm:gap-8 sm:h-[690px] "
+            >
+              {topic.map(function (newsItem, index) {
+                return (
+                  <Card
+                    key={newsItem.id}
+                    heading={newsItem.heading}
+                    description={newsItem.description}
+                    date={newsItem.date}
+                    month={newsItem.month}
+                    img={newsItem.imgSrc}
+                  />
+                );
+              })}
             </div>
 
             {/* 2.b.b */}
             {/* Bottom Circle */}
-            <div className="flex justify-center gap-4 mt-[46px] ">
+            {/* <div className="flex justify-center gap-4 mt-[46px] ">
               <BottomCircle circleColor={color.bitRed} borderColor= {color.bitRed} />
               <BottomCircle circleColor={color.bitWhite} borderColor= {color.bitRed} />
               <BottomCircle circleColor={color.bitWhite} borderColor= {color.bitRed} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

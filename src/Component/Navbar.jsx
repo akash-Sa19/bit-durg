@@ -43,24 +43,6 @@ import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
 
-
-
-const buttonStyle = {
-  color: "white",
-  "&:hover": {
-    color: "#ddd",
-    backgroundColor: "rgba(245, 245, 245, 0.1)",
-  },
-};
-const bottomNavLinkStyle = {
-  color: "black",
-  "&:hover": {
-    color: "rgb(0, 0, 255)",
-    textDecoration: "underline",
-    backgroundColor: "white",
-  },
-};
-
 // const menuItemCSS = {
 //   // textTransform: "capitalize",
 //   color: "red",

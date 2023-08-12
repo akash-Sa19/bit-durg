@@ -8,14 +8,18 @@ import Card from "./subComponent/Card";
 import Mission from "./Mission";
 import Achievements from "./Achievements";
 import StraightFromSource from "./StraightFromSource";
-import BottomCircle from "./subComponent/BottomCircle";
 import StudentSection from "./StudentSection";
 import Gallery from "./Gallery";
 import Footer from "./Footer";
 import NewToBit from "./NewToBit";
+
+// Sub Component
+import BottomCircle from "./subComponent/BottomCircle";
 import Card2 from "./subComponent/Card2";
 import NavbarMenuItem from "./subComponent/MenuItemList";
 import Search from "./subComponent/Search"
+import Buttons from './subComponent/Buttons'
+import LoginCard from "./subComponent/loginCard";
 export {
   Navbar,
   Hero,
@@ -35,4 +39,6 @@ export {
   Card2,
   NavbarMenuItem,
   Search,
+  Buttons,
+  LoginCard,
 };

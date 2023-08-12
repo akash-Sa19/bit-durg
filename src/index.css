@@ -37,11 +37,9 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.buttonDropShadow {
-  filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.25));
+.scrollNone::-webkit-scrollbar {
+  display: none;
 }
-
 .underlineAnimation {
   background: linear-gradient(0deg, #800000, #800000) no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
@@ -63,3 +61,6 @@
   background-position-x: left;
 }
 
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}

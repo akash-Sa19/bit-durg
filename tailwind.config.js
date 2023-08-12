@@ -11,7 +11,7 @@ export default {
       lg: "1440px",
       xl: "1640px",
     },
-    
+
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
       "serif-pro": ["Source Serif Pro", "serif"],
@@ -23,6 +23,8 @@ export default {
         "bit-yellow": "#E7D7C1",
         "bit-blue": "#062242",
         "bit-lightblue": "#7EB2DD",
+        "bit-CreamLite": "rgba(231, 215, 193, 0.25)",
+        "bit-Cream": "#E7D7C1",
         white: "#FFFFFF",
         black: "#000000",
         grey: "#D9D9D9",

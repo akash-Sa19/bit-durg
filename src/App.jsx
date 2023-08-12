@@ -20,13 +20,6 @@ import {
   NewToBit,
 } from "./Component/index";
 
-import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
-import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -75,21 +68,21 @@ const App = () => {
   }, [width, height]);
 
   return (
-    <div className="bg-scroll ">
+    <div className="bg-scroll scrollNone">
       <ThemeProvider theme={theme}>
-        <Navbar width={width} />
-        <Hero />
-        <CollegeWidget />
-        <WhoWeAre />
-        <NewsEvent />
-        <Mission />
+        {/* <Navbar width={width} /> */}
+        {/* <Hero /> */}
+        {/* <CollegeWidget /> */}
+        {/* <WhoWeAre /> */}
+        {/* <NewsEvent /> */}
+        {/* <Mission /> */}
         {/* this component is creating prb causing tilting of the component */}
-        <Achievements />
-        <StraightFromSource width={width} height={height} />
-        <NewToBit />
-        <StudentSection />
+        {/* <Achievements /> */}
+        {/* <StraightFromSource width={width} height={height} /> */}
+        {/* <NewToBit /> */}
+        {/* <StudentSection /> */}
         <Gallery />
-        <Footer />
+        {/* <Footer /> */}
       </ThemeProvider>
     </div>
   );
