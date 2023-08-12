@@ -5,7 +5,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import Navbar from './component/Navbar';
 // import HeroComponent from './component/HeroComponent';
 import {
-  Search,
   Navbar,
   Hero,
   CollegeWidget,
@@ -64,25 +63,24 @@ const App = () => {
   });
 
   useEffect(() => {
-    console.log(width, height);
+    // console.log(width, height);
   }, [width, height]);
 
   return (
     <div className="bg-scroll scrollNone">
       <ThemeProvider theme={theme}>
-        {/* <Navbar width={width} /> */}
-        {/* <Hero /> */}
-        {/* <CollegeWidget /> */}
-        {/* <WhoWeAre /> */}
-        {/* <NewsEvent /> */}
-        {/* <Mission /> */}
-        {/* this component is creating prb causing tilting of the component */}
-        {/* <Achievements /> */}
+        <Navbar width={width} />
+        <Hero />
+        <CollegeWidget />
+        <WhoWeAre />
+        <NewsEvent />
+        <Mission />
+        <Achievements />
         {/* <StraightFromSource width={width} height={height} /> */}
-        {/* <NewToBit /> */}
+        <NewToBit />
         {/* <StudentSection /> */}
         <Gallery />
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </div>
   );

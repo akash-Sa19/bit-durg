@@ -101,7 +101,7 @@ const NewToBit = () => {
       {/* New to Bit */}
       <div className="mt-[100px] flex md:flex-row sm:flex-col md:items-start sm:items-center md:justify-center lg:gap-[100px] md:gap-[46px] w-auto ">
         {/* 2.a */}
-        <div className="flex flex-col justify-start items-center ">
+        <div className="flex flex-col items-center justify-start ">
           {/* Bit Logo */}
           {/* 2.a.a */}
           <img
@@ -113,7 +113,7 @@ const NewToBit = () => {
           {/* 2.a.b */}
           <span className="h-1 w-[200px] bg-grey block mt-5"></span>
           {/* 2.a.c */}
-          <div className="text-bit-red font-medium">
+          <div className="font-medium text-bit-red">
             <List>
               <ListItemButton onClick={handleClick} 
               sx={buttonDesign} align-items='flex-start'>
@@ -198,7 +198,7 @@ const NewToBit = () => {
         <div className="flex flex-wrap w-auto overflow-x-scroll scrollNone 
         lg:min-w-[1024px] lg:w-[70.27778vw] lg:gap-10 lg:h-[630px]
         md:flex-col md:w-[540px] mdl:w-[840px] md:mt-[0] md:h-[530px]
-        sm:flex-col sm:mt-10 sm:gap-8 sm:h-[790px] ">
+        sm:flex-col sm:mt-10 sm:gap-8 sm:h-[790px] lg:max-w-[1024px]">
           {/* Add Map to card in this */}
           {topic.map((items, index) => (
             <Card2 key={items.id} heading={items.heading}

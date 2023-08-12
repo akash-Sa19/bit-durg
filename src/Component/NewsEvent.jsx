@@ -165,7 +165,7 @@ const NewsEvent = () => {
             {/* 2.b.a */}
             <div
               className="scrollNone flex flex-wrap w-auto overflow-x-scroll
-            lg:gap-10 lg:min-w-[1024px] lg:w-[70.27778vw] lg:h-[890px]
+            lg:gap-10 lg:min-w-[1024px] lg:max-w-[1024px] lg:w-[70.27778vw] lg:h-[890px]
             md:mt-[0] md:w-[540px] mdl:w-[840px] md:flex-col md:h-[690px]
             sm:flex-col sm:mt-10 sm:gap-8 sm:h-[690px] "
             >

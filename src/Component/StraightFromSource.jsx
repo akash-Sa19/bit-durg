@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Ribbon from "./subComponent/Ribbon";
 import IconButton from "@mui/material/IconButton";
 import { video01, video02, video03 } from "../assets/video/asset";
@@ -97,7 +96,7 @@ const StraightFromSource = ({ width, height }) => {
   // w-[${calculateResolution()[1]}px]`;
   const videoContainer = `relative col-span-1`;
 
-  console.log(videoSize);
+  // console.log(videoSize);
 
   return (
     <div className="new-container mt-[150px]">
@@ -114,9 +113,9 @@ const StraightFromSource = ({ width, height }) => {
         {/* Video Component */}
         {/* {console.log(width * (3 / 10) * (16 / 9))} */}
         <div className={videoContainer} style={videoSize}>
-          <div className="relative h-full w-full">
+          <div className="relative w-full h-full">
             <video
-              className="h-full w-full object-cover"
+              className="object-cover w-full h-full"
               ref={videoRef01}
               controls
               onPause={() => setPlay({ ...play, video01: false })}
@@ -125,7 +124,7 @@ const StraightFromSource = ({ width, height }) => {
               Your browser does not support the video tag.
             </video>
             <img
-              className="absolute top-0 left-0 h-full w-full object-cover"
+              className="absolute top-0 left-0 object-cover w-full h-full"
               src={Rectangle1}
               style={{ display: !play.video01 ? "block" : "none" }}
               alt="Poster Image"
@@ -157,9 +156,9 @@ const StraightFromSource = ({ width, height }) => {
 
         {/* Video Component */}
         <div className={videoContainer} style={videoSize}>
-          <div className="relative h-full w-full">
+          <div className="relative w-full h-full">
             <video
-              className="h-full w-full object-cover"
+              className="object-cover w-full h-full"
               ref={videoRef02}
               controls
               onPause={() => setPlay({ ...play, video02: false })}
@@ -168,7 +167,7 @@ const StraightFromSource = ({ width, height }) => {
               Your browser does not support the video tag.
             </video>
             <img
-              className="absolute top-0 left-0 h-full w-full object-cover"
+              className="absolute top-0 left-0 object-cover w-full h-full"
               src={Rectangle2}
               style={{ display: !play.video02 ? "block" : "none" }}
               alt="Poster Image"
@@ -202,9 +201,9 @@ const StraightFromSource = ({ width, height }) => {
 
         {/* Video Component */}
         <div className={videoContainer} style={videoSize}>
-          <div className="relative h-full w-full">
+          <div className="relative w-full h-full">
             <video
-              className="h-full w-full object-cover"
+              className="object-cover w-full h-full"
               ref={videoRef03}
               controls
               onPause={() => setPlay({ ...play, video03: false })}
@@ -213,7 +212,7 @@ const StraightFromSource = ({ width, height }) => {
               Your browser does not support the video tag.
             </video>
             <img
-              className="absolute top-0 left-0 h-full w-full object-cover"
+              className="absolute top-0 left-0 object-cover w-full h-full"
               src={Rectangle3}
               style={{ display: !play.video03 ? "block" : "none" }}
               alt="Poster Image"
