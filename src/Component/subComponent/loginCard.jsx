@@ -15,13 +15,14 @@ const loginCard = (props) => {
         className={`lg:text-2xl md:text-lg sm:text-lg ${
           fold ? "lg:mt-[14px] sm:mt-[6px]" : "lg:mt-8 sm:mt-4"
         } transition-all duration-500`}
-        onClick={() => {
+        onClick={props.foldFunctState}
+          // () => {
 
-          setFold((prevState) => !prevState);
+          // setFold((prevState) => !prevState);
           // props.foldFunct
-        }
+        // }
         
-        }
+        
       >
         {props.heading}
       </p>

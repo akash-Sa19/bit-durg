@@ -76,7 +76,7 @@ const App = () => {
         <NewsEvent />
         <Mission />
         <Achievements />
-        {/* <StraightFromSource width={width} height={height} /> */}
+        <StraightFromSource width={width} height={height} />
         <NewToBit />
         {/* <StudentSection /> */}
         <Gallery />

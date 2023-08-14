@@ -21,6 +21,7 @@ import Search from "./subComponent/Search"
 import Buttons from './subComponent/Buttons'
 import LoginCard from "./subComponent/loginCard";
 import DesktopMenuBar from "./subComponent/DesktopMenuBar";
+
 export {
   Navbar,
   Hero,

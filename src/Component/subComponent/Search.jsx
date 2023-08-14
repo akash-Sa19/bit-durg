@@ -40,10 +40,10 @@ const Search = (props) => {
   return (
     // Main Div
     <div
-      className={`w-[100vw] sm:px-4 sm:py-4 sml:px-12 sml:py-12 fixed lg:h-[250px] md:h-[200px] border border-[#800000] z-[60] font-bold text-[${color.bitRed}] font-alegreya-sans bg-white sm:gap-4 sml:gap-6 flex flex-col justify-center`}
+      className={`w-[100vw] sm:px-4 sm:py-4 sml:px-12 sml:py-12 fixed lg:h-[250px] md:h-[200px] z-[60] font-bold text-[${color.bitRed}] font-alegreya-sans bg-white sm:gap-4 sml:gap-6 flex flex-col justify-center`}
     >
       {/* 1.a */}
-      <div className="flex flex-row justify-between items-start">
+      <div className="flex flex-row items-start justify-between">
         {/* 1.| */}
         <div className="flex flex-wrap sm:gap-4 sml:gap-8">
           {/* 1.a.a */}
@@ -51,17 +51,17 @@ const Search = (props) => {
           <div className="gap-[10px] flex flex-col" onClick={clickButton1}>
             {/* 1.a.a.a */}
             {/* Button Icon */}
-            <div className="flex gap-[16px] items-center">
+            <div className="flex md:gap-[16px] sm:gap-[8px] items-center">
               <img
                 src={global_icon}
                 alt="Globe Icon"
-                className="sm:w-[16px] sm:h-[16px] sml:w-[26px] sml:h-[26px]"
+                className="sm:w-[16px] sm:h-[16px] sml:w-[26px] sml:h-[26px] "
               />
               <p className="sm:text-base sml:text-2xl">All of BIT.in</p>
             </div>
             {/* 1.a.a.b */}
             {/* Button bottom figures */}
-            <div className="w-auto flex flex-col items-center">
+            <div className="flex flex-col items-center w-auto">
               {selected1 ? (
                 <>
                   <div className={`w-full h-[5px] bg-[#800000]`}></div>
@@ -80,7 +80,7 @@ const Search = (props) => {
           <div className="gap-[10px] flex flex-col" onClick={clickButton2}>
             {/* 1.a.b.a */}
             {/* Button Icon */}
-            <div className="flex gap-[16px] items-center">
+            <div className="flex sm:gap-[8px] md:gap-[16px] items-center">
               <img
                 src={peopleCircleRed}
                 alt="People Icon"
@@ -90,7 +90,7 @@ const Search = (props) => {
             </div>
             {/* 1.a.b.b */}
             {/* Button bottom figures */}
-            <div className="w-auto flex flex-col items-center">
+            <div className="flex flex-col items-center w-auto">
               {selected2 ? (
                 <>
                   <div className={`w-full h-[5px] bg-[#800000] `}></div>
@@ -109,7 +109,7 @@ const Search = (props) => {
           <div className="gap-[10px] flex flex-col" onClick={clickButton3}>
             {/* 1.a.c.a */}
             {/* Button Icon */}
-            <div className="flex gap-[16px] items-center">
+            <div className="flex md:gap-[16px] sm:gap-[8px] items-center">
               <img
                 src={news_icon}
                 alt="News Icon"
@@ -119,7 +119,7 @@ const Search = (props) => {
             </div>
             {/* 1.a.c.b */}
             {/* Button bottom figures */}
-            <div className="w-auto flex flex-col items-center">
+            <div className="flex flex-col items-center w-auto">
               {selected3 ? (
                 <>
                   <div className={`w-full h-[5px] bg-[#800000] `}></div>
@@ -134,6 +134,7 @@ const Search = (props) => {
           </div>
         </div>
         {/* 1.|| */}
+        {/* close Button */}
         <IconButton
           aria-label="Close Icon"
           onClick={props.handleSearchBarState}
@@ -141,8 +142,8 @@ const Search = (props) => {
             position: "relative",
             // top: "11px",
             // left: "5px",
-            width: 38,
-            height: 38,
+            width: {sm:'30px', md:'38px'},
+            height: {sm:'35px', md:'35px'},
           }}
         >
           <img src={closeIcon} alt="Close Icon" className="w-[22px] h-[22px]" />
@@ -157,62 +158,27 @@ const Search = (props) => {
           <img
             src={search}
             alt="Search Icon"
-            className="w-[30px] h-[30px] mx-[26px] -scale-x-100"
+            className="md:w-[30px] sm:w-[15px] sm:h-[15px] sml:h-[20px] sml:w-[20px] md:h-[30px]  md:ml-[26px] sm:ml-2 -scale-x-100"
           />
-          <p className="lg:text-[26px] md:text-[20px] font-normal">
+          <p className="lg:text-[26px] md:text-[20px] sml:text-[20px] sm:text-[14px] sm:ml-3 font-normal ">
             {searchTitle}
           </p>
         </div>
         {/* 2.a.b */}
         {/* Search Button */}
         <div
-          className={`bg-[${color.bitRed}] lg:text-[20px] md:text-[16px] text-white w-[135px] lg:h-[75px] md:h-[55px] flex items-center justify-evenly font-normal`}
+          className={`bg-[${color.bitRed}] lg:text-[20px] md:text-[16px] text-white w-[135px] lg:h-[75px] md:h-[55px] flex items-center justify-evenly font-normal `}
         >
-          <p>SEARCH</p>
+          <p className="sm:text-[10px] md:text-base sml:text-sm">SEARCH</p>
           <img
             src={arrowRight}
             alt="Right Arrow"
-            className="w-[24px] h-[24px]"
+            className="md:w-[24px] md:h-[24px] sm:w-[15px] sm:h-[15px]"
           />
         </div>
       </div>
     </div>
 
-    // ----------------------------------------------------
-    // 2nd try
-    // <div className={`w-[100vw] fixed h-[250px] border border-[#800000] z-[100] text-[26px] font-bold text-[${color.bitRed}] font-alegreya-sans flex gap-[30px]`}>
-    //   {SearchItems.map((currentValue, index) => (
-    //     <div className="gap-[10px] flex flex-col" key={currentValue.key}>
-    //       <div className="flex gap-[16px] items-center">
-    //         <img
-    //           src={currentValue.img}
-    //           alt={currentValue.alt}
-    //           className="w-[30px] h-[30px]"
-    //         />
-    //         <p>{currentValue.heading}</p>
-    //       </div>
-    //       <div className="w-auto flex flex-col items-center">
-    //         {
-    //             selected ?
-    //             (<>
-    //             <div className={`w-full h-[5px] bg-[${color.bitRed}] `}></div>
-    //             <img src={triangle} alt="Down Arrow" />
-    //             </>)
-    //             :
-    //             (
-    //                 <div className={`w-full h-[5px] border border-[${color.bitRed}] `}></div>
-    //             )
-    //         }
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
-
-    //  {/* ---------------------------------------------------- */}
-    // <div className="">
-    // <img src={peopleCircleRed} alt="" />
-    // <img src={peopleCircleWhite} alt="" />
-    // </div>
   );
 };
 

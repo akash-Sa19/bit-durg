@@ -63,9 +63,10 @@ const NewToBit = () => {
     color: "white",
     // width: { sm: "200px", md: "175px", lg: "200px" },
     width: "200px",
+    transition: 'all 0.3s ease',
     '&:hover': {
-        backgroundColor: "#800000",
-    color: "white",
+      backgroundColor: "#800000",
+      color: "white",
     }
   };
   const listItemButtonStyle = {
@@ -81,6 +82,8 @@ const NewToBit = () => {
       justifyContent: "flex-start",
       padding: "6px 16px",
       textTransform: "none",
+      transition: 'all 0.3s ease',
+      border: "3px solid rgba(231, 215, 193, 0)",
       '&:hover': {
           border: "3px solid #E7D7C1",
           backgroundColor: "rgba(231, 215, 193, 0.25)",

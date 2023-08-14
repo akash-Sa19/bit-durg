@@ -5,7 +5,7 @@ const Button = (props) => {
   // const [click, setClick] = useState(false)
   return (
     <div className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] border-[3px] border-bit-Cream 
-     hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10  ${props.click ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } `} 
+     hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10  ${props.click ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } transition-all duration-300`} 
      onClick={props.buttonFunc}>
 
       <img src={props.img} alt={props.iconName} className='px-[6px] mr-[8px]' />

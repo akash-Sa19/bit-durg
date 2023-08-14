@@ -20,33 +20,6 @@ import { news, events, color } from "../Constants";
 
 // import "../index.css";
 
-// const buttonDesignStyle = {
-//   backgroundColor: "rgba(231, 215, 193, 0.25)",
-//   color: "#800000",
-//   width: { sm: "200px", md: "175px", lg: "200px" },
-//   height: 45,
-//   fontWeight: 800,
-//   fontSize: 20,
-//   borderRadius: 0,
-//   display: "flex",
-//   alignItem: "center",
-//   justifyContent: "flex-start",
-//   padding: "6px 16px",
-//   textTransform: "none",
-//   borderBottom: "3px solid #E7D7C1",
-
-//   // "&:hover": {
-//   //   border: "3px solid #E7D7C1",
-//   //   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
-//   //   backgroundColor: "rgba(231, 215, 193, 0.25)",
-//   // },
-//   "&:active": {
-//     border: "3px solid #E7D7C1",
-//     boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
-//     // backgroundColor: "rgba(231, 215, 193, 0.25)",
-//     backgroundColor: "rgba(0, 0, 193, 0.25)",
-//   },
-// };
 const NewsIcon = () => {
   return <img src={news_icon} width="20px" height="20px" />;
 };
@@ -74,7 +47,7 @@ const NewsEvent = () => {
     setClickFilter(!clickFilter);
   }
   return (
-    <div className="w-full">
+    <div id="news" className="w-full">
       <div className="mt-[150px]">
         {/* 1 */}
         {/* Ribbon for Event and News */}
@@ -103,7 +76,7 @@ const NewsEvent = () => {
             <div className="mt-[60px] flex flex-col font-alegreya-sans">
               {/* News Icon */}
               <div
-                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] border-[3px] ${clickNews ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } border-bit-Cream hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10 `}
+                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] border-[3px] ${clickNews ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } border-bit-Cream hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10 transition-all duration-300`}
                 onClick={(props) => {
                   setTopic(news)
                   if (clickEvent == true) {
@@ -124,7 +97,7 @@ const NewsEvent = () => {
 
               {/* Event Icon */}
               <div
-                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] mt-[8px]
+                className={`bg-bit-CreamLite w-[200px] h-[45px] flex items-center justify-start px-[6px] mt-[8px] transition-all duration-300
                border-[3px] ${clickEvent ? 'shadow-[4px_4px_0px_rgba(0,0,0,0.25)]': '' } border-bit-Cream hover:shadow-[4px_4px_0px_rgba(0,0,0,0.25)] hover:border-[3px] hover:z-10 `}
                 onClick={(props) => {
                   setTopic(events)
@@ -178,6 +151,7 @@ const NewsEvent = () => {
                     date={newsItem.date}
                     month={newsItem.month}
                     img={newsItem.imgSrc}
+                    link={newsItem.link}
                   />
                 );
               })}

@@ -7,7 +7,6 @@ import React from "react";
 // asset
 import { hero } from "../assets/asset";
 
-import {DesktopMenuBar} from './index' 
 // Material Ui  
 import Typography from "@mui/material/Typography";
 
@@ -45,7 +44,6 @@ const Hero = () => {
           EXCEL
         </Typography>
       </div>
-      {/* <DesktopMenuBar /> */}
     </div>
   );
 };

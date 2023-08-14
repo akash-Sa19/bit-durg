@@ -7,9 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { color } from '../../Constants';
-import { img1 } from '../../assets/asset'
 
+import '../../index.css'
 
 
 export default function MediaCard(props) {
@@ -24,30 +23,25 @@ export default function MediaCard(props) {
     // Increasing the height of card by 10px
     className={` relative
     lg:w-[310px] lg:h-[420px]
-    sm:w-[253.19px] sm:h-[324.46px] `}
-    // className={` relative
-    // lg:min-w-[310px] lg:min-h-[420px] lg:w-[21.52778vw] lg:h-[29.1667vw] 
-    // md:min-w-[253.19px] md:min-h-[314.46px] md:w-[30.3585vw] md:h-[37.70vw]
-    //  `}
+    sm:w-[253.19px] sm:h-[324.46px] transition-all duration-300 `}
     >
       <CardMedia
-        // sx={{ height: 208 }}
         image={props.img}
         title="Image 1"
-        className="lg:h-[208px] sm:h-[168.79px]"
+        className="lg:h-[208px] sm:h-[168.79px] cardImg"
       />
       {/* Image Border */}
       <Box sx={{
         // width: 290,
         // height: 190,
-        border: '3px solid #ffffff',
+        // border: '3px solid #ffffff',
         position: 'absolute',
         color: 'rgba(217, 217, 217, 0)',
         top: {sm: '8px', lg: '10px'},
         left: {sm: '8px', lg: '10px'},
       }}
-      className="lg:w-[290px] lg:h-[190px] 
-      sm:w-[237.19px] sm:h-[152.79px]"
+      className="lg:w-[290px] lg:h-[190px] border-[3px] border-white
+      sm:w-[237.19px] sm:h-[152.79px] hover:border-bit-red transition-all duration-300 borderBox"
       >
       </Box>
 
@@ -88,7 +82,7 @@ export default function MediaCard(props) {
         <Typography 
           // variant="h6"
           sx={{ fontWeight: 700,
-          fontSize: {sm: '16px', lg: '20px', xl: '24px'}, 
+          fontSize: {sm: '16px', lg: '20px', xl: '22px'}, 
         }}
           className={`text-bit-red font-bold lg:h-[64px] sm:h-[48px] 
           xl:h-[72px]`}>
@@ -101,7 +95,10 @@ export default function MediaCard(props) {
           color="text.black"
           sx={{ fontWeight: 500,
                 fontSize: {sm: '12px',lg: '14px', xl: '16px'},
-                marginTop: {sm: '4px'}
+                marginTop: {sm: '4px', lg:'0px', xl:'-2px'},
+                overflowY: 'hidden',
+                height: {sm:'36px' ,md: '36px', lg: '42px', xl: '50px'},
+                // border: 'solid 1px red'
           }} >
           {props.description}
         </Typography>
@@ -110,14 +107,16 @@ export default function MediaCard(props) {
 
       <CardActions sx={{
         position: 'absolute',
-        bottom: {sm: '0px', lg: '4px', xl: '-4px'},
+        bottom: {sm: '0px', lg: '4px', xl: '0px'},
         left: 0,
       }}>
 
         {/* Share Button */}
         <Button size='small' variant='text'>Share</Button>
         {/* Read More Button */}
-        <Button size="small" variant='text'>Read More</Button>
+        <Button size="small" variant='text' 
+        onClick={() => {window.open(props.link, '_blank')}}
+        >Read More</Button>
       </CardActions>
     </Card>
   );

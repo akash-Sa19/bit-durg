@@ -28,7 +28,7 @@ const Card2 = (props) => {
           // sx={{ height: 208 }}
           image={props.img}
           title="Image 1"
-          className="lg:h-[208px] sm:h-[168.79px]"
+          className="lg:h-[208px] sm:h-[168.79px] transition-all duration-300 overflow-hidden"
           onClick = {() => {
             
           }}
@@ -44,6 +44,7 @@ const Card2 = (props) => {
             width: { sm: "237.19px", lg: "290px" },
             height: { sm: "152.79px", lg: "190px" },
           }}
+          className ='transition-all duration-300 hover:border-bit-red hover:'
         ></Box>
       </Card>
 
@@ -58,6 +59,7 @@ const Card2 = (props) => {
             // width: {sm: '253.19px', lg: '310px' },
             color: color.bitRed,
           }}
+          
         >
           <a href={props.link} target="_blank">{props.heading}</a>
         </Typography>

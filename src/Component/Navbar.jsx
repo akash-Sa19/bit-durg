@@ -31,7 +31,7 @@ import {
 } from "../assets/asset";
 
 // imported components
-import { Search } from "./index";
+import { Search, DesktopMenuBar } from "./index";
 
 // Material Ui Import
 import Button from "@mui/material/Button";
@@ -43,16 +43,28 @@ import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
 import GrandParent from "./subComponent/MenuItemList";
 
-// const menuItemCSS = {
-//   // textTransform: "capitalize",
-//   color: "red",
-// };
+
 
 // The component
 const Navbar = ({ width }) => {
+
+  // variables for Desktop Navbar display 
+  const [admission, setAdmission] = useState(false)
+  const [academics, setAcademics] = useState(false)
+  const [department, setDepartment] = useState(false)
+  const [placement, setPlacement] = useState(false)
+  const [campusLife, setCampusLife] = useState(false)
+  const [about, setAbout] = useState(false)
+  const [connect, setConnect] = useState(false)
+
+  const visit = (url) => {
+    window.open(url, '_blank');
+    console.log(url);
+  } 
+
   const [showSearchBar, setSearchBar] = useState(false);
   // This Function is used to transfer the state to the "showNavBar" to the child component Search
-  // so that i can manipulate the state of the function
+  // so that we can manipulate the state of the function
   const handleSearchBar = (showSearchBar) => {
     setSearchBar(!showSearchBar);
   };
@@ -61,22 +73,6 @@ const Navbar = ({ width }) => {
   // This function on/off navbar for tables and mobile
   const handleNavbarDisplay = () => {
     setNavbarDisplay(!navbarDisplay);
-  };
-
-  const buttonStyle = {
-    color: "white",
-    "&:hover": {
-      color: "#ddd",
-      backgroundColor: "rgba(245, 245, 245, 0.1)",
-    },
-  };
-  const bottomNavLinkStyle = {
-    color: "black",
-    "&:hover": {
-      color: "rgb(0, 0, 255)",
-      textDecoration: "underline",
-      backgroundColor: "white",
-    },
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -88,8 +84,32 @@ const Navbar = ({ width }) => {
     setAnchorEl(null);
   };
 
+  // styles
+  const buttonStyle = {
+    color: "white",
+    "&:hover": {
+      color: "#ddd",
+      backgroundColor: "rgba(245, 245, 245, 0.1)",
+    },
+  };
+  const bottomNavLinkStyle = {
+    color: "black",
+    fontSize: '16px',
+    transition: 'all 0.4 ease',
+    borderRadius : 0,
+    "&:hover": {
+      color: color.bitRed,
+      backgroundColor: "white",
+    },
+    '&:active': {
+      color: color.bitRed,
+    }
+  };
+
+  
+
   return (
-    <div className="font-roboto relative bg-scroll">
+    <div className="relative bg-scroll font-roboto">
       {/* Search Bar */}
       {/* This component overlay above the all content of the website, (High z-index)  */}
       {showSearchBar ? (
@@ -101,21 +121,21 @@ const Navbar = ({ width }) => {
       {/* TopBar of Navbar - Down */}
       {/* Responsive for all three breakpoints */}
       {width >= 1440 ? (
-        <div className="flex gap-4 bg-bit-red h-10 px-2">
+        <div className="flex h-10 gap-4 px-2 bg-bit-red">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow">
-            <div className="flex items-center h-full justify-end gap-4">
-              <Button variant="text" sx={buttonStyle}>
+            <div className="flex items-center justify-end h-full gap-4">
+              <Button variant="text" sx={buttonStyle} >
                 Event
               </Button>
-              <Button variant="text" sx={buttonStyle}>
+              <Button variant="text" sx={buttonStyle} onClick={ () => visit('#news')}>
                 News
               </Button>
-              <Button variant="text" sx={buttonStyle}>
+              <Button variant="text" sx={buttonStyle} onClick={ () => visit('https://bitdurg.ac.in/')}>
                 Careers
               </Button>
-              <Button variant="text" sx={buttonStyle}>
-                Info On
+              <Button variant="text" sx={buttonStyle} onClick={ () => visit('https://bitdurg.ac.in/all-notices-list')}>
+                Notices
               </Button>
             </div>
           </div>
@@ -130,19 +150,19 @@ const Navbar = ({ width }) => {
             <div
               className={`flex items-center h-full w-full justify-start gap-6`}
             >
-              <div className="flex justify-between items-center w-full">
+              <div className="flex items-center justify-between w-full">
                 {/* Nav-Links */}
                 <div className="flex gap-4">
-                  <Button variant="text" sx={buttonStyle}>
-                    About
+                  <Button variant="text" sx={buttonStyle} onClick={ () => visit('https://bitdurg.edu.in/')}>
+                  Moodle
                   </Button>
-                  <Button variant="text" sx={buttonStyle}>
+                  <Button variant="text" sx={buttonStyle} >
                     Visit
                   </Button>
-                  <Button variant="text" sx={buttonStyle}>
+                  <Button variant="text" sx={buttonStyle} >
                     Contact Us
                   </Button>
-                  <Button variant="text" sx={buttonStyle}>
+                  <Button variant="text" sx={buttonStyle} onClick={() => visit('https://bitdurg.ac.in/iic')}>
                     IIC
                   </Button>
                 </div>
@@ -153,7 +173,7 @@ const Navbar = ({ width }) => {
                     name="search"
                     id="search"
                     placeholder="Find Department..."
-                    className="bg-white focus:outline-none overflow-hidden text-xs"
+                    className="overflow-hidden text-xs bg-white focus:outline-none"
                   />
                   <Button
                     variant="text"
@@ -182,6 +202,9 @@ const Navbar = ({ width }) => {
       )}
       {/* TopBar of Navbar - up */}
 
+      {/* ------------------------------------------------- */}
+      {/* ------------------------------------------------- */}
+
       {/*  BottomBar of Navbar - down  */}
       {/* Conditional statement for navbar display acc. to screen size */}
       {width >= 1440 ? (
@@ -189,19 +212,65 @@ const Navbar = ({ width }) => {
         <div className="flex gap-4 h-[60px] px-2">
           {/* Left Side Nav-Links */}
           <div className="item basis-0 grow">
-            <div className="flex items-center h-full w-full justify-end gap-6">
-              <Button variant="text" sx={bottomNavLinkStyle}>
+            <div className="flex items-center justify-end w-full h-full gap-6 ">
+              <Button variant="text" sx={bottomNavLinkStyle} 
+              onClick={() => {
+                setAdmission((prevState) => !prevState);
+                setAcademics(false);
+                setDepartment(false);
+                setCampusLife(false)
+                setAbout(false);
+                setConnect(false);
+                setPlacement(false);
+              }}>
                 Admission
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
+              <DesktopMenuBar menuIndex= {2} open={admission} />
+
+              <Button variant="text" sx={bottomNavLinkStyle} 
+              onClick={() => {
+                setAcademics((prevState) => !prevState);
+                setAdmission(false);
+                setDepartment(false);
+                setCampusLife(false)
+                setAbout(false);
+                setConnect(false);
+                setPlacement(false);
+              }}>
                 Academics
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
+              <DesktopMenuBar menuIndex= {1} open={academics} />
+
+              <Button variant="text" sx={bottomNavLinkStyle}
+              onClick={() => {
+                setDepartment((prevState) => !prevState)
+                setAdmission(false);
+                setCampusLife(false)
+                setAbout(false);
+                setConnect(false);
+                setPlacement(false);
+                setAcademics(false);
+
+              }}>
                 Department
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
+              <DesktopMenuBar menuIndex= {3} open={department} />
+
+              <Button variant="text" sx={bottomNavLinkStyle}
+              onClick={() => {
+                setPlacement((prevState) => !prevState);
+                setAdmission(false);
+                setCampusLife(false)
+                setAbout(false);
+                setConnect(false);
+                setAcademics(false);
+                setDepartment(false);
+
+              }}>
                 Placement
               </Button>
+              <DesktopMenuBar menuIndex= {4} open={placement} />
+
             </div>
           </div>
 
@@ -215,16 +284,54 @@ const Navbar = ({ width }) => {
             <div
               className={`flex items-center h-full w-full justify-start gap-6`}
             >
-              <Button variant="text" sx={bottomNavLinkStyle}>
-                Central Library
+              <Button variant="text" sx={bottomNavLinkStyle} 
+              onClick={() => {
+                setCampusLife((prevState) => !prevState);
+                setAdmission(false);
+                setAbout(false);
+                setConnect(false);
+                setAcademics(false);
+                setDepartment(false);
+                setPlacement(false);
+
+              }}>
+                Campus Life
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
-                Moodle (lsm)
+              <DesktopMenuBar menuIndex= {5} open={campusLife} />
+
+              <Button variant="text" sx={bottomNavLinkStyle}
+              onClick={() => {
+                setAbout((prevState) => !prevState);
+                setAcademics(false);
+                setDepartment(false);
+                setCampusLife(false)
+                setConnect(false);
+                setPlacement(false);
+                setAdmission(false);
+
+              }}>
+                About
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
+              <DesktopMenuBar menuIndex= {0} open={about} />
+
+
+              <Button variant="text" sx={bottomNavLinkStyle}
+              onClick={() => {
+                setConnect((prevState) => !prevState);
+                setAcademics(false);
+                setDepartment(false);
+                setCampusLife(false)
+                setAbout(false);
+                setPlacement(false);
+                setAdmission(false);
+
+              }}>
                 Connect
               </Button>
-              <Button variant="text" sx={bottomNavLinkStyle}>
+              <DesktopMenuBar menuIndex= {6} open={connect} />
+
+
+              <Button variant="text" sx={bottomNavLinkStyle} onClick={() => visit('http://bitdurg.ac.in/syllabus')}>
                 Syllabus
               </Button>
             </div>
@@ -243,7 +350,7 @@ const Navbar = ({ width }) => {
           {/* Right Side Nav-Links */}
           <div className="item basis-0 grow">
             {/* change here */}
-            <div className="h-full flex items-center justify-end gap-1">
+            <div className="flex items-center justify-end h-full gap-1">
               <IconButton aria-label="Search" onClick={() => handleSearchBar()}>
                 <img src={search} alt="Search Icon" />
               </IconButton>
@@ -432,7 +539,7 @@ const Navbar = ({ width }) => {
 
       {/* BIT Logo */}
       {/* The main middle logo */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 ">
+      <div className="absolute top-0 z-20 -translate-x-1/2 left-1/2 ">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>

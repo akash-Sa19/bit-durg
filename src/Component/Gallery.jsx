@@ -28,13 +28,13 @@ const Gallery = () => {
   const [fold2, setFold2] = useState(true);
 
   // Unable to alter the states in the Components even through passing function
-  // const foldFunct = () => {
-  //   setFold1((prevState) => !prevState)
-  //   setFold2((prevState) => !prevState)
-  //   console.log('fold function runned');
-  //   console.log('fold1:' + fold1);
-  //   console.log('fold2:' + fold2);
-  // }
+  const foldFunct = () => {
+    setFold1(!fold1)
+    setFold2(!fold2)
+    console.log('fold function runned');
+    console.log('fold1:' + fold1);
+    console.log('fold2:' + fold2);
+  }
 
   return (
     <div
@@ -140,9 +140,9 @@ const Gallery = () => {
       <div
         className={`md:h-full sm:h-[500px] md:w-full p-2 text-center font-bold bg-bit-Cream ${boxShadow} rounded-lg md:col-span-3 sm:col-span-6 md:row-span-3 sm:row-span-4 flex flex-col items-center justify-evenly sm:max-w-[420px] md:max-w-full md:min-w transition-all duration-500 `}
       >
-        <LoginCard heading="ERP (Faculty Login)" foldValue={fold1} />
+        <LoginCard heading="ERP (Faculty Login)" foldValue={fold1} foldFunctState= {foldFunct} />
 
-        <LoginCard heading="ERP (Student Login)" foldValue={fold2} />
+        <LoginCard heading="ERP (Student Login)" foldValue={fold2} foldFunctState= {foldFunct} />
       </div>
 
       {/* Sucess Stories */}
