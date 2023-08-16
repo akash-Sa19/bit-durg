@@ -19,12 +19,12 @@ const Mission = () => {
   const textStyle =
     "lg:font-medium text-justify lg:leading-[32px] lg:text-lg md:leading-normal md:font-normal md:text-base sm:font-light sm:leading-tight sm:text-xs";
   return (
-    <div className="new-container mt-[150px]
-    md:w-[90vw] md:max-w-[90vw]  
-    sm:min-w-[360px]  sm:w-[90vw] ">
+    <div className="new-container mt-[150px] lg:max-w-[1520px]
+    md:w-[90vw] md:max-w-[900px]  
+    sm:min-w-[360px]  sm:w-[90vw] shadow-2xl shadow-black ">
       {/* child div */}
       <div
-        className="bg-bit-red w-full sm:rounded-lg relative border border-white
+        className="bg-bit-red w-full sm:rounded-lg relative 
         lg:h-[735px] 
         md:h-[600px] 
         sm:h-[550px]"
@@ -51,7 +51,7 @@ const Mission = () => {
             <img
               src={Principal}
               alt="Depp Heard Lawsuit"
-              className="object-cover h-full w-full p-1 rounded-xl"
+              className="object-cover w-full h-full p-1 rounded-xl"
             />
           </div>
 
@@ -68,7 +68,7 @@ const Mission = () => {
               className="absolute md:bottom-[-40px] md:right-[-5px]
                sm:-bottom-[40px] sm:-right-[30px]"
             />
-            <div className="lg:px-20 md:px-10 flex items-center justify-center h-full mx-5">
+            <div className="flex items-center justify-center h-full mx-5 lg:px-20 md:px-10">
               <div>
                 <p className={textStyle}>
                   Bhilai Institute Of Technology, Durg, with a mission to

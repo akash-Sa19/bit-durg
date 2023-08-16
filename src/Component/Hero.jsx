@@ -5,7 +5,8 @@
 import React from "react";
 
 // asset
-import { hero } from "../assets/asset";
+// import { hero } from "../assets/asset";
+import {heroVideo} from '../assets/video/asset'
 
 // Material Ui  
 import Typography from "@mui/material/Typography";
@@ -16,8 +17,9 @@ const Hero = () => {
     fontSize: {sm:'45px', md:'60px', lg:'80px', xl:'80px'},
   }
   return (
-    <div className="sm:h-[560px] lg:h-[660px] w-full relative">
-      <img src={hero} alt="Hero Image" className="object-cover w-full h-full" />
+    <div className="h-[92vh] w-full relative">
+      {/* <img src={hero} alt="Hero Image" className="object-cover w-full h-full" /> */}
+      <video src={heroVideo} loop muted autoPlay className="object-cover w-full h-full" />
       <div className="absolute bottom-[60px] left-[60px]">
         <Typography
           variant="h2"

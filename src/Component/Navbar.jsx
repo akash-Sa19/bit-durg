@@ -539,7 +539,7 @@ const Navbar = ({ width }) => {
 
       {/* BIT Logo */}
       {/* The main middle logo */}
-      <div className="absolute top-0 z-20 -translate-x-1/2 left-1/2 ">
+      <div className="absolute top-0 z-20 -translate-x-1/2 -translate-y-1 left-1/2 ">
         <img src={Grouplogo1} alt="BitLogo" className="m-auto" />
       </div>
     </div>
