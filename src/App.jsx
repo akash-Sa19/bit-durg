@@ -71,11 +71,11 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Navbar width={width} />
         <Hero />
-        <CollegeWidget />
+        <CollegeWidget width={width} />
         <WhoWeAre />
         <NewsEvent />
         <Mission />
-        <Achievements />
+        <Achievements width={width} />
         <StraightFromSource width={width} height={height} />
         <NewToBit />
         {/* <StudentSection /> */}

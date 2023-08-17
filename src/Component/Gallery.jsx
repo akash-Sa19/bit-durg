@@ -5,6 +5,8 @@ import ReactPlayer from "react-player";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 
 // assets
 import {
@@ -18,6 +20,19 @@ import {
 
 // sub Component
 import { LoginCard } from "./index";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 360,
+      md: 834,
+      mdl: 1275,
+      lg: 1440,
+      xl: 1740,
+    },
+  },
+});
 
 const Gallery = () => {
   const iconDesign =
@@ -37,8 +52,9 @@ const Gallery = () => {
   }
 
   return (
+    <ThemeProvider theme={theme}>
     <div
-      className={`new-container md:w-[90%] sm:w-[90%] sm:max-w-[400px] md:max-w-[750px] lg:max-w-[1296px] my-10 lg:h-[1000px] md:h-[560px] sm:h-auto grid sm:grid-cols-6 md:grid-rows-5 sm:grid-rows-[repeat(16, minmax(0, 1fr))] lg:gap-12 md:gap-6 sm:gap-7 mt-[200px] lg:scale-1 `}
+      className={`new-container md:w-[90%] sm:w-[90%] sm:max-w-[400px] md:max-w-[750px] lg:max-w-[1296px] my-10 lg:h-[1000px] md:h-[560px] sm:h-auto grid sm:grid-cols-6 md:grid-rows-5 sm:grid-rows-[repeat(16, minmax(0, 1fr))] lg:gap-12 md:gap-6 sm:gap-7 mt-[100px] lg:scale-1 `}
     >
       <div
         className={`h-full w-full p-2 text-center font-bold rounded-lg md:col-span-2 sm:col-span-6 md:row-span-3 sm:row-span-4 bg-[#E7D7C1] ${boxShadow} flex flex-col justify-between items-center transition-all duration-500 `}
@@ -53,25 +69,27 @@ const Gallery = () => {
                 backgroundColor: "white",
                 borderRadius: 3,
                 my: 2,
-                height: { md: "158px", lg: "305px" },
-                minHeight: "220px",
-                width: { md: "198px", lg: "340px" },
+                height: { md: "260px", lg: "305px" },
+                // minHeight: "220px",
+                width: { md: "208px", lg: "340px" },
                 fontSize: { md: "8px", lg: "14px" },
               }}
             />
           </LocalizationProvider>
         </div>
 
-        {/* <div className="my-2 bg-white p-2 lg:w-[340px] md:w-[200px] lg:h-[200px] mx-auto rounded-tl-lg rounded-tr-lg  text-left border border-red-500 translate translate-y-4">
-          <p>21-May | Sunday | Holiday</p>
-          <p>22-May | Monday | Somthing</p>
-          <p>22-May | Tuesday | Nothing</p>
-        </div> */}
+        <div className="md:hidden lg:block my-2 bg-white p-2 lg:w-[340px] md:w-[200px] lg:h-[200px] mx-auto rounded-tl-lg rounded-tr-lg  text-left translate translate-y-4">
+          <div className="flex flex-col gap-1 mx-3 my-3 text-base font-normal">
+          <p>20-May | Sunday | Vinayaka Chathurthi</p>
+          <p>29-May | Tuesday | Onam</p>
+          <p>30-May | Wednesday | Raksha Bandhan</p>
+          </div>
+        </div>
       </div>
 
       {/* video player */}
       <div
-        className={`md:h-full md:w-full sm:h-[189px] p-2 text-center font-bold rounded-lg md:col-span-3 sm:col-span-6 md:row-span-2 sm:row-span-3 bg-bit-Cream ${boxShadow} overflow-hidden transition-all duration-500 `}
+        className={` md:h-full md:w-full sm:h-[189px] p-2 text-center font-bold rounded-lg md:col-span-3 sm:col-span-6 md:row-span-2 sm:row-span-3 bg-bit-Cream ${boxShadow} overflow-hidden transition-all duration-500 `}
       >
           <ReactPlayer
             url={[
@@ -166,6 +184,7 @@ const Gallery = () => {
           />
           </div>
     </div>
+    </ThemeProvider>
   );
 };
 

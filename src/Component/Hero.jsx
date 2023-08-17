@@ -5,7 +5,7 @@
 import React from "react";
 
 // asset
-// import { hero } from "../assets/asset";
+import { hero } from "../assets/asset";
 import {heroVideo} from '../assets/video/asset'
 
 // Material Ui  

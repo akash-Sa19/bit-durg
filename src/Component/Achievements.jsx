@@ -1,16 +1,48 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+// material ui 
 import Typography from "@mui/material/Typography";
+
+// assets
 import { Ariia, Naac, Nirf, Nba, Margdarshan } from "../assets/asset";
+
+// constants
 import { color } from "../Constants";
 
-const Achievements = () => {
+// gsap
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+const Achievements = (props) => {
   const textStyle =
     "text-xl font-extrabold tracking-[0.15rem] text-center mt-2 uppercase bg-clip-text text-transparent bg-gradient-to-r from-[#F26921] to-[#ED1065]";
   const imgStyle = 
     "lg:w-[160px] lg:h-[160px] mdl:w-[140px] mdl:h-[140px] md:w-[92px] md:h-[92px] sm:w-[72px] sm:h-[72px] ";
   
+    const elRef = useRef(null);
+    useEffect(() => {
+      const el = elRef.current;
+      gsap.fromTo(
+        el,
+        {y: 500, opacity: 0.1, },
+        {
+          y: 0,
+        duration: 2,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: el,
+          // markers: true,
+          start: `${props.width >= 1440 ? -500 : -400 } 100%`,
+          scrub: true,
+          toggleActions: 'play none none none',
+          end: `${props.width >= 1440 ? -150 : -350 } 80%`,
+        },
+        }
+      );
+      
+    }, []);
   return (
-    <div className="new-container md:mt-[150px] sm:mt-[100px] flex flex-col items-center">
+    <div className="new-container md:mt-[150px] sm:mt-[100px] flex flex-col items-center" ref={elRef}>
       <Typography
         variant="h3"
         color="black"
