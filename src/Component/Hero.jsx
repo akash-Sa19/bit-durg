@@ -20,7 +20,7 @@ const Hero = () => {
     <div className="h-[92vh] w-full relative">
       {/* <img src={hero} alt="Hero Image" className="object-cover w-full h-full" /> */}
       <video src={heroVideo} loop muted autoPlay className="object-cover w-full h-full" />
-      <div className="absolute bottom-[60px] left-[60px]">
+      <div className="absolute md:bottom-[60px] sm:bottom-[30px] md:left-[60px] sm:left-[30px]">
         <Typography
           variant="h2"
           component="h2"

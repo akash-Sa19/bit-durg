@@ -42,7 +42,7 @@ const Card2 = (props) => {
             // sx={{ height: 208 }}
             image={props.img}
             title="Image 1"
-            className="lg:h-[208px] sm:h-[168.79px] transition-all duration-300 overflow-hidden"
+            className="lg:h-[208px] sm:h-[168.79px] transition-all duration-300 overflow-hidden object-cover object-center"
             onClick={() => {}}
           />
           {/* Image Border */}

@@ -5,11 +5,9 @@ import graduate from "./graduate.svg";
 import undergraduate from "./undergraduate.svg";
 import scholarship from "./scholarship.svg";
 import campusLife from "./campusLife.svg";
-import whoWeAre from "./whoWeAre.png";
 import event_icon from "./event_icon.svg";
 import news_icon from "./news_icon.svg";
 import filter from "./filter.svg";
-import img1 from "./img1.png";
 import calender from "./icons_calender.svg";
 import deppHeard from "./deppHeard.jpeg";
 import Ariia from "./Ariia.svg";
@@ -17,9 +15,6 @@ import Naac from "./Naac.svg";
 import Nirf from "./Nirf.svg";
 import Nba from "./Nba.svg";
 import Margdarshan from "./Margdarshan.svg";
-import image01 from "./image01.jpeg";
-import image02 from "./image02.jpg";
-import image03 from "./image03.jpg";
 import bitLogo3 from "./BitLogo3.svg";
 import bitLogo2 from "./BitLogo2.svg";
 
@@ -64,12 +59,10 @@ export {
   event_icon,
   news_icon,
   filter,
-  img1,
   graduate,
   undergraduate,
   scholarship,
   campusLife,
-  whoWeAre,
   calender,
   startDoubleQuote,
   endDoubleQuote,
@@ -79,9 +72,6 @@ export {
   Nirf,
   Nba,
   Margdarshan,
-  image01,
-  image02,
-  image03,
   bitLogo3,
   bitLogo2,
   bitBuildingIcon,

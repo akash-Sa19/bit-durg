@@ -11,23 +11,21 @@
 
 import React from "react";
 
-// assets
-import { whoWeAre } from "../assets/asset";
 
 const WhoWeAre = () => {
   return (
     <div
       className="new-container flex md:justify-evenly sm:items-center bg-bit-red shadow-2xl shadow-black lg:mt-[150px]
-    lg:h-[605px] lg:min-w-[1320px] lg:w-[90vw] lg:max-w-[1520px]
+    lg:h-[605px] lg:min-w-[1320px] lg:w-[90vw] lg:max-w-[1520px] 
      md:min-w-[765px] md:w-[90vw] md:max-w-[900px] md:h-[350px] md:flex-row md:rounded-lg
       sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[680px] sm:flex-col sm:justify-start sm:rounded-none"
     >
       {/* image div */}
       {/* <div className="flex items-center justify-center w-auto "> */}
       <img
-        src={whoWeAre}
+        src={`https://bitdurg.ac.in/images/admission.jpg`}
         alt="Who We Are Image"
-        className="lg:w-[493px] lg:max-w-[493px] lg:h-[496px] 
+        className="lg:w-[493px] lg:max-w-[493px] lg:h-[496px] object-cover object-center
           md:min-w-[274px] md:w-[30vw] md:max-w-[320px] md:h-[288px] 
            sm:min-w-[360px] sm:w-[100vw] sm:max-w-[420px] sm:h-[260px]  "
       />

@@ -40,7 +40,7 @@ export default function MediaCard(props) {
         <CardMedia
           image={props.img}
           title="Image 1"
-          className="lg:h-[208px] sm:h-[168.79px] cardImg"
+          className="lg:h-[208px] sm:h-[168.79px] cardImg object-cover object-center"
         />
         {/* Image Border */}
         <Box
